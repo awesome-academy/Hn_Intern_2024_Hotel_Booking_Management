@@ -1,0 +1,39 @@
+vi:
+  activerecord:
+    models:
+      user: "Người dùng"
+    attributes:
+      user:
+        full_name: "Họ và tên"
+        email: "Email"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              format: "phải chứa ít nhất một chữ cái viết thường, một chữ cái viết hoa, một chữ số và một ký tự đặc biệt, và có ít nhất 8 ký tự"
+  layouts:
+    header:
+      home: "Trang chủ"
+      rooms: "Danh sách phòng"
+      booking: "Danh sách đặt phòng"
+      language: "Ngôn ngữ"
+      english: "Tiếng anh"
+      vietnamese: "Tiếng việt"
+      login: "Đăng nhập"
+      signup: "Đăng ký"
+  shared:
+    error_messages:
+      the_form_contains: "Biểu mẫu này có"
+      error_count:
+        one: "1 lỗi."
+        other: "%{count} lỗi."
+  users:
+    new:
+      title: "Đăng Ký"
+      button_text: "Tạo tài khoản mới"
+      old_user: "Bạn đã có tài khoản?"
+    create:
+      flash_create_success: "Tạo tài khoản mới thành công"

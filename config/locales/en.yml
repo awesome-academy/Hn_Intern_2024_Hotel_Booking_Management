@@ -1,2 +1,39 @@
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        full_name: "Full name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              format: "It must contain at least one lowercase letter, one uppercase letter, one digit, and one special character, and must be at least 8 characters long"
+  layouts:
+    header:
+      home: "Home"
+      rooms: "Rooms"
+      booking: "Booking"
+      language: "Language"
+      english: "English"
+      vietnamese: "Vietnamese"
+      login: "Login"
+      signup: "Sign up"
+  shared:
+    error_messages:
+      the_form_contains: "This form contains"
+      error_count:
+        one: "1 error."
+        other: "%{count} errors."
+  users:
+    new:
+      title: "Sign Up"
+      button_text: "Create new account"
+      old_user: "Have an account?"
+    create:
+      flash_create_success: "Create new account successfully"
