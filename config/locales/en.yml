@@ -1,4 +1,12 @@
 en:
+  bed: "Bed"
+  wifi: "WiFi"
+  bath: "Bath"
+  pool: "Pool"
+  air_conditioner: "Air conditioner"
+  tv: "TV"
+  iron: "Iron"
+  sofa: "Sofa"
   activerecord:
     models:
       user: "User"
@@ -37,3 +45,8 @@ en:
       old_user: "Have an account?"
     create:
       flash_create_success: "Create new account successfully"
+  rooms:
+    index:
+      button_text: "Search"
+      check_in: "Check in"
+      check_out: "Check out"
