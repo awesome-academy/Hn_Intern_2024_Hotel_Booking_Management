@@ -2,7 +2,9 @@
   <div class="room-item shadow rounded overflow-hidden h-100">
     <div class="position-relative">
       <%= image_tag "img/carousel-2.jpg", class: "img-fluid"%>
-      <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$<%= room.price %></small>
+      <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">
+        <%= number_to_currency room.price %>
+      </small>
     </div>
     <div class="p-4 mt-2">
       <div class="d-flex justify-content-between mb-3">
