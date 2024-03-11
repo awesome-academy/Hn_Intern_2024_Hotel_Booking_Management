@@ -1,4 +1,12 @@
 vi:
+  bed: "Giường ngủ"
+  wifi: "WiFi"
+  bath: "Phòng tắm "
+  pool: "Bể bơi"
+  air_conditioner: "Điều hòa"
+  tv: "TV"
+  iron: "Bàn là"
+  sofa: "Ghế sofa"
   activerecord:
     models:
       user: "Người dùng"
@@ -37,3 +45,8 @@ vi:
       old_user: "Bạn đã có tài khoản?"
     create:
       flash_create_success: "Tạo tài khoản mới thành công"
+  rooms:
+    index:
+      button_text: "Tìm kiếm"
+      check_in: "Đăng ký vào"
+      check_out: "Trả phòng"
