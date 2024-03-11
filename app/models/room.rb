@@ -6,4 +6,7 @@ class Room < ApplicationRecord
 
   has_many :room_facilities, dependent: :destroy
   has_many :facilities, through: :room_facilities, source: :facility
+
+  # scope :latest, ->{order created_at: :desc}
+  scope :desc_price, ->{order price: :desc}
 end
