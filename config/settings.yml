@@ -1,0 +1,6 @@
+digits:
+  digit_8: 8
+  digit_255: 255
+regexs:
+  email: \A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z
+  password:   \A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}\z
