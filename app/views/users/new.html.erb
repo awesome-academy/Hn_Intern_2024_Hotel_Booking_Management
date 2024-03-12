@@ -5,7 +5,7 @@
   <div class="container row">
     <div class="col-lg-6 offset-3">
       <%= render "form", locals: {url: signup_path, method: :post} %>
-      <p class="my-2"><%= t ".old_user" %> <%= link_to t("layouts.header.login"), "#" %></p>
+      <p class="my-2"><%= t ".old_user" %> <%= link_to t("layouts.header.login"), signin_path %></p>
     </div>
   </div>
 </div>

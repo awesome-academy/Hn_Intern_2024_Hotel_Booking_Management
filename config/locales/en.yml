@@ -45,6 +45,9 @@ en:
       vietnamese: "Vietnamese"
       login: "Login"
       signup: "Sign up"
+      logout: "Log out"
+      account: "Account"
+      profile: "Profile"
   shared:
     error_messages:
       the_form_contains: "This form contains"
@@ -53,7 +56,7 @@ en:
         other: "%{count} errors."
   users:
     new:
-      title: "Sign Up"
+      title: "Sign up"
       button_text: "Create new account"
       old_user: "Have an account?"
     create:
@@ -74,3 +77,12 @@ en:
     room:
       detail: "View detail"
       book_now: "Book now"
+  sessions:
+    new:
+      title: "Sign in"
+      new_user: "Don't have an account?"
+      password: "Password"
+      remember_me: "Remember me"
+    create:
+      flash_create_success: "Log in successfully"
+      flash_create_danger: "Incorrect username or password"
