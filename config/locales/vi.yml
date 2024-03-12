@@ -16,6 +16,10 @@ vi:
   tv: "TV"
   iron: "Bàn là"
   sofa: "Ghế sofa"
+
+  flash:
+    room_not_found: "Không tìm thấy phòng"
+
   activerecord:
     models:
       user: "Người dùng"
@@ -59,3 +63,14 @@ vi:
       button_text: "Tìm kiếm"
       check_in: "Đăng ký vào"
       check_out: "Trả phòng"
+    show:
+      room: "Phòng"
+      date: "Ngày"
+      button_check: "Kiểm tra phòng"
+      description: "Mô tả"
+      facilities: "Tiện nghi"
+      review: "Đánh giá"
+      price: "Giá"
+    room:
+      detail: "Chi tiết"
+      book_now: "Đặt phòng"
