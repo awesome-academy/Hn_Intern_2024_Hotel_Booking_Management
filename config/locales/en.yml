@@ -16,6 +16,10 @@ en:
   tv: "TV"
   iron: "Iron"
   sofa: "Sofa"
+
+  flash:
+    room_not_found: "Room not found"
+
   activerecord:
     models:
       user: "User"
@@ -59,3 +63,14 @@ en:
       button_text: "Search"
       check_in: "Check in"
       check_out: "Check out"
+    show:
+      room: "Room"
+      date: "Date"
+      button_check: "Check available"
+      description: "Description"
+      facilities: "Facilities"
+      review: "Room review"
+      price: "Price"
+    room:
+      detail: "View detail"
+      book_now: "Book now"
