@@ -20,7 +20,7 @@
             <%= link_to t(".rooms"), rooms_path, class:"nav-item nav-link" %>
             <%= link_to t(".booking"), "#", class:"nav-item nav-link" %>
           </div>
-          <div class="navbar-nav mr-0 py-0">
+          <div class="navbar-nav mx-5 py-0">
             <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><%= t ".language" %></a>
               <div class="dropdown-menu rounded-0 m-0">
@@ -28,8 +28,18 @@
                 <%= link_to t(".vietnamese"), {locale: :vi}, class: "dropdown-item" %>
               </div>
             </div>
-            <%= link_to t(".signup"), signup_path, class: "nav-item nav-link" %>
-            <%= link_to t(".login"), "#", class: "nav-item nav-link" %>
+            <% if signed_in? %>
+              <div class="nav-item dropdown mx-5">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><%= t ".account" %></a>
+              <div class="dropdown-menu rounded-0 m-0">
+                <%= link_to t(".profile"), "#", class: "dropdown-item" %>
+                <%= link_to t(".logout"), logout_path, class: "dropdown-item", data: { "turbo-method": :delete } %>
+              </div>
+            </div>
+            <% else %>
+              <%= link_to t(".signup"), signup_path, class: "nav-item nav-link" %>
+              <%= link_to t(".login"), signin_path, class: "nav-item nav-link" %>
+            <% end %>
           </div>
         </div>
       </nav>

@@ -14,6 +14,40 @@ class User < ApplicationRecord
     allow_nil: true
 
   enum role: {user: 0, admin: 1}
+
+  attr_accessor :remember_token
+
+  def authenticated? attr, token
+    digest = send "#{attr}_digest"
+    return false unless digest
+
+    BCrypt::Password.new(digest).is_password? token
+  end
+
+  def remember_me
+    self.remember_token = User.new_token
+    update_column :remember_digest, User.digest(remember_token)
+  end
+
+  def forget
+    update_column :remember_digest, nil
+  end
+
+  class << self
+    def digest string
+      cost = if ActiveModel::SecurePassword.min_cost
+               BCrypt::Engine::MIN_COST
+             else
+               BCrypt::Engine.cost
+             end
+      BCrypt::Password.create string, cost:
+    end
+
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+  end
+
   private
   def downcase_email
     email.downcase!

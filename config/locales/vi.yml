@@ -45,6 +45,9 @@ vi:
       vietnamese: "Tiếng việt"
       login: "Đăng nhập"
       signup: "Đăng ký"
+      logout: "Đăng xuất"
+      account: "Tài khoản"
+      profile: "Thông tin người dùng"
   shared:
     error_messages:
       the_form_contains: "Biểu mẫu này có"
@@ -53,7 +56,7 @@ vi:
         other: "%{count} lỗi."
   users:
     new:
-      title: "Đăng Ký"
+      title: "Đăng ký"
       button_text: "Tạo tài khoản mới"
       old_user: "Bạn đã có tài khoản?"
     create:
@@ -74,3 +77,12 @@ vi:
     room:
       detail: "Chi tiết"
       book_now: "Đặt phòng"
+  sessions:
+    new:
+      title: "Đăng nhập"
+      new_user: "Chưa có tài khoản?"
+      password: "Mật khẩu"
+      remember_me: "Ghi nhớ đăng nhập"
+    create:
+      flash_create_success: "Đăng nhập thành công"
+      flash_create_danger: "Thông tin đăng nhập chưa đúng"
