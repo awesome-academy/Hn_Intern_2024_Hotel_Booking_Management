@@ -1,17 +1,28 @@
 class RoomsController < ApplicationController
-  before_action :load_room, only: :show
+  before_action :load_room, only: %i(show check_available)
   def index
     @pagy, @rooms = pagy Room.desc_price, items: Settings.digits.digit_8
   end
 
   def show; end
 
-  private
-  def load_room
-    @room = Room.find_by id: params[:id]
-    return if @room
-
-    flash[:warning] = t "flash.room_not_found"
-    redirect_to root_path
+  def check_available
+    check_in_date = params.dig(:date_check, :check_in_date)
+    check_out_date = params.dig(:date_check, :check_out_date)
+    if @room.available?(check_in_date, check_out_date)
+      render(
+        json: {
+          message: t(".available_room", ci: check_in_date, co: check_out_date)
+        },
+        status: :ok
+      )
+    else
+      render(
+        json: {
+          message: t(".busy_room", ci: check_in_date, co: check_out_date)
+        },
+        status: :not_found
+      )
+    end
   end
 end

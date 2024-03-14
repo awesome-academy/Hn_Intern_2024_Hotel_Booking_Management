@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
   enum role: {user: 0, admin: 1}
 
+  has_many :bookings, dependent: :destroy
+
   attr_accessor :remember_token
 
   def authenticated? attr, token

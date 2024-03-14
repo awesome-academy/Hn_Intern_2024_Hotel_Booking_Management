@@ -6,7 +6,13 @@ class Room < ApplicationRecord
 
   has_many :room_facilities, dependent: :destroy
   has_many :facilities, through: :room_facilities, source: :facility
+  has_many :bookings, dependent: :destroy
 
   # scope :latest, ->{order created_at: :desc}
   scope :desc_price, ->{order price: :desc}
+
+  def available? check_in, check_out
+    bookings.where("check_in <= ? AND check_out >= ?", check_out,
+                   check_in).empty?
+  end
 end
