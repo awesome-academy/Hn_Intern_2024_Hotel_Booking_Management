@@ -1,8 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :signed_in_user, only: %i(new create)
+  before_action :signed_in_user
   before_action :load_room, only: :new
+  before_action :create_booking, only: :create
 
-  def index; end
+  def index
+    @pagy, @bookings = pagy current_user.get_bookings,
+                            items: Settings.digits.digit_3
+  end
 
   def show; end
 
@@ -10,12 +14,7 @@ class BookingsController < ApplicationController
     @booking = @room.bookings.build
   end
 
-  def create # rubocop:disable Metrics/AbcSize
-    @room = Room.find_by id: params.dig(:booking, :room_id)
-    @booking = @room.bookings.build booking_params
-    @booking.user = current_user
-    @booking.book_day = Time.zone.today
-
+  def create
     if save_booking
       flash[:success] = t ".flash_create_success"
       redirect_to root_path
@@ -44,5 +43,12 @@ class BookingsController < ApplicationController
 
       true
     end
+  end
+
+  def create_booking
+    @room = Room.find_by id: params.dig(:booking, :room_id)
+    @booking = @room.bookings.build booking_params
+    @booking.user = current_user
+    @booking.book_day = DateTime.now
   end
 end

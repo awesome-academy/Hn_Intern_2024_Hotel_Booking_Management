@@ -58,6 +58,15 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "enter_check_in": "Please enter check in",
       "enter_check_out": "Please enter check out"
     },
+    "booking": {
+      "book_day": "Book day",
+      "book_name": "Order's name",
+      "check_in": "Check in",
+      "check_out": "Check out",
+      "code": "CODE",
+      "status": "Status",
+      "view_detail": "View detail"
+    },
     "create": {
       "flash_create_success": "Create booking request successfully"
     },
@@ -65,6 +74,10 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "booked_room": "is booked. Please choose another time",
       "can_not_in_past": "can not be in the past",
       "check_out_invalid": "is invalid"
+    },
+    "index": {
+      "title": "Booking list",
+      "total": "Total"
     },
     "new": {
       "book_room": "Book room",
@@ -77284,6 +77297,8 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "default": "%a, %d %b %Y %H:%M:%S %z",
       "long": "%B %d, %Y %H:%M",
       "short": "%d %b %H:%M",
+      "short_date": "%a, %d %b %Y",
+      "short_date_time": "%a, %d %b %Y, %H:%M",
       "us": "%m/%d/%Y %I:%M %p"
     },
     "pm": "pm"

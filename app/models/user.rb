@@ -35,6 +35,10 @@ class User < ApplicationRecord
     update_column :remember_digest, nil
   end
 
+  def get_bookings
+    bookings.newest
+  end
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost

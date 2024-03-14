@@ -1,4 +1,6 @@
 digits:
+  digit_3: 3
+  digit_5: 5
   digit_8: 8
   digit_255: 255
 regexs:
