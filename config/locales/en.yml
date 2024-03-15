@@ -1,4 +1,8 @@
 en:
+  time:
+    formats:
+      short_date: "%a, %d %b %Y"
+      short_date_time: "%a, %d %b %Y, %H:%M"
   number:
     currency:
       format:
@@ -112,6 +116,17 @@ en:
       title: "Room booking"
       book_room: "Book room"
       button_text: "Make a booking request"
+    index:
+      title: "Booking list"
+      total: "Total"
+    booking:
+      code: "CODE"
+      book_day: "Book day"
+      book_name: "Order's name"
+      status: "Status"
+      check_in: "Check in"
+      check_out: "Check out"
+      view_detail: "View detail"
     create:
       flash_create_success: "Create booking request successfully"
     errors:

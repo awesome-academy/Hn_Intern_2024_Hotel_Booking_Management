@@ -14,6 +14,8 @@ class Booking < ApplicationRecord
 
   enum status: {pending: 0, confirmed: 1, rejected: 2}
 
+  scope :newest, ->{order book_day: :desc, check_in: :asc}
+
   private
   def check_in_valid
     return unless check_in && check_in < Time.zone.today

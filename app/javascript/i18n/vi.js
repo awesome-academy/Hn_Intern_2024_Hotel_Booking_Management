@@ -58,6 +58,15 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "enter_check_in": "Vui lòng nhập check in",
       "enter_check_out": "Vui lòng nhập check out"
     },
+    "booking": {
+      "book_day": "Ngày đặt",
+      "book_name": "Người đặt",
+      "check_in": "Ngày nhận",
+      "check_out": "Ngày trả",
+      "code": "MÃ",
+      "status": "Trạng thái",
+      "view_detail": "Chi tiết"
+    },
     "create": {
       "flash_create_success": "Tạo yêu cầu đặt phòng thành công"
     },
@@ -65,6 +74,10 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "booked_room": "đã được đặt. Vui lòng chọn thời gian khác",
       "can_not_in_past": "không được trong quá khứ",
       "check_out_invalid": "không hợp lệ"
+    },
+    "index": {
+      "title": "Danh sách đặt phòng",
+      "total": "Tổng"
     },
     "new": {
       "book_room": "Đặt phòng",
@@ -76997,6 +77010,8 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "default": "%a, %d %b %Y %H:%M:%S %z",
       "long": "%d %B, %Y %H:%M",
       "short": "%d %b %H:%M",
+      "short_date": "%a, %d %b %Y",
+      "short_date_time": "%a, %d %b %Y, %H:%M",
       "us": "%m/%d/%Y %I:%M %p"
     },
     "pm": "chiều"

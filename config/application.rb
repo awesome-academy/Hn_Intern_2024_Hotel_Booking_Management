@@ -13,5 +13,6 @@ module HotelBooking
     config.logger = Logger.new(STDOUT)
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.middleware.use I18n::JS::Middleware
+    config.time_zone = "Asia/Ho_Chi_Minh"
   end
 end
