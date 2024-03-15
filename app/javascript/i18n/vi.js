@@ -70,12 +70,30 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     "create": {
       "flash_create_success": "Tạo yêu cầu đặt phòng thành công"
     },
+    "destroy": {
+      "flash_destroy_danger": "Hủy đặt phòng thất bại",
+      "flash_destroy_success": "Hủy đặt phòng thành công"
+    },
+    "detail": {
+      "book_day": "Ngày tạo",
+      "book_name": "Người đặt",
+      "button_cancel": "Hủy đặt phòng",
+      "code": "Mã",
+      "confirm_cancel": "Bạn chắc chắn hủy đặt phòng?",
+      "email": "Email",
+      "note": "Ghi chú",
+      "price": "Đơn giá",
+      "room": "Phòng",
+      "telephone": "Số điện thoại",
+      "title": "Chi tiết đặt phòng"
+    },
     "errors": {
       "booked_room": "đã được đặt. Vui lòng chọn thời gian khác",
       "can_not_in_past": "không được trong quá khứ",
       "check_out_invalid": "không hợp lệ"
     },
     "index": {
+      "no_booking_request": "Chưa có yêu cầu nào",
       "title": "Danh sách đặt phòng",
       "total": "Tổng"
     },
@@ -76703,6 +76721,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     }
   },
   "flash": {
+    "booking_not_found": "Không tìm thấy thông tin đặt phòng",
     "must_sign_in": "Vui lòng đăng nhập trước",
     "room_not_found": "Không tìm thấy phòng"
   },

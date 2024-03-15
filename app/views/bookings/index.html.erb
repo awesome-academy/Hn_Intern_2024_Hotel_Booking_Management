@@ -5,13 +5,22 @@
     <div class="row g-5 align-items-center">
       <div class="col-lg-6 border-end border-dark border-2">
         <h1><%= t ".total" %>: <%= current_user.bookings.count %></h1>
-        <%== pagy_bootstrap_nav @pagy %>
-        <%= render @bookings %>
-        <%== pagy_bootstrap_nav @pagy %>
-      </div>
-      <div class="col-lg-6">
-        <!-- show detail booking -->
 
+        <% if @bookings.empty? %>
+          <%= t ".no_booking_request" %>
+        <% else %>
+          <%== pagy_bootstrap_nav @pagy %>
+          <%= render @bookings %>
+          <%== pagy_bootstrap_nav @pagy %>
+        <% end %>
+
+      </div>
+      <div class="col-lg-6 overflow-auto">
+        <div class="border border-dark d-flex justify-content-center align-items-center">
+          <div id="show-detail-booking" >
+            ...
+          </div>
+        </div>
       </div>
     </div>
   </div>

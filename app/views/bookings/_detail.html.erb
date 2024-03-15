@@ -1,0 +1,38 @@
+<div id="show-detail-booking" >
+  <div class="text-center">
+    <h2 class="section-title text-center text-uppercase my-5"><%= t ".title" %></h2>
+  </div>
+  <h3 class="mb-4 text-center"><%= t ".code" %> <span class="text-primary text-uppercase">#<%= booking.id %></span></h3>
+  <h3 class="mb-4 text-center"><%= t ".book_day" %> <span class="text-primary text-uppercase"><%= l booking.book_day, format: :short_date_time %></span></h3>
+  <div class="mt-3 row">
+
+    <!-- show detail booking -->
+    <div class="col-6 ps-5">
+      <h4><%= t ".book_name" %>: <%= booking.full_name %></h4>
+      <h4><%= t ".telephone" %>: <%= booking.telephone %></h4>
+      <h4><%= t ".email" %>: <%= booking.email %></h4>
+      <div>
+        <h4><%= t "bookings.booking.check_in" %>: <%= l booking.check_in, format: :short_date %></h4>
+        <h4><%= t "bookings.booking.check_out" %>: <%= l booking.check_out, format: :short_date %></h4>
+      </div>
+    </div>
+
+    <div class="col-6 ps-5">
+      <h4><%= t "bookings.booking.status" %>: <%= t booking.status %></h4>
+      <h4><%= t ".room" %>:
+        <span class="text-primary">
+          <%= link_to booking.room.name, room_path(booking) %>
+        </span>
+      </h4>
+      <h4><%= t ".price" %>: <%= number_to_currency booking.room.price %></h4>
+    </div>
+    <h4 class="col-6 ps-5">
+      <%= t ".note" %>: <%= booking.note %>
+    </h4>
+    <div class="col-6 mb-5 text-center">
+      <% if booking.pending? %>
+        <%= link_to t(".button_cancel"), booking, data: {"turbo-method": :delete, "turbo-confirm": t(".confirm_cancel")}, class: "btn btn-outline-danger d-inline py-3 px-2" %>
+      <% end %>
+    </div>
+  </div>
+</div>

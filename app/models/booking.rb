@@ -16,6 +16,10 @@ class Booking < ApplicationRecord
 
   scope :newest, ->{order book_day: :desc, check_in: :asc}
 
+  def can_be_deleted?
+    pending?
+  end
+
   private
   def check_in_valid
     return unless check_in && check_in < Time.zone.today
