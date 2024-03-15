@@ -11,5 +11,7 @@ module HotelBooking
     config.i18n.default_locale = :en
 
     config.logger = Logger.new(STDOUT)
+    config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.middleware.use I18n::JS::Middleware
   end
 end

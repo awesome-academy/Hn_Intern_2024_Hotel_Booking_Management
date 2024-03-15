@@ -1,0 +1,79 @@
+<!-- Booking Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center"">
+      <h6 class="section-title text-center text-primary text-uppercase"><%= t ".title" %></h6>
+      <h1 class="mb-5"><%= t ".book_room" %> <span class="text-primary text-uppercase">
+        <%= link_to room_path(@room) do %>
+          <%= @booking.room.name %>
+        <% end %>
+      </span></h1>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <div class="row g-3">
+          <div class="col-12 text-center">
+            <%= image_tag "img/carousel-2.jpg", class: "img-fluid rounded w-75" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <%= form_for @booking do |f| %>
+
+          <%= render "shared/error_messages", object: f.object %>
+          <%= f.hidden_field :room_id, value: @room.id %>
+          <%= f.hidden_field :price, value: @room.price %>
+
+          <div class="row g-3">
+            <div class="col-md-12">
+              <div class="form-floating">
+                <%= f.text_field :full_name, class: "form-control", placeholder: "" %>
+                <%= f.label :full_name%>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <%= f.email_field :email, class: "form-control", placeholder: "" %>
+                <%= f.label :email %>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <%= f.text_field :telephone, class: "form-control", placeholder: "" %>
+                <%= f.label :telephone %>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating date" data-target-input="nearest">
+                <%= f.date_field :check_in, class: "input-small form-control" %>
+                <%= f.label :check_in %>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating date" data-target-input="nearest">
+                <%= f.date_field :check_out, class: "input-small form-control" %>
+                <%= f.label :check_out %>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-floating">
+                <%= f.text_area :note, class: "form-control h-100", placeholder: "" %>
+                <%= f.label :note %>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <%= f.submit t(".button_text"), class: "btn btn-primary w-100 py-3" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Booking End -->

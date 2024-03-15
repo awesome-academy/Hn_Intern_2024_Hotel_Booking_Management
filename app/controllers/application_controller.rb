@@ -18,6 +18,22 @@ class ApplicationController < ActionController::Base
     session[:user_id] = user.id
   end
 
+  def load_room
+    @room = Room.find_by id: params[:id]
+    return if @room
+
+    flash[:warning] = t "flash.room_not_found"
+    redirect_to root_path
+  end
+
+  def signed_in_user
+    return if signed_in?
+
+    store_location
+    flash[:danger] = t "flash.must_sign_in"
+    redirect_to signin_url
+  end
+
   private
 
   def default_url_options

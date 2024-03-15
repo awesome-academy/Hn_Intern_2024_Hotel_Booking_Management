@@ -17,24 +17,41 @@ en:
   iron: "Iron"
   sofa: "Sofa"
 
+  pending: "Pending"
+  confirmed: "Accept"
+  rejected: "Reject"
+
   flash:
     room_not_found: "Room not found"
+    must_sign_in: "Please sign in first"
 
   activerecord:
     models:
       user: "User"
+      booking: "Booking"
     attributes:
       user:
         full_name: "Full name"
         email: "Email"
         password: "Password"
         password_confirmation: "Password confirmation"
+      booking:
+        full_name: "Full name"
+        email: "Email"
+        telephone: "Telephone"
+        note: "Note"
+        check_in: "Check in"
+        check_out: "Check out"
     errors:
       models:
         user:
           attributes:
             password:
               format: "It must contain at least one lowercase letter, one uppercase letter, one digit, and one special character, and must be at least 8 characters long"
+        booking:
+          attributes:
+            telephone:
+              format: "must contain 10 digits"
   layouts:
     header:
       home: "Home"
@@ -74,9 +91,13 @@ en:
       facilities: "Facilities"
       review: "Room review"
       price: "Price"
+      book_now: "Book now"
     room:
       detail: "View detail"
       book_now: "Book now"
+    check_available:
+      available_room: "This room is available from %{ci} to %{co}"
+      busy_room: "This room isn't available from %{ci} to %{co}"
   sessions:
     new:
       title: "Sign in"
@@ -86,3 +107,19 @@ en:
     create:
       flash_create_success: "Log in successfully"
       flash_create_danger: "Incorrect username or password"
+  bookings:
+    new:
+      title: "Room booking"
+      book_room: "Book room"
+      button_text: "Make a booking request"
+    create:
+      flash_create_success: "Create booking request successfully"
+    errors:
+      can_not_in_past: "can not be in the past"
+      check_out_invalid: "is invalid"
+      booked_room: "is booked. Please choose another time"
+    alerts:
+      enter_check_in: "Please enter check in"
+      enter_check_out: "Please enter check out"
+      check_in_invalid: "Check in can not in the past"
+      check_out_invalid: "Check out is invalid"

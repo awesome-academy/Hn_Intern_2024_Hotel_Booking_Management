@@ -53,22 +53,34 @@
     <div class="col-12 col-lg-4">
       <!-- Hotel Reservation Area -->
       <div class="hotel-reservation--area mb-100">
-        <form action="#" method="post">
+        <%= form_for(:date_check,{:url => check_available_room_path(@room),
+          :method => :get, :id => "form_check_available"}) do |f| %>
+
           <div class="form-group mb-30">
             <h5 class="text-center"><%= t ".date" %></h5>
             <div class="row no-gutters">
+
               <div class="col-12">
-                <input type="text" class="input-small form-control" name="checkInDate" placeholder="<%= t "rooms.index.check_in" %>">
+                <%= f.label :check_in_date, t("rooms.index.check_in") %>
+                <%= f.date_field :check_in_date, class: "input-small form-control"%>
               </div>
+
               <div class="col-12 mt-2">
-                <input type="text" class="input-small form-control" name="checkOutDate" placeholder="<%= t "rooms.index.check_out" %>">
+                <%= f.label :check_out_date, t("rooms.index.check_out") %>
+                <%= f.date_field :check_out_date, class: "input-small form-control"%>
               </div>
+
             </div>
           </div>
+
           <div class="form-group">
             <button type="submit" class="btn btn-primary w-100 mt-2"><%= t ".button_check" %></button>
           </div>
-        </form>
+
+          <div class="form-group" id="btn-book-now" style="display: none;">
+            <%= link_to t(".book_now"), new_booking_path(@room), class: "btn btn-primary w-100 mt-2" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

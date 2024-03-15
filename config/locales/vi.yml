@@ -17,24 +17,41 @@ vi:
   iron: "Bàn là"
   sofa: "Ghế sofa"
 
+  pending: "Đang chờ"
+  confirmed: "Chấp nhận"
+  rejected: "Từ chối"
+
   flash:
     room_not_found: "Không tìm thấy phòng"
+    must_sign_in: "Vui lòng đăng nhập trước"
 
   activerecord:
     models:
       user: "Người dùng"
+      booking: "Đặt phòng"
     attributes:
       user:
         full_name: "Họ và tên"
         email: "Email"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
+      booking:
+        full_name: "Tên người đặt"
+        email: "Email"
+        telephone: "Số điện thoại"
+        note: "Ghi chú"
+        check_in: "Ngày nhận phòng"
+        check_out: "Ngày trả phòng"
     errors:
       models:
         user:
           attributes:
             password:
               format: "phải chứa ít nhất một chữ cái viết thường, một chữ cái viết hoa, một chữ số và một ký tự đặc biệt, và có ít nhất 8 ký tự"
+        booking:
+          attributes:
+            telephone:
+              format: "phải chứa 10 chữ số"
   layouts:
     header:
       home: "Trang chủ"
@@ -64,8 +81,8 @@ vi:
   rooms:
     index:
       button_text: "Tìm kiếm"
-      check_in: "Đăng ký vào"
-      check_out: "Trả phòng"
+      check_in: "Ngày nhận phòng"
+      check_out: "Ngày trả phòng"
     show:
       room: "Phòng"
       date: "Ngày"
@@ -74,9 +91,13 @@ vi:
       facilities: "Tiện nghi"
       review: "Đánh giá"
       price: "Giá"
+      book_now: "Đặt ngay"
     room:
       detail: "Chi tiết"
       book_now: "Đặt phòng"
+    check_available:
+      available_room: "Phòng trống từ ngày %{ci} đến %{co}"
+      busy_room: "Phòng đã được đặt từ %{ci} đến %{co}"
   sessions:
     new:
       title: "Đăng nhập"
@@ -86,3 +107,19 @@ vi:
     create:
       flash_create_success: "Đăng nhập thành công"
       flash_create_danger: "Thông tin đăng nhập chưa đúng"
+  bookings:
+    new:
+      title: "Tạo yêu cầu"
+      book_room: "Đặt phòng"
+      button_text: "Tạo yêu cầu đặt phòng"
+    create:
+      flash_create_success: "Tạo yêu cầu đặt phòng thành công"
+    errors:
+      can_not_in_past: "không được trong quá khứ"
+      check_out_invalid: "không hợp lệ"
+      booked_room: "đã được đặt. Vui lòng chọn thời gian khác"
+    alerts:
+      enter_check_in: "Vui lòng nhập check in"
+      enter_check_out: "Vui lòng nhập check out"
+      check_in_invalid: "Ngày nhận phòng không được trong quá khứ"
+      check_out_invalid: "Ngày trả phòng không hợp lệ"
