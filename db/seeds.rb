@@ -23,3 +23,5 @@ ROOM_COUNT.times do |n|
     room.room_facilities.create! facility:, quantity:
   end
 end
+
+User.create!(full_name: "ADMIN", email: "admin@gmail.com", password: "Admin123@", password_confirmation: "Admin123@", role: 1)

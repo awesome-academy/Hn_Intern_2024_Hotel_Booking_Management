@@ -29,6 +29,7 @@ en:
     room_not_found: "Room not found"
     must_sign_in: "Please sign in first"
     booking_not_found: "Booking not found"
+    require_admin: "Only admins can do this"
 
   activerecord:
     models:
@@ -155,3 +156,28 @@ en:
       note: "Note"
       button_cancel: "Cancel booking"
       confirm_cancel: "Are you sure to cancel the booking?"
+
+  admin:
+
+    layouts:
+      header:
+        title: "Admin"
+        home: "Home"
+        mamage: "Manage"
+        user: "User"
+        room: "Room"
+        statistic: "Statistic"
+        language: "Language"
+        english: "English"
+        vietnamese: "Vietnamese"
+        account: "Account"
+        logout: "Log out"
+
+    dashboard:
+      index:
+        welcome: "Welcome to the admin page!"
+        manage_user: "User management"
+        manage_room: "Room management"
+        booking_request: "Booking request list"
+        review_request: "Review list"
+        statistic: "Statistic"

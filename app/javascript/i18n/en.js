@@ -48,6 +48,33 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "user": "User"
     }
   },
+  "admin": {
+    "dashboard": {
+      "index": {
+        "booking_request": "Booking request list",
+        "manage_room": "Room management",
+        "manage_user": "User management",
+        "review_request": "Review list",
+        "statistic": "Statistic",
+        "welcome": "Welcome to the admin page!"
+      }
+    },
+    "layouts": {
+      "header": {
+        "account": "Account",
+        "english": "English",
+        "home": "Home",
+        "language": "Language",
+        "logout": "Log out",
+        "mamage": "Manage",
+        "room": "Room",
+        "statistic": "Statistic",
+        "title": "Admin",
+        "user": "User",
+        "vietnamese": "Vietnamese"
+      }
+    }
+  },
   "air_conditioner": "Air conditioner",
   "bath": "Bath",
   "bed": "Bed",
@@ -77147,6 +77174,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
   "flash": {
     "booking_not_found": "Booking not found",
     "must_sign_in": "Please sign in first",
+    "require_admin": "Only admins can do this",
     "room_not_found": "Room not found"
   },
   "helpers": {

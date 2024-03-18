@@ -14,4 +14,8 @@ module SessionsHelper
       end
     end
   end
+
+  def admin?
+    current_user&.admin?
+  end
 end

@@ -48,6 +48,33 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "user": "Người dùng"
     }
   },
+  "admin": {
+    "dashboard": {
+      "index": {
+        "booking_request": "Danh sashc yêu cầu đặt phòng",
+        "manage_room": "Quản lý phòng",
+        "manage_user": "Quản lý người dùng",
+        "review_request": "Duyệt đánh giá",
+        "statistic": "Thống kê",
+        "welcome": "Chào mừng đến với trang quản trị!"
+      }
+    },
+    "layouts": {
+      "header": {
+        "account": "Tài khoản",
+        "english": "Tiếng anh",
+        "home": "Trang chủ",
+        "language": "Ngôn ngữ",
+        "logout": "Đăng xuất",
+        "mamage": "Quản lý",
+        "room": "Phòng",
+        "statistic": "Thống kê",
+        "title": "Quản trị",
+        "user": "Người dùng",
+        "vietnamese": "Tiếng việt"
+      }
+    }
+  },
   "air_conditioner": "Điều hòa",
   "bath": "Phòng tắm ",
   "bed": "Giường ngủ",
@@ -76723,6 +76750,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
   "flash": {
     "booking_not_found": "Không tìm thấy thông tin đặt phòng",
     "must_sign_in": "Vui lòng đăng nhập trước",
+    "require_admin": "Chỉ admin mới được thực hiện",
     "room_not_found": "Không tìm thấy phòng"
   },
   "helpers": {
