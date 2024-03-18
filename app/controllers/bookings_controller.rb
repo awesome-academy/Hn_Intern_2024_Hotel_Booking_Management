@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :signed_in_user
   before_action :load_room, only: :new
+  before_action :load_booking, only: %i(show destroy)
   before_action :create_booking, only: :create
 
   def index
@@ -8,7 +9,12 @@ class BookingsController < ApplicationController
                             items: Settings.digits.digit_3
   end
 
-  def show; end
+  def show
+    render turbo_stream:
+      turbo_stream.replace("show-detail-booking",
+                           partial: "detail",
+                           locals: {booking: @booking})
+  end
 
   def new
     @booking = @room.bookings.build
@@ -28,7 +34,14 @@ class BookingsController < ApplicationController
 
   def update; end
 
-  def destroy; end
+  def destroy
+    if @booking.can_be_deleted? && @booking.destroy
+      flash[:success] = t ".flash_destroy_success"
+    else
+      flash[:danger] = t ".flash_destroy_danger"
+    end
+    redirect_to request.referer
+  end
 
   private
   def booking_params
@@ -50,5 +63,13 @@ class BookingsController < ApplicationController
     @booking = @room.bookings.build booking_params
     @booking.user = current_user
     @booking.book_day = DateTime.now
+  end
+
+  def load_booking
+    @booking = Booking.find_by id: params[:id]
+    return if @booking
+
+    flash[:warning] = t "flash.booking_not_found"
+    redirect_to root_path
   end
 end

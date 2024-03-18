@@ -28,6 +28,7 @@ en:
   flash:
     room_not_found: "Room not found"
     must_sign_in: "Please sign in first"
+    booking_not_found: "Booking not found"
 
   activerecord:
     models:
@@ -119,6 +120,7 @@ en:
     index:
       title: "Booking list"
       total: "Total"
+      no_booking_request: "There are no requests yet"
     booking:
       code: "CODE"
       book_day: "Book day"
@@ -138,3 +140,18 @@ en:
       enter_check_out: "Please enter check out"
       check_in_invalid: "Check in can not in the past"
       check_out_invalid: "Check out is invalid"
+    destroy:
+      flash_destroy_success: "Booking canceled successfully"
+      flash_destroy_danger: "Cancellation of booking failed"
+    detail:
+      title: "Booking details"
+      code: "Code"
+      book_day: "Date created"
+      book_name: "Order's name"
+      telephone: "Telephone"
+      email: "Email"
+      room: "Room"
+      price: "Price"
+      note: "Note"
+      button_cancel: "Cancel booking"
+      confirm_cancel: "Are you sure to cancel the booking?"

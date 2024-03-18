@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     post "/signin", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
 
-    get "bookings/:id", to: "bookings#new", as: "new_booking"
-    resources :bookings, except: :new
+    get "booking/:id", to: "bookings#new", as: "new_booking"
+    post "bookings/:id", to: "bookings#show", as: "booking"
+    resources :bookings, except: %i(show new)
   end
 end

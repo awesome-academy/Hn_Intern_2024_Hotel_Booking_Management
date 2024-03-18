@@ -28,6 +28,7 @@ vi:
   flash:
     room_not_found: "Không tìm thấy phòng"
     must_sign_in: "Vui lòng đăng nhập trước"
+    booking_not_found: "Không tìm thấy thông tin đặt phòng"
 
   activerecord:
     models:
@@ -119,6 +120,7 @@ vi:
     index:
       title: "Danh sách đặt phòng"
       total: "Tổng"
+      no_booking_request: "Chưa có yêu cầu nào"
     booking:
       code: "MÃ"
       book_day: "Ngày đặt"
@@ -138,3 +140,18 @@ vi:
       enter_check_out: "Vui lòng nhập check out"
       check_in_invalid: "Ngày nhận phòng không được trong quá khứ"
       check_out_invalid: "Ngày trả phòng không hợp lệ"
+    destroy:
+      flash_destroy_success: "Hủy đặt phòng thành công"
+      flash_destroy_danger: "Hủy đặt phòng thất bại"
+    detail:
+      title: "Chi tiết đặt phòng"
+      code: "Mã"
+      book_day: "Ngày tạo"
+      book_name: "Người đặt"
+      telephone: "Số điện thoại"
+      email: "Email"
+      room: "Phòng"
+      price: "Đơn giá"
+      note: "Ghi chú"
+      button_cancel: "Hủy đặt phòng"
+      confirm_cancel: "Bạn chắc chắn hủy đặt phòng?"

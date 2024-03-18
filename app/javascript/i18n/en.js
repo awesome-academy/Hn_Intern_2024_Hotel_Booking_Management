@@ -70,12 +70,30 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     "create": {
       "flash_create_success": "Create booking request successfully"
     },
+    "destroy": {
+      "flash_destroy_danger": "Cancellation of booking failed",
+      "flash_destroy_success": "Booking canceled successfully"
+    },
+    "detail": {
+      "book_day": "Date created",
+      "book_name": "Order's name",
+      "button_cancel": "Cancel booking",
+      "code": "Code",
+      "confirm_cancel": "Are you sure to cancel the booking?",
+      "email": "Email",
+      "note": "Note",
+      "price": "Price",
+      "room": "Room",
+      "telephone": "Telephone",
+      "title": "Booking details"
+    },
     "errors": {
       "booked_room": "is booked. Please choose another time",
       "can_not_in_past": "can not be in the past",
       "check_out_invalid": "is invalid"
     },
     "index": {
+      "no_booking_request": "There are no requests yet",
       "title": "Booking list",
       "total": "Total"
     },
@@ -77127,6 +77145,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     }
   },
   "flash": {
+    "booking_not_found": "Booking not found",
     "must_sign_in": "Please sign in first",
     "room_not_found": "Room not found"
   },
