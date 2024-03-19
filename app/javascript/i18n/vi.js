@@ -49,9 +49,15 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     }
   },
   "admin": {
+    "bookings": {
+      "index": {
+        "action": "Hành động",
+        "booking_request_list": "Danh sách yêu cầu đặt phòng"
+      }
+    },
     "dashboard": {
       "index": {
-        "booking_request": "Danh sashc yêu cầu đặt phòng",
+        "booking_request": "Danh sách yêu cầu đặt phòng",
         "manage_room": "Quản lý phòng",
         "manage_user": "Quản lý người dùng",
         "review_request": "Duyệt đánh giá",
@@ -62,6 +68,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     "layouts": {
       "header": {
         "account": "Tài khoản",
+        "booking_request": "Danh sách yêu cầu đặt phòng",
         "english": "Tiếng anh",
         "home": "Trang chủ",
         "language": "Ngôn ngữ",

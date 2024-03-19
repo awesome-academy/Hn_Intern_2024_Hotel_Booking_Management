@@ -1,0 +1,33 @@
+<tr>
+  <th scope="row">
+    <%= booking.id %>
+  </th>
+  <td><%= booking.full_name %></td>
+  <td><%= booking.room.name %></td>
+  <td><%= l booking.book_day, format: :short_date %></td>
+  <td><%= l booking.check_in, format: :short_date %></td>
+  <td><%= l booking.check_out, format: :short_date %></td>
+  <td>
+    <% if booking.status == "pending" %>
+      <p class="badge rounded-pill bg-warning fs-5">
+        <%= t booking.status %>
+      </p>
+    <% elsif booking.status == "confirmed" %>
+      <p class="badge rounded-pill bg-success fs-5">
+        <%= t booking.status %>
+      </p>
+    <% elsif booking.status == "rejected" %>
+      <p class="badge rounded-pill bg-danger fs-5">
+        <%= t booking.status %>
+      </p>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to "#", class: "btn btn-primary rounded-circle" do %>
+      <%= fa_icon "eye" %>
+    <% end %>
+    <%= link_to "#", class: "btn btn-danger rounded-circle" do %>
+      <%= fa_icon "trash" %>
+    <% end %>
+  </td>
+</tr>

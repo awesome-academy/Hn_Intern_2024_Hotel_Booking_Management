@@ -19,8 +19,9 @@
               <%= t(".manage") %>
             </a>
             <ul class="dropdown-menu">
+              <li><%= link_to t(".booking_request"), admin_bookings_path, class: "dropdown-item" %></li>
               <li><a class="dropdown-item" href="#"><%= t(".user") %></a></li>
-              <li><a class="dropdown-item" href="#"><%= t(".room") %></a></a></a></li>
+              <li><a class="dropdown-item" href="#"><%= t(".room") %></a></li>
             </ul>
           </li>
           <li class="nav-item">

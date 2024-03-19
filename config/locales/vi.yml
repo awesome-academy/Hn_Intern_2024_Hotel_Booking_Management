@@ -172,12 +172,18 @@ vi:
         vietnamese: "Tiếng việt"
         account: "Tài khoản"
         logout: "Đăng xuất"
+        booking_request: "Danh sách yêu cầu đặt phòng"
 
     dashboard:
       index:
         welcome: "Chào mừng đến với trang quản trị!"
         manage_user: "Quản lý người dùng"
         manage_room: "Quản lý phòng"
-        booking_request: "Danh sashc yêu cầu đặt phòng"
+        booking_request: "Danh sách yêu cầu đặt phòng"
         review_request: "Duyệt đánh giá"
         statistic: "Thống kê"
+
+    bookings:
+      index:
+        booking_request_list: "Danh sách yêu cầu đặt phòng"
+        action: "Hành động"
