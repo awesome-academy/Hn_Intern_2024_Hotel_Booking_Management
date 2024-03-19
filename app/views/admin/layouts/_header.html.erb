@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 fs-5">
+  <div class="container-fluid text-dark">
+    <div class="col-lg-3 bg-dark d-none d-lg-block">
+      <a href="#" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+        <h1 class="m-0 text-primary text-uppercase"><%= t ".title" %></h1>
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse row" id="navbarSupportedContent">
+      <div class="col-8">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to t(".home"), admin_dashboard_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown">
+              <%= t(".manage") %>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"><%= t(".user") %></a></li>
+              <li><a class="dropdown-item" href="#"><%= t(".room") %></a></a></a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <%= link_to t(".statistic"), "#", class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-4">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown">
+              <%= t(".language") %>
+            </a>
+            <ul class="dropdown-menu">
+              <%= link_to t(".english"), {locale: :en}, class: "dropdown-item" %>
+              <%= link_to t(".vietnamese"), {locale: :vi}, class: "dropdown-item" %>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown">
+              <%= t(".account") %>
+            </a>
+            <ul class="dropdown-menu">
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to t(".logout"), logout_path, class: "dropdown-item", data: { "turbo-method": :delete } %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

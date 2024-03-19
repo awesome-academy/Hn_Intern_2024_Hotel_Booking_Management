@@ -34,6 +34,13 @@ class ApplicationController < ActionController::Base
     redirect_to signin_url
   end
 
+  def require_admin
+    return if admin?
+
+    flash[:warning] = t "flash.require_admin"
+    redirect_to root_path
+  end
+
   private
 
   def default_url_options

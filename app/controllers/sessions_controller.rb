@@ -22,7 +22,11 @@ class SessionsController < ApplicationController
     sign_in user
     params.dig(:session, :remember_me) == "1" ? remember(user) : forget(user)
     flash[:success] = t ".flash_create_success"
-    redirect_back_or root_path
+    if user.admin?
+      redirect_to admin_dashboard_path
+    else
+      redirect_back_or root_path
+    end
   end
 
   def log_out

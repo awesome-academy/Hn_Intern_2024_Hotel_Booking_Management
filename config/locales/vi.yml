@@ -29,6 +29,7 @@ vi:
     room_not_found: "Không tìm thấy phòng"
     must_sign_in: "Vui lòng đăng nhập trước"
     booking_not_found: "Không tìm thấy thông tin đặt phòng"
+    require_admin: "Chỉ admin mới được thực hiện"
 
   activerecord:
     models:
@@ -155,3 +156,28 @@ vi:
       note: "Ghi chú"
       button_cancel: "Hủy đặt phòng"
       confirm_cancel: "Bạn chắc chắn hủy đặt phòng?"
+
+  admin:
+
+    layouts:
+      header:
+        title: "Quản trị"
+        home: "Trang chủ"
+        mamage: "Quản lý"
+        user: "Người dùng"
+        room: "Phòng"
+        statistic: "Thống kê"
+        language: "Ngôn ngữ"
+        english: "Tiếng anh"
+        vietnamese: "Tiếng việt"
+        account: "Tài khoản"
+        logout: "Đăng xuất"
+
+    dashboard:
+      index:
+        welcome: "Chào mừng đến với trang quản trị!"
+        manage_user: "Quản lý người dùng"
+        manage_room: "Quản lý phòng"
+        booking_request: "Danh sashc yêu cầu đặt phòng"
+        review_request: "Duyệt đánh giá"
+        statistic: "Thống kê"
