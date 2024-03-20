@@ -19,14 +19,22 @@ class SessionsController < ApplicationController
   private
 
   def authenticate_success user
+    if user.admin?
+      handle_sign_in user
+      redirect_to admin_dashboard_path
+    elsif user.activated
+      handle_sign_in user
+      redirect_to root_path
+    else
+      flash[:danger] = t ".flash_not_activated"
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def handle_sign_in user
     sign_in user
     params.dig(:session, :remember_me) == "1" ? remember(user) : forget(user)
     flash[:success] = t ".flash_create_success"
-    if user.admin?
-      redirect_to admin_dashboard_path
-    else
-      redirect_back_or root_path
-    end
   end
 
   def log_out

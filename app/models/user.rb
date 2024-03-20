@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
 
   before_save :downcase_email
+  before_create :create_activation_digest
 
   validates :email, presence: true,
     length: {maximum: Settings.digits.digit_255},
@@ -17,7 +18,7 @@ class User < ApplicationRecord
 
   has_many :bookings, dependent: :destroy
 
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
 
   def authenticated? attr, token
     digest = send "#{attr}_digest"
@@ -39,6 +40,14 @@ class User < ApplicationRecord
     bookings.newest
   end
 
+  def send_mail_activate
+    UserMailer.activate_account(self).deliver_now
+  end
+
+  def activate
+    update_columns activated: true, activated_at: Time.zone.now
+  end
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
@@ -57,5 +66,10 @@ class User < ApplicationRecord
   private
   def downcase_email
     email.downcase!
+  end
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest activation_token
   end
 end

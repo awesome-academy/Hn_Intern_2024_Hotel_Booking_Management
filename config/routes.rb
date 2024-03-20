@@ -20,5 +20,7 @@ Rails.application.routes.draw do
       get "dashboard", to: "dashboard#index"
       resources "bookings", only: %i(index show update)
     end
+
+    resources "account_activations", only: :edit
   end
 end
