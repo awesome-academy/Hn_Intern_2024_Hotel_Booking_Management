@@ -1,0 +1,191 @@
+<div class="container mt-5 w-100">
+  <div class="px-5">
+    <h1 class="display-4"><%= t ".title" %></h1>
+    <hr/>
+    <div class="row shadow rounded-3 border border-light border-2 p-0 m-0">
+
+      <div class="col-12"><h1 class="display-4"><%= t ".id" %>: #<%= @booking.id %></h1></div>
+
+      <%= render "shared/error_messages", object: @booking %>
+
+      <div class="col-6 mb-5">
+        <div class="row ms-5">
+          <div class="col-2 d-flex justify-content-center align-items-start">
+            <div class="rounded-circle fa-3x mt-2">
+              <%= fa_stacked_icon "user", base: "circle-o", class: "text-primary" %>
+            </div>
+          </div>
+          <div class="col-10">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title"><%= t ".customer" %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".account" %>: #<%= @booking.user.id %> - <%= @booking.user.full_name %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".book_name" %>: <%= @booking.full_name %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".email" %>: <%= @booking.email %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".telephone" %>: <%= @booking.telephone %></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 mb-5">
+        <div class="row ms-5">
+          <div class="col-2 d-flex justify-content-center align-items-start">
+            <div class="rounded-circle fa-3x mt-2">
+              <%= fa_stacked_icon "info", base: "circle-o", class: "text-info" %>
+            </div>
+          </div>
+          <div class="col-10">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title"><%= t ".room_info" %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".room_name" %>: <%= @booking.room.name %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".room_price" %>: <%= number_to_currency @booking.room.price %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".room_view" %>: <%= t @booking.room.view_type %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".room_type" %>: <%= t @booking.room.room_type %></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 mb-5">
+        <div class="row ms-5">
+          <div class="col-2 d-flex justify-content-center align-items-start">
+            <div class="rounded-circle fa-3x mt-2">
+              <%= fa_stacked_icon "calendar", base: "circle-o", class: "text-secondary" %>
+            </div>
+          </div>
+          <div class="col-10">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title"><%= t ".time" %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".book_day" %>: <%= l @booking.book_day, format: :short_date %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".check_in" %>: <%= l @booking.check_in, format: :short_date %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= t ".check_out" %>: <%= l @booking.check_out, format: :short_date %></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 mb-5">
+        <div class="row ms-5">
+          <div class="col-2 d-flex justify-content-center align-items-start">
+            <div class="rounded-circle fa-3x mt-2">
+              <%= fa_stacked_icon "book", base: "circle-o", class: "text-danger" %>
+            </div>
+          </div>
+          <div class="col-10">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title"><%= t ".note" %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= @booking.note %></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 mb-5">
+        <div class="row ms-5">
+          <div class="col-2 d-flex justify-content-center align-items-start">
+            <div class="rounded-circle fa-3x mt-2">
+              <%= fa_stacked_icon "bars", base: "circle-o", class: "text-success" %>
+            </div>
+          </div>
+          <div class="col-10">
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title"><%= t ".status" %></h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+
+                  <% if @booking.status == "pending" %>
+                    <span class="badge rounded-pill bg-warning fs-5">
+                      <%= t @booking.status %>
+                    </span>
+                  <% elsif @booking.status == "confirmed" %>
+                    <span class="badge rounded-pill bg-success fs-5">
+                      <%= t @booking.status %>
+                    </span>
+                  <% elsif @booking.status == "rejected" %>
+                    <span class="badge rounded-pill bg-danger fs-5">
+                      <%= t @booking.status %>
+                    </span>
+                  <% end %>
+                  <% if @booking.status == "rejected" %>
+                    <br/>
+                    <%= t ".reason" %>: <%= @booking.reason %>
+                  <% end %>
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 text-end mb-2">
+
+        <button type="button" class="btn btn-success p-3 m-2" data-bs-toggle="modal" data-bs-target="#confirmModal">
+          <%= t "confirmed" %>
+        </button>
+
+        <button type="button" class="btn btn-danger p-3 m-2" data-bs-toggle="modal" data-bs-target="#rejectModal">
+          <%= t "rejected" %>
+        </button>
+
+        <%= link_to t(".btn_cancel"), admin_bookings_path, class: "btn btn-secondary p-3 m-2" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal reject -->
+<div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= t "rejected" %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= form_for @booking, url: admin_booking_path do |f| %>
+
+        <%= f.hidden_field :status, value: :rejected %>
+
+        <div class="modal-body">
+            <%= f.label :reason, class: "form-label" %>:
+            <%= f.text_field :reason, class: "form-control" %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t ".btn_close" %></button>
+          <%= f.submit t(".btn_save"), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Modal confirm -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= t "confirmed" %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= form_for @booking, url: admin_booking_path do |f| %>
+
+        <%= f.hidden_field :status, value: :confirmed %>
+
+        <div class="modal-body">
+          <p><%= t ".confirm_text" %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t ".btn_close" %></button>
+          <%= f.submit t(".btn_save"), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -25,6 +25,15 @@ en:
   confirmed: "Accept"
   rejected: "Reject"
 
+  balcony: "Balcony"
+  mountain: "Mountain"
+  ocean: "Ocean"
+
+  single_bedroom: "Single room"
+  twin_bedroom: "Twin room"
+  double_bedroom: "Double room"
+  triple_bedroom: "Triple room"
+
   flash:
     room_not_found: "Room not found"
     must_sign_in: "Please sign in first"
@@ -48,6 +57,7 @@ en:
         note: "Note"
         check_in: "Check in"
         check_out: "Check out"
+        reason: "Reason for rejection"
     errors:
       models:
         user:
@@ -132,10 +142,12 @@ en:
       view_detail: "View detail"
     create:
       flash_create_success: "Create booking request successfully"
+      flash_create_danger: "Create booking request failed"
     errors:
       can_not_in_past: "can not be in the past"
       check_out_invalid: "is invalid"
       booked_room: "is booked. Please choose another time"
+      require_reason: "no reason for rejection"
     alerts:
       enter_check_in: "Please enter check in"
       enter_check_out: "Please enter check out"
@@ -163,7 +175,7 @@ en:
       header:
         title: "Admin"
         home: "Home"
-        mamage: "Manage"
+        manage: "Manage"
         user: "User"
         room: "Room"
         statistic: "Statistic"
@@ -187,3 +199,31 @@ en:
       index:
         booking_request_list: "Booking request list"
         action: "Action"
+      show:
+        title: "Booking detail"
+        customer: "Customer"
+        account: "Account"
+        book_name: "Order's name"
+        email: "Email"
+        telephone: "Telephone"
+        time: "Time"
+        book_day: "Book day"
+        check_in: "Check in"
+        check_out: "Check out"
+        room_info: "Room info"
+        room_name: "Name"
+        room_price: "Price"
+        room_view: "View"
+        room_type: "Type"
+        note: "Note"
+        status: "Status"
+        btn_cancel: "Cancel"
+        btn_update: "Update"
+        reason: "Reason"
+        id: "Code"
+        btn_save: "Save change"
+        btn_close: "Close"
+        confirm_text: "You sure want to accept?"
+      update:
+        flash_update_success: "Update successfully"
+        flash_update_danger: "Update failed"

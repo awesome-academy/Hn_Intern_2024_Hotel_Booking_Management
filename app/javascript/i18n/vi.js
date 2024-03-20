@@ -9,6 +9,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "email": "Email",
         "full_name": "Tên người đặt",
         "note": "Ghi chú",
+        "reason": "Lý do từ chối",
         "telephone": "Số điện thoại"
       },
       "user": {
@@ -53,6 +54,36 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "index": {
         "action": "Hành động",
         "booking_request_list": "Danh sách yêu cầu đặt phòng"
+      },
+      "show": {
+        "account": "Tài khoản",
+        "book_day": "Ngày đặt",
+        "book_name": "Tên người đặt",
+        "btn_cancel": "Quay lại",
+        "btn_close": "Đóng",
+        "btn_save": "Lưu thay đổi",
+        "btn_update": "Cập nhật",
+        "check_in": "Ngày nhận",
+        "check_out": "Ngày trả",
+        "confirm_text": "Bạn chắc chắn muốn chấp nhận?",
+        "customer": "Khách hàng",
+        "email": "Email",
+        "id": "Mã",
+        "note": "Ghi chú",
+        "reason": "Lý do",
+        "room_info": "Thông tin phòng",
+        "room_name": "Tên",
+        "room_price": "Đơn giá",
+        "room_type": "Kiểu phòng",
+        "room_view": "Quang cảnh",
+        "status": "Trạng thái",
+        "telephone": "Số điện thoại",
+        "time": "Thời gian",
+        "title": "Chi tiết yêu cầu"
+      },
+      "update": {
+        "flash_update_danger": "Cập nhật thất bại",
+        "flash_update_success": "Cập nhật trạng thái thành công"
       }
     },
     "dashboard": {
@@ -73,7 +104,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "home": "Trang chủ",
         "language": "Ngôn ngữ",
         "logout": "Đăng xuất",
-        "mamage": "Quản lý",
+        "manage": "Quản lý",
         "room": "Phòng",
         "statistic": "Thống kê",
         "title": "Quản trị",
@@ -83,6 +114,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     }
   },
   "air_conditioner": "Điều hòa",
+  "balcony": "Ban công",
   "bath": "Phòng tắm ",
   "bed": "Giường ngủ",
   "bookings": {
@@ -102,6 +134,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "view_detail": "Chi tiết"
     },
     "create": {
+      "flash_create_danger": "Tạo yêu cầu thất bại",
       "flash_create_success": "Tạo yêu cầu đặt phòng thành công"
     },
     "destroy": {
@@ -124,7 +157,8 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     "errors": {
       "booked_room": "đã được đặt. Vui lòng chọn thời gian khác",
       "can_not_in_past": "không được trong quá khứ",
-      "check_out_invalid": "không hợp lệ"
+      "check_out_invalid": "không hợp lệ",
+      "require_reason": "chưa có lý do từ chối"
     },
     "index": {
       "no_booking_request": "Chưa có yêu cầu nào",
@@ -226,6 +260,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "year": "Năm"
     }
   },
+  "double_bedroom": "Phòng 2 giường đơn",
   "errors": {
     "connection_refused": "Oops! Failed to connect to the Web Console middleware.\nPlease make sure a rails development server is running.\n",
     "format": "%{attribute} %{message}",
@@ -76931,6 +76966,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "vietnamese": "Tiếng việt"
     }
   },
+  "mountain": "Núi",
   "number": {
     "currency": {
       "format": {
@@ -77001,6 +77037,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       }
     }
   },
+  "ocean": "Biển",
   "pending": "Đang chờ",
   "pool": "Bể bơi",
   "rejected": "Từ chối",
@@ -77050,6 +77087,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "the_form_contains": "Biểu mẫu này có"
     }
   },
+  "single_bedroom": "Phòng 1 giường đơn",
   "sofa": "Ghế sofa",
   "support": {
     "array": {
@@ -77070,7 +77108,9 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     },
     "pm": "chiều"
   },
+  "triple_bedroom": "Phòng 3 giường đơn",
   "tv": "TV",
+  "twin_bedroom": "Phòng 1 giường đôi",
   "users": {
     "create": {
       "flash_create_success": "Tạo tài khoản mới thành công"

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       get "dashboard", to: "dashboard#index"
-      resources "bookings", only: :index
+      resources "bookings", only: %i(index show update)
     end
   end
 end
