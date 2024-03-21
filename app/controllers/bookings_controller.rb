@@ -64,12 +64,4 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.book_day = DateTime.now
   end
-
-  def load_booking
-    @booking = Booking.find_by id: params[:id]
-    return if @booking
-
-    flash[:warning] = t "flash.booking_not_found"
-    redirect_to root_path
-  end
 end

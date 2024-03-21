@@ -9,6 +9,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
         "email": "Email",
         "full_name": "Full name",
         "note": "Note",
+        "reason": "Reason for rejection",
         "telephone": "Telephone"
       },
       "user": {
@@ -53,6 +54,36 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "index": {
         "action": "Action",
         "booking_request_list": "Booking request list"
+      },
+      "show": {
+        "account": "Account",
+        "book_day": "Book day",
+        "book_name": "Order's name",
+        "btn_cancel": "Cancel",
+        "btn_close": "Close",
+        "btn_save": "Save change",
+        "btn_update": "Update",
+        "check_in": "Check in",
+        "check_out": "Check out",
+        "confirm_text": "You sure want to accept?",
+        "customer": "Customer",
+        "email": "Email",
+        "id": "Code",
+        "note": "Note",
+        "reason": "Reason",
+        "room_info": "Room info",
+        "room_name": "Name",
+        "room_price": "Price",
+        "room_type": "Type",
+        "room_view": "View",
+        "status": "Status",
+        "telephone": "Telephone",
+        "time": "Time",
+        "title": "Booking detail"
+      },
+      "update": {
+        "flash_update_danger": "Update failed",
+        "flash_update_success": "Update successfully"
       }
     },
     "dashboard": {
@@ -73,7 +104,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
         "home": "Home",
         "language": "Language",
         "logout": "Log out",
-        "mamage": "Manage",
+        "manage": "Manage",
         "room": "Room",
         "statistic": "Statistic",
         "title": "Admin",
@@ -83,6 +114,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     }
   },
   "air_conditioner": "Air conditioner",
+  "balcony": "Balcony",
   "bath": "Bath",
   "bed": "Bed",
   "bookings": {
@@ -102,6 +134,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "view_detail": "View detail"
     },
     "create": {
+      "flash_create_danger": "Create booking request failed",
       "flash_create_success": "Create booking request successfully"
     },
     "destroy": {
@@ -124,7 +157,8 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     "errors": {
       "booked_room": "is booked. Please choose another time",
       "can_not_in_past": "can not be in the past",
-      "check_out_invalid": "is invalid"
+      "check_out_invalid": "is invalid",
+      "require_reason": "no reason for rejection"
     },
     "index": {
       "no_booking_request": "There are no requests yet",
@@ -259,6 +293,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "year": "Year"
     }
   },
+  "double_bedroom": "Double room",
   "errors": {
     "connection_refused": "Oops! Failed to connect to the Web Console middleware.\nPlease make sure a rails development server is running.\n",
     "format": "%{attribute} %{message}",
@@ -77218,6 +77253,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "vietnamese": "Vietnamese"
     }
   },
+  "mountain": "Mountain",
   "number": {
     "currency": {
       "format": {
@@ -77288,6 +77324,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       }
     }
   },
+  "ocean": "Ocean",
   "pending": "Pending",
   "pool": "Pool",
   "rejected": "Reject",
@@ -77337,6 +77374,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "the_form_contains": "This form contains"
     }
   },
+  "single_bedroom": "Single room",
   "sofa": "Sofa",
   "support": {
     "array": {
@@ -77357,7 +77395,9 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     },
     "pm": "pm"
   },
+  "triple_bedroom": "Triple room",
   "tv": "TV",
+  "twin_bedroom": "Twin room",
   "users": {
     "create": {
       "flash_create_success": "Create new account successfully"

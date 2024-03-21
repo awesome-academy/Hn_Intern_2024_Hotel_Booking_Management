@@ -1,6 +1,6 @@
 <tr>
   <th scope="row">
-    <%= booking.id %>
+    <%= link_to booking.id, admin_booking_path(booking), class: "text-decoration-underline" %>
   </th>
   <td><%= booking.full_name %></td>
   <td><%= booking.room.name %></td>
@@ -23,7 +23,7 @@
     <% end %>
   </td>
   <td>
-    <%= link_to "#", class: "btn btn-primary rounded-circle" do %>
+    <%= link_to admin_booking_path(booking), class: "btn btn-primary rounded-circle" do %>
       <%= fa_icon "eye" %>
     <% end %>
     <%= link_to "#", class: "btn btn-danger rounded-circle" do %>

@@ -8,9 +8,10 @@ class Booking < ApplicationRecord
     format: {with: Regexp.new(Settings.regexs.email, "i")}
   validates :telephone, presence: true,
     format: {with: Regexp.new(Settings.regexs.telephone)}
-  validate :check_in_valid
-  validate :check_out_valid
-  validate :date_valid
+  validate :check_in_valid, :check_out_valid, :date_valid, on: :create
+  validate :check_reason_presence, if: ->{rejected?}
+
+  before_save :clear_reason_if_not_rejected
 
   enum status: {pending: 0, confirmed: 1, rejected: 2}
 
@@ -37,5 +38,15 @@ class Booking < ApplicationRecord
     return if room.available? check_in, check_out
 
     errors.add :room, I18n.t("bookings.errors.booked_room")
+  end
+
+  def check_reason_presence
+    return if reason.present?
+
+    errors.add :reason, I18n.t("bookings.errors.require_reason")
+  end
+
+  def clear_reason_if_not_rejected
+    self.reason = nil unless rejected?
   end
 end

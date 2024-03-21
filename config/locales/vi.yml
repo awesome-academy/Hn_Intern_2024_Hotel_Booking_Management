@@ -25,6 +25,15 @@ vi:
   confirmed: "Chấp nhận"
   rejected: "Từ chối"
 
+  balcony: "Ban công"
+  mountain: "Núi"
+  ocean: "Biển"
+
+  single_bedroom: "Phòng 1 giường đơn"
+  twin_bedroom: "Phòng 1 giường đôi"
+  double_bedroom: "Phòng 2 giường đơn"
+  triple_bedroom: "Phòng 3 giường đơn"
+
   flash:
     room_not_found: "Không tìm thấy phòng"
     must_sign_in: "Vui lòng đăng nhập trước"
@@ -48,6 +57,7 @@ vi:
         note: "Ghi chú"
         check_in: "Ngày nhận phòng"
         check_out: "Ngày trả phòng"
+        reason: "Lý do từ chối"
     errors:
       models:
         user:
@@ -132,10 +142,12 @@ vi:
       view_detail: "Chi tiết"
     create:
       flash_create_success: "Tạo yêu cầu đặt phòng thành công"
+      flash_create_danger: "Tạo yêu cầu thất bại"
     errors:
       can_not_in_past: "không được trong quá khứ"
       check_out_invalid: "không hợp lệ"
       booked_room: "đã được đặt. Vui lòng chọn thời gian khác"
+      require_reason: "chưa có lý do từ chối"
     alerts:
       enter_check_in: "Vui lòng nhập check in"
       enter_check_out: "Vui lòng nhập check out"
@@ -163,7 +175,7 @@ vi:
       header:
         title: "Quản trị"
         home: "Trang chủ"
-        mamage: "Quản lý"
+        manage: "Quản lý"
         user: "Người dùng"
         room: "Phòng"
         statistic: "Thống kê"
@@ -187,3 +199,31 @@ vi:
       index:
         booking_request_list: "Danh sách yêu cầu đặt phòng"
         action: "Hành động"
+      show:
+        title: "Chi tiết yêu cầu"
+        customer: "Khách hàng"
+        account: "Tài khoản"
+        book_name: "Tên người đặt"
+        email: "Email"
+        telephone: "Số điện thoại"
+        time: "Thời gian"
+        book_day: "Ngày đặt"
+        check_in: "Ngày nhận"
+        check_out: "Ngày trả"
+        room_info: "Thông tin phòng"
+        room_name: "Tên"
+        room_price: "Đơn giá"
+        room_view: "Quang cảnh"
+        room_type: "Kiểu phòng"
+        note: "Ghi chú"
+        status: "Trạng thái"
+        btn_cancel: "Quay lại"
+        btn_update: "Cập nhật"
+        reason: "Lý do"
+        id: "Mã"
+        btn_save: "Lưu thay đổi"
+        btn_close: "Đóng"
+        confirm_text: "Bạn chắc chắn muốn chấp nhận?"
+      update:
+        flash_update_success: "Cập nhật trạng thái thành công"
+        flash_update_danger: "Cập nhật thất bại"

@@ -26,6 +26,14 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def load_booking
+    @booking = Booking.find_by id: params[:id]
+    return if @booking
+
+    flash[:warning] = t "flash.booking_not_found"
+    redirect_to root_path
+  end
+
   def signed_in_user
     return if signed_in?
 
