@@ -169,6 +169,7 @@ vi:
       note: "Ghi chú"
       button_cancel: "Hủy đặt phòng"
       confirm_cancel: "Bạn chắc chắn hủy đặt phòng?"
+      reason: "Lý do từ chối"
 
   account_activations:
     edit:
@@ -240,3 +241,23 @@ vi:
       hi: "Xin chào"
       welcome: "Chào mừng bạn đến với hệ thống khách sạn"
       activate: "Kích hoạt tài khoản"
+
+  booking_mailer:
+    confirm_booking:
+      subject: "Xác nhận yêu cầu đặt phòng"
+      dear: "Kính gửi %{full_name},"
+      respect_inform: "Chúng tôi xin trân trọng thông báo rằng yêu cầu đặt phòng (mã: #%{code}) của bạn đã được chấp nhận. Dưới đây là một số thông tin liên quan:"
+      book_day: "Ngày đặt: %{book_day}"
+      check_in: "Ngày nhận phòng: %{check_in}"
+      check_out: "Ngày trả phòng: %{check_out}"
+      room_name: "Tên phòng: %{room_name}"
+      room_type: "Loại phòng: %{room_type}"
+      contact: "Nếu bạn có thắc mắc nào xin hãy liên hệ với chúng tôi qua số %{phone} hoặc qua email %{email}"
+      thanks: "Cảm ơn bạn đã chọn khách sạn của chúng tôi và chúng tôi rất mong chờ được phục vụ bạn trong chuyến đi tới."
+    reject_booking:
+      subject: "Từ chối yêu cầu đặt phòng"
+      dear: "Kính gửi %{full_name}"
+      respect_inform: "Chúng tôi xin chân thành cảm ơn sự quan tâm của bạn đến dịch vụ của chúng tôi."
+      inform_reject: "Chúng tôi rất tiếc phải thông báo rằng yêu cầu đặt phòng (mã: #%{code}) của bạn không thể được chấp nhận vào thời điểm này. Với lí do như sau:"
+      contact: "Nếu bạn cần bất kỳ sự trợ giúp nào hoặc thông tin thêm, vui lòng liên hệ với chúng tôi qua số điện thoại %{phone} hoặc qua email %{email}."
+      aplogize: "Chúng tôi rất tiếc vì sự bất tiện này và hy vọng bạn sẽ tìm được sự thoải mái và thuận lợi ở các lựa chọn khác."

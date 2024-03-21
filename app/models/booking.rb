@@ -21,6 +21,14 @@ class Booking < ApplicationRecord
     pending?
   end
 
+  def send_mail_confirm
+    if confirmed?
+      BookingMailer.confirm_booking(self).deliver_now
+    elsif rejected?
+      BookingMailer.reject_booking(self).deliver_now
+    end
+  end
+
   private
   def check_in_valid
     return unless check_in && check_in < Time.zone.today

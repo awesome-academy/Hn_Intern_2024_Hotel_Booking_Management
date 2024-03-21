@@ -100,20 +100,7 @@
               <div class="card-body">
                 <h5 class="card-title"><%= t ".status" %></h5>
                 <h6 class="card-subtitle mb-2 text-muted">
-
-                  <% if @booking.status == "pending" %>
-                    <span class="badge rounded-pill bg-warning fs-5">
-                      <%= t @booking.status %>
-                    </span>
-                  <% elsif @booking.status == "confirmed" %>
-                    <span class="badge rounded-pill bg-success fs-5">
-                      <%= t @booking.status %>
-                    </span>
-                  <% elsif @booking.status == "rejected" %>
-                    <span class="badge rounded-pill bg-danger fs-5">
-                      <%= t @booking.status %>
-                    </span>
-                  <% end %>
+                  <%= show_tag_status @booking.status %>
                   <% if @booking.status == "rejected" %>
                     <br/>
                     <%= t ".reason" %>: <%= @booking.reason %>

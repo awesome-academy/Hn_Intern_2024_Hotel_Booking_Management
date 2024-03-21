@@ -123,6 +123,28 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
   "balcony": "Ban công",
   "bath": "Phòng tắm ",
   "bed": "Giường ngủ",
+  "booking_mailer": {
+    "confirm_booking": {
+      "book_day": "Ngày đặt: %{book_day}",
+      "check_in": "Ngày nhận phòng: %{check_in}",
+      "check_out": "Ngày trả phòng: %{check_out}",
+      "contact": "Nếu bạn có thắc mắc nào xin hãy liên hệ với chúng tôi qua số %{phone} hoặc qua email %{email}",
+      "dear": "Kính gửi %{full_name},",
+      "respect_inform": "Chúng tôi xin trân trọng thông báo rằng yêu cầu đặt phòng (mã: #%{code}) của bạn đã được chấp nhận. Dưới đây là một số thông tin liên quan:",
+      "room_name": "Tên phòng: %{room_name}",
+      "room_type": "Loại phòng: %{room_type}",
+      "subject": "Xác nhận yêu cầu đặt phòng",
+      "thanks": "Cảm ơn bạn đã chọn khách sạn của chúng tôi và chúng tôi rất mong chờ được phục vụ bạn trong chuyến đi tới."
+    },
+    "reject_booking": {
+      "aplogize": "Chúng tôi rất tiếc vì sự bất tiện này và hy vọng bạn sẽ tìm được sự thoải mái và thuận lợi ở các lựa chọn khác.",
+      "contact": "Nếu bạn cần bất kỳ sự trợ giúp nào hoặc thông tin thêm, vui lòng liên hệ với chúng tôi qua số điện thoại %{phone} hoặc qua email %{email}.",
+      "dear": "Kính gửi %{full_name}",
+      "inform_reject": "Chúng tôi rất tiếc phải thông báo rằng yêu cầu đặt phòng (mã: #%{code}) của bạn không thể được chấp nhận vào thời điểm này. Với lí do như sau:",
+      "respect_inform": "Chúng tôi xin chân thành cảm ơn sự quan tâm của bạn đến dịch vụ của chúng tôi.",
+      "subject": "Từ chối yêu cầu đặt phòng"
+    }
+  },
   "bookings": {
     "alerts": {
       "check_in_invalid": "Ngày nhận phòng không được trong quá khứ",
@@ -156,6 +178,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "email": "Email",
       "note": "Ghi chú",
       "price": "Đơn giá",
+      "reason": "Lý do từ chối",
       "room": "Phòng",
       "telephone": "Số điện thoại",
       "title": "Chi tiết đặt phòng"
