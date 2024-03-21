@@ -172,6 +172,7 @@ en:
         vietnamese: "Vietnamese"
         account: "Account"
         logout: "Log out"
+        booking_request: "Booking request list"
 
     dashboard:
       index:
@@ -181,3 +182,8 @@ en:
         booking_request: "Booking request list"
         review_request: "Review list"
         statistic: "Statistic"
+
+    bookings:
+      index:
+        booking_request_list: "Booking request list"
+        action: "Action"

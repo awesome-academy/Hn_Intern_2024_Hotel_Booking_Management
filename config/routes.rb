@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       get "dashboard", to: "dashboard#index"
+      resources "bookings", only: :index
     end
   end
 end

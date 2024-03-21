@@ -49,6 +49,12 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     }
   },
   "admin": {
+    "bookings": {
+      "index": {
+        "action": "Action",
+        "booking_request_list": "Booking request list"
+      }
+    },
     "dashboard": {
       "index": {
         "booking_request": "Booking request list",
@@ -62,6 +68,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     "layouts": {
       "header": {
         "account": "Account",
+        "booking_request": "Booking request list",
         "english": "English",
         "home": "Home",
         "language": "Language",

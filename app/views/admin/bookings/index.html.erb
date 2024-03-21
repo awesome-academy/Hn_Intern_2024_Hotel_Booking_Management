@@ -1,0 +1,26 @@
+<div class="container mt-5 w-100">
+  <div class="px-5">
+    <h1 class="display-4"><%= t ".booking_request_list" %> (<%= Booking.count %>)</h1>
+    <hr class="my-4">
+    <div>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col"><%= t "bookings.detail.book_name" %></th>
+            <th scope="col"><%= t "bookings.detail.room" %></th>
+            <th scope="col"><%= t "bookings.detail.book_day" %></th>
+            <th scope="col"><%= t "bookings.booking.check_in" %></th>
+            <th scope="col"><%= t "bookings.booking.check_out" %></th>
+            <th scope="col"><%= t "bookings.booking.status" %></th>
+            <th scope="col"><%= t ".action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @bookings %>
+        </tbody>
+      </table>
+      <%== pagy_bootstrap_nav @pagy if @pagy.pages > 1 %>
+    </div>
+  </div>
+</div>
