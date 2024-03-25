@@ -111,9 +111,26 @@ vi:
     room:
       detail: "Chi tiết"
       book_now: "Đặt phòng"
+      room_type: "Loại phòng:"
+      view_type: "Quanh cảnh:"
     check_available:
       available_room: "Phòng trống từ ngày %{ci} đến %{co}"
       busy_room: "Phòng đã được đặt từ %{ci} đến %{co}"
+    filter:
+      sort: "Sắp xếp"
+      button_text: "Tìm kiếm"
+      asc_price: "Giá tăng dần"
+      desc_price: "Giá giảm dần"
+      asc_name: "Tên (A -> Z)"
+      desc_name: "Tên (Z -> A)"
+      latest: "Mới nhất"
+      view_select: "Chọn quang cảnh"
+      room_select: "Chọn kiểu phòng"
+      available: "Tìm phòng trống trong khoảng:"
+      check_in: "Ngày nhận"
+      check_out: "Ngày trả"
+    list_rooms:
+      not_found: "Không tìm thấy"
   sessions:
     new:
       title: "Đăng nhập"

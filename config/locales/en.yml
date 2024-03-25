@@ -111,9 +111,26 @@ en:
     room:
       detail: "View detail"
       book_now: "Book now"
+      room_type: "Type:"
+      view_type: "View:"
     check_available:
       available_room: "This room is available from %{ci} to %{co}"
       busy_room: "This room isn't available from %{ci} to %{co}"
+    filter:
+      sort: "Sort"
+      button_text: "Search"
+      asc_price: "Ascending price"
+      desc_price: "Descending price"
+      asc_name: "Name (A -> Z)"
+      desc_name: "Name (Z -> A)"
+      latest: "Newest"
+      view_select: "Choose view type"
+      room_select: "Choose room type"
+      available: "Available rooms in:"
+      check_in: "Check in"
+      check_out: "Check out"
+    list_rooms:
+      not_found: "Not found"
   sessions:
     new:
       title: "Sign in"

@@ -77362,14 +77362,33 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "available_room": "This room is available from %{ci} to %{co}",
       "busy_room": "This room isn't available from %{ci} to %{co}"
     },
+    "filter": {
+      "asc_name": "Name (A -> Z)",
+      "asc_price": "Ascending price",
+      "available": "Available rooms in:",
+      "button_text": "Search",
+      "check_in": "Check in",
+      "check_out": "Check out",
+      "desc_name": "Name (Z -> A)",
+      "desc_price": "Descending price",
+      "latest": "Newest",
+      "room_select": "Choose room type",
+      "sort": "Sort",
+      "view_select": "Choose view type"
+    },
     "index": {
       "button_text": "Search",
       "check_in": "Check in",
       "check_out": "Check out"
     },
+    "list_rooms": {
+      "not_found": "Not found"
+    },
     "room": {
       "book_now": "Book now",
-      "detail": "View detail"
+      "detail": "View detail",
+      "room_type": "Type:",
+      "view_type": "View:"
     },
     "show": {
       "book_now": "Book now",

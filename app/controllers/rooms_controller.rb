@@ -1,7 +1,19 @@
 class RoomsController < ApplicationController
   before_action :load_room, only: %i(show check_available)
   def index
-    @pagy, @rooms = pagy Room.desc_price, items: Settings.digits.digit_8
+    @pagy, @rooms = pagy(
+      request.get? ? Room.latest : filtered_rooms,
+      items: Settings.digits.digit_8,
+      params: request.get? ? nil : extra_params,
+      link_extra: request.get? ? nil : "data-turbo-method=post"
+    )
+    respond_to do |format|
+      format.html
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("show-list-rooms",
+                                                  partial: "list_rooms")
+      end
+    end
   end
 
   def show; end
@@ -24,5 +36,18 @@ class RoomsController < ApplicationController
         status: :not_found
       )
     end
+  end
+  private
+
+  def filtered_rooms
+    Room.includes(:facilities)
+        .filter_by_room_type(params[:room_type])
+        .filter_by_view_type(params[:view_type])
+        .available_in_priod(params[:check_in], params[:check_out])
+        .send(params[:sort].presence || "latest")
+  end
+
+  def extra_params
+    params.permit(:room_type, :view_type, :sort, :check_in, :check_out).to_h
   end
 end

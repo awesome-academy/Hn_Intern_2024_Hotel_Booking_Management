@@ -77075,14 +77075,33 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "available_room": "Phòng trống từ ngày %{ci} đến %{co}",
       "busy_room": "Phòng đã được đặt từ %{ci} đến %{co}"
     },
+    "filter": {
+      "asc_name": "Tên (A -> Z)",
+      "asc_price": "Giá tăng dần",
+      "available": "Tìm phòng trống trong khoảng:",
+      "button_text": "Tìm kiếm",
+      "check_in": "Ngày nhận",
+      "check_out": "Ngày trả",
+      "desc_name": "Tên (Z -> A)",
+      "desc_price": "Giá giảm dần",
+      "latest": "Mới nhất",
+      "room_select": "Chọn kiểu phòng",
+      "sort": "Sắp xếp",
+      "view_select": "Chọn quang cảnh"
+    },
     "index": {
       "button_text": "Tìm kiếm",
       "check_in": "Ngày nhận phòng",
       "check_out": "Ngày trả phòng"
     },
+    "list_rooms": {
+      "not_found": "Không tìm thấy"
+    },
     "room": {
       "book_now": "Đặt phòng",
-      "detail": "Chi tiết"
+      "detail": "Chi tiết",
+      "room_type": "Loại phòng:",
+      "view_type": "Quanh cảnh:"
     },
     "show": {
       "book_now": "Đặt ngay",
