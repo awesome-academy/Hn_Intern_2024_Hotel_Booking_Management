@@ -1,6 +1,12 @@
 import I18n from 'i18n-js';
 I18n.translations || (I18n.translations = {});
 I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
+  "account_activations": {
+    "edit": {
+      "flash_edit_danger": "Kích hoạt tài khoản thất bại",
+      "flash_edit_success": "Kích hoạt tài khoản thành công"
+    }
+  },
   "activerecord": {
     "attributes": {
       "booking": {
@@ -77356,7 +77362,8 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
   "sessions": {
     "create": {
       "flash_create_danger": "Incorrect username or password",
-      "flash_create_success": "Log in successfully"
+      "flash_create_success": "Log in successfully",
+      "flash_not_activated": "Account has not been activated. Please check your email to activate your account."
     },
     "new": {
       "new_user": "Don't have an account?",
@@ -77398,6 +77405,14 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
   "triple_bedroom": "Triple room",
   "tv": "TV",
   "twin_bedroom": "Twin room",
+  "user_mailer": {
+    "activate_account": {
+      "activate": "Active account",
+      "hi": "Hello",
+      "subject": "Account activation",
+      "welcome": "Welcome to the hotel system"
+    }
+  },
   "users": {
     "create": {
       "flash_create_success": "Create new account successfully"

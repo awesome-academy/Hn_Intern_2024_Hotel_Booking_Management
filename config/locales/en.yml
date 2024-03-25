@@ -123,6 +123,7 @@ en:
     create:
       flash_create_success: "Log in successfully"
       flash_create_danger: "Incorrect username or password"
+      flash_not_activated: "Account has not been activated. Please check your email to activate your account."
   bookings:
     new:
       title: "Room booking"
@@ -168,6 +169,11 @@ en:
       note: "Note"
       button_cancel: "Cancel booking"
       confirm_cancel: "Are you sure to cancel the booking?"
+
+  account_activations:
+    edit:
+      flash_edit_success: "Kích hoạt tài khoản thành công"
+      flash_edit_danger: "Kích hoạt tài khoản thất bại"
 
   admin:
 
@@ -227,3 +233,10 @@ en:
       update:
         flash_update_success: "Update successfully"
         flash_update_danger: "Update failed"
+
+  user_mailer:
+    activate_account:
+      subject: "Account activation"
+      hi: "Hello"
+      welcome: "Welcome to the hotel system"
+      activate: "Active account"

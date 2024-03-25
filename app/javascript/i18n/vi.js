@@ -1,6 +1,12 @@
 import I18n from 'i18n-js';
 I18n.translations || (I18n.translations = {});
 I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
+  "account_activations": {
+    "edit": {
+      "flash_edit_danger": "Kích hoạt tài khoản thất bại",
+      "flash_edit_success": "Kích hoạt tài khoản thành công"
+    }
+  },
   "activerecord": {
     "attributes": {
       "booking": {
@@ -77069,7 +77075,8 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
   "sessions": {
     "create": {
       "flash_create_danger": "Thông tin đăng nhập chưa đúng",
-      "flash_create_success": "Đăng nhập thành công"
+      "flash_create_success": "Đăng nhập thành công",
+      "flash_not_activated": "Tài khoản chưa được kích hoạt. Vui lòng kiểm tra email để kích hoạt tài khoản."
     },
     "new": {
       "new_user": "Chưa có tài khoản?",
@@ -77111,6 +77118,14 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
   "triple_bedroom": "Phòng 3 giường đơn",
   "tv": "TV",
   "twin_bedroom": "Phòng 1 giường đôi",
+  "user_mailer": {
+    "activate_account": {
+      "activate": "Kích hoạt tài khoản",
+      "hi": "Xin chào",
+      "subject": "Kích hoạt tài khoản",
+      "welcome": "Chào mừng bạn đến với hệ thống khách sạn"
+    }
+  },
   "users": {
     "create": {
       "flash_create_success": "Tạo tài khoản mới thành công"
