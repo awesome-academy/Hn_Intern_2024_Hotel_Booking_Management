@@ -123,6 +123,28 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
   "balcony": "Balcony",
   "bath": "Bath",
   "bed": "Bed",
+  "booking_mailer": {
+    "confirm_booking": {
+      "book_day": "Book day: %{book_day}",
+      "check_in": "Check in: %{check_in}",
+      "check_out": "Check out: %{check_out}",
+      "contact": "Should you have any questions or concerns, please do not hesitate to contact us via this phone number %{phone} or email %{email}",
+      "dear": "Dear %{full_name},",
+      "respect_inform": "We are pleased to inform you that your room reservation request (code: #%{code}) has been received and is being processed. Below are some relevant details:",
+      "room_name": "Room name: %{room_name}",
+      "room_type": "Room type: %{room_type}",
+      "subject": "Confirm the booking request",
+      "thanks": "Thank you for choosing our hotel, and we look forward to serving you on your upcoming trip."
+    },
+    "reject_booking": {
+      "aplogize": "We apologize for the inconvenience and hope you find suitable alternatives for your stay.",
+      "contact": "Should you require any assistance or further information, please feel free to contact us via this phone number %{phone} or email %{email}.",
+      "dear": "Dear %{full_name}",
+      "inform_reject": "We regret to inform you that your room reservation request (code: #%{code}) cannot be accommodated at this time. Below is the reason for this rejection:",
+      "respect_inform": "We sincerely appreciate your interest in our hotel.",
+      "subject": "Reject the booking request"
+    }
+  },
   "bookings": {
     "alerts": {
       "check_in_invalid": "Check in can not in the past",
@@ -156,6 +178,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "email": "Email",
       "note": "Note",
       "price": "Price",
+      "reason": "Reason for rejection",
       "room": "Room",
       "telephone": "Telephone",
       "title": "Booking details"

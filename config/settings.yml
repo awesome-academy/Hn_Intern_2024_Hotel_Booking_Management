@@ -7,3 +7,6 @@ regexs:
   email: \A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z
   password:   \A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}\z
   telephone: \A[0-9]{10}\z
+hotel:
+  phone: 024-6666-8888
+  email: hotelier@gmail.com

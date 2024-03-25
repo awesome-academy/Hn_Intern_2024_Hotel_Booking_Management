@@ -11,8 +11,10 @@ class Admin::BookingsController < Admin::BaseController
   def update
     if @booking.update booking_params
       flash[:success] = t ".flash_update_success"
+      @booking.send_mail_confirm
       redirect_to admin_bookings_path
     else
+      @booking.reload
       flash[:danger] = t ".flash_update_danger"
       render :show, status: :unprocessable_entity
     end

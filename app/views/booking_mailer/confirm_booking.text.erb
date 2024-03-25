@@ -1,0 +1,11 @@
+<%= t ".dear", full_name: @booking.full_name  %>
+<%= t ".respect_inform", code: @booking.id %>
+
+<%= t ".book_day", book_day: l(@booking.book_day, format: :short_date_time) %>
+<%= t ".check_in", check_in: l(@booking.check_in, format: :short_date) %>
+<%= t ".check_out", check_out: l(@booking.check_out, format: :short_date) %>
+<%= t ".room_name", room_name: @booking.room.name %>
+<%= t ".room_type", room_type: t(@booking.room.room_type) %>
+
+<%= t ".contact", phone: Settings.hotel.phone, email: Settings.hotel.email %>
+<%= t ".thanks" %>

@@ -1,0 +1,8 @@
+<%= t ".dear", full_name: @booking.full_name  %>
+<%= t ".respect_inform" %>
+<%= t ".inform_reject", code: @booking.id %>
+
+<%= @booking.reason %>
+
+<%= t ".contact", phone: Settings.hotel.phone, email: Settings.hotel.email %>
+<%= t ".aplogize" %>

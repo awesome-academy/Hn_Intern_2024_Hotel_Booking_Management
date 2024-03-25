@@ -18,7 +18,9 @@
     </div>
 
     <div class="col-6 ps-5">
-      <h4><%= t "bookings.booking.status" %>: <%= t booking.status %></h4>
+      <h4><%= t "bookings.booking.status" %>:
+        <%= show_tag_status booking.status %>
+      </h4>
       <h4><%= t ".room" %>:
         <span class="text-primary">
           <%= link_to booking.room.name, room_path(booking) %>
@@ -34,5 +36,10 @@
         <%= link_to t(".button_cancel"), booking, data: {"turbo-method": :delete, "turbo-confirm": t(".confirm_cancel")}, class: "btn btn-outline-danger d-inline py-3 px-2" %>
       <% end %>
     </div>
+    <h4 class="col-12 ps-5">
+      <% if booking.rejected? %>
+        <%= t ".reason" %>: <%= booking.reason %>
+      <% end %>
+    </h4>
   </div>
 </div>

@@ -1,0 +1,8 @@
+<h4><%= t ".dear", full_name: @booking.full_name  %></h4>
+<h4><%= t ".respect_inform" %></h4>
+<h4><%= t ".inform_reject", code: @booking.id %></h4>
+<ul>
+  <li><%= @booking.reason %></li>
+</ul>
+<h4><%= t ".contact", phone: Settings.hotel.phone, email: Settings.hotel.email %></h4>
+<h4><%= t ".aplogize" %></h4>

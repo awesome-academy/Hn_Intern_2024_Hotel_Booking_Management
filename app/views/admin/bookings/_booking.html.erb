@@ -8,19 +8,7 @@
   <td><%= l booking.check_in, format: :short_date %></td>
   <td><%= l booking.check_out, format: :short_date %></td>
   <td>
-    <% if booking.status == "pending" %>
-      <p class="badge rounded-pill bg-warning fs-5">
-        <%= t booking.status %>
-      </p>
-    <% elsif booking.status == "confirmed" %>
-      <p class="badge rounded-pill bg-success fs-5">
-        <%= t booking.status %>
-      </p>
-    <% elsif booking.status == "rejected" %>
-      <p class="badge rounded-pill bg-danger fs-5">
-        <%= t booking.status %>
-      </p>
-    <% end %>
+    <%= show_tag_status booking.status %>
   </td>
   <td>
     <%= link_to admin_booking_path(booking), class: "btn btn-primary rounded-circle" do %>
