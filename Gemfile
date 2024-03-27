@@ -14,9 +14,12 @@ gem "i18n-js", "~>3.9.2"
 gem "image_processing"
 gem "pagy"
 gem "rails", "~> 7.1.3"
+gem "rails-controller-testing"
 gem "rails-i18n"
 gem "ransack", github: "activerecord-hackery/ransack", branch: "main"
 gem "sidekiq"
+gem "simplecov"
+gem "simplecov-rcov"
 
 gem "sprockets-rails"
 
@@ -43,6 +46,7 @@ gem "sassc-rails"
 
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
+  gem "rspec-rails", "~> 5.0.0"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
