@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     resources :rooms, only: %i(index show) do
       get :check_available, on: :member
+      post :index, on: :collection
     end
 
     get "booking/:id", to: "bookings#new", as: "new_booking"

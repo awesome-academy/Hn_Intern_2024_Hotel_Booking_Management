@@ -15,6 +15,12 @@
           <small class="mb-2 col-6"><i class="fa fa-check text-primary me-2"></i><%= t f.name %></small>
         <% end %>
       </div>
+      <div class="row mb-3">
+        <p class="col-6"><%= t ".room_type" %></p>
+        <p class="col-6"><%= t room.room_type %></p>
+        <p class="col-6"><%= t ".view_type" %></p>
+        <p class="col-6"><%= t room.view_type %></p>
+      </div>
       <div class="d-flex justify-content-between">
         <%= link_to t(".detail"), room_path(room), class: "btn btn-sm btn-primary rounded py-2 px-4" %>
         <%= link_to t(".book_now"), new_booking_path(room), class: "btn btn-sm btn-dark rounded py-2 px-4" %>
