@@ -563,6 +563,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
   },
   "double_room": "Phòng 2 giường đơn",
   "errors": {
+    "connection_refused": "Oops! Failed to connect to the Web Console middleware.\nPlease make sure a rails development server is running.\n",
     "format": "%{attribute} %{message}",
     "messages": {
       "accepted": "phải được đồng ý",
@@ -628,7 +629,9 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     "template": {
       "body": "Có lỗi với các mục sau:",
       "header": "%{count} lỗi ngăn không cho lưu %{model} này"
-    }
+    },
+    "unacceptable_request": "A supported version is expected in the Accept header.\n",
+    "unavailable_session": "Session %{id} is no longer available in memory.\n\nIf you happen to run on a multi-process server (like Unicorn or Puma) the process\nthis request hit doesn't store %{id} in memory. Consider turning the number of\nprocesses/workers to one (1) or using a different server in development.\n"
   },
   "faker": {
     "address": {
@@ -77120,7 +77123,9 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     "must_sign_in": "Vui lòng đăng nhập trước",
     "request_not_approved": "Yêu cầu không được duyệt",
     "require_admin": "Chỉ admin mới được thực hiện",
+    "room_is_busy": "Không thể vô hiệu phòng vì phòng đang được đặt.",
     "room_not_found": "Không tìm thấy phòng",
+    "some_room_is_busy": "Không thể vô hiệu loại phòng vì có phòng thuộc loại này đang được đặt",
     "update_failed": "Cập nhật thất bại",
     "update_success": "Cập nhật thành công",
     "user_not_found": "Không tìm thấy người dùng"
