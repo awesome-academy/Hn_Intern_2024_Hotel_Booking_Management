@@ -158,6 +158,25 @@ en:
       title: "Room booking"
       book_room: "Book room"
       button_text: "Make a booking request"
+      booking_details: "Your booking details"
+      check_in: "Check in"
+      check_out: "Check out"
+      total_length_stay: "Total length of stay"
+      length_stay:
+        one: "%{count} night"
+        other: "%{count} nights"
+      you_select: "You selected"
+      amount:
+        one: "%{count} room"
+        other: "%{count} rooms"
+      for_people:
+        one: "for %{count} person"
+        other: "for %{count} people"
+      price_summary: "Your price summary"
+      price: "Price"
+      choose_again: "Choose again"
+      enter_your_details: "Enter your details"
+      facilities: "Facilities"
     index:
       title: "Booking list"
       total: "Total"

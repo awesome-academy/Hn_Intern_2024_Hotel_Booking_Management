@@ -199,9 +199,31 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "total": "Total"
     },
     "new": {
+      "amount": {
+        "one": "%{count} room",
+        "other": "%{count} rooms"
+      },
       "book_room": "Book room",
+      "booking_details": "Your booking details",
       "button_text": "Make a booking request",
-      "title": "Room booking"
+      "check_in": "Check in",
+      "check_out": "Check out",
+      "choose_again": "Choose again",
+      "enter_your_details": "Enter your details",
+      "facilities": "Facilities",
+      "for_people": {
+        "one": "for %{count} person",
+        "other": "for %{count} people"
+      },
+      "length_stay": {
+        "one": "%{count} night",
+        "other": "%{count} nights"
+      },
+      "price": "Price",
+      "price_summary": "Your price summary",
+      "title": "Room booking",
+      "total_length_stay": "Total length of stay",
+      "you_select": "You selected"
     }
   },
   "confirmed": "Accept",

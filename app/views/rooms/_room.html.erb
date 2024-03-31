@@ -18,10 +18,16 @@
       <h6><%= t ".view" %>: <%= t view_type_name(item.view_type) %></h6>
       <h6 class="text-danger"><%= t ".availabel", count: item.room_count %></h6>
     </div>
-    <%= form_tag "#", method: :get, class: "col-3 row" do %>
+    <%= form_tag new_booking_path, method: :get, class: "col-3 row" do %>
+      <%= hidden_field_tag :room_type_id, item.id %>
+      <%= hidden_field_tag :view_type, item.view_type %>
+      <%= hidden_field_tag :check_in, check_in %>
+      <%= hidden_field_tag :check_out, check_out %>
+      <%= hidden_field_tag :num_guest, num_guest %>
+      <%= hidden_field_tag :price, item.price %>
       <div class="col-4 d-flex flex-column justify-content-center align-items-center">
-        <%= label_tag :number, t(".amount") %>
-        <%= select_tag :number, options_for_select((1..item.room_count).to_a), class: "form-select" %>
+        <%= label_tag :amount, t(".amount") %>
+        <%= select_tag :amount, options_for_select((1..item.room_count).to_a), class: "form-select" %>
       </div>
       <div class="col-8 d-flex flex-column justify-content-evenly align-items-center">
         <div><%= number_to_currency item.price %> / <%= t(".night") %></div>

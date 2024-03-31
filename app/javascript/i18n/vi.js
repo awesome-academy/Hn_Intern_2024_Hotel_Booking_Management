@@ -199,9 +199,31 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "total": "Tổng"
     },
     "new": {
+      "amount": {
+        "one": "%{count} phòng",
+        "other": "%{count} phòng"
+      },
       "book_room": "Đặt phòng",
+      "booking_details": "Chi tiết đặt phòng",
       "button_text": "Tạo yêu cầu đặt phòng",
-      "title": "Tạo yêu cầu"
+      "check_in": "Ngày nhận",
+      "check_out": "Ngày trả",
+      "choose_again": "Chọn lại",
+      "enter_your_details": "Nhập thông tin nhận phòng",
+      "facilities": "Tiện nghi",
+      "for_people": {
+        "one": "cho %{count} người",
+        "other": "cho %{count} người"
+      },
+      "length_stay": {
+        "one": "%{count} đêm",
+        "other": "%{count} đêm"
+      },
+      "price": "Tổng giá",
+      "price_summary": "Tóm tắt chi phí",
+      "title": "Tạo yêu cầu",
+      "total_length_stay": "Thời gian lưu trú",
+      "you_select": "Bạn đã chọn"
     }
   },
   "confirmed": "Chấp nhận",
