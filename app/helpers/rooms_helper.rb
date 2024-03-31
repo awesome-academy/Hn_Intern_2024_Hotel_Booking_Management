@@ -1,6 +1,6 @@
 module RoomsHelper
   def room_type_options
-    Room.room_types.map{|k, v| [t(k), v]}
+    RoomType.pluck(:name).map{|k| [t(k), k]}
   end
 
   def view_type_options
@@ -11,9 +11,11 @@ module RoomsHelper
     [
       [t(".asc_price"), "asc_price"],
       [t(".desc_price"), "desc_price"],
-      [t(".asc_name"), "asc_name"],
-      [t(".desc_name"), "desc_name"],
       [t(".latest"), "latest"]
     ]
+  end
+
+  def view_type_name view_type
+    Room.view_types.key(view_type)
   end
 end

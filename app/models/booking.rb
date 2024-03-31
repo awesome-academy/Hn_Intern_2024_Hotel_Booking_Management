@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
+  has_many :booked_rooms, dependent: :destroy
+
   belongs_to :user
-  belongs_to :room
 
   validates :full_name, :check_in, :check_out, presence: true
   validates :email, presence: true,
@@ -13,7 +14,7 @@ class Booking < ApplicationRecord
 
   before_save :clear_reason_if_not_rejected
 
-  enum status: {pending: 0, confirmed: 1, rejected: 2}
+  enum status: {pending: 0, confirmed: 1, rejected: 2, completed: 3}
 
   scope :newest, ->{order book_day: :desc, check_in: :asc}
 

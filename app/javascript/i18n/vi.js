@@ -123,6 +123,10 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
   "balcony": "Ban công",
   "bath": "Phòng tắm ",
   "bed": "Giường ngủ",
+  "bed_type": {
+    "double": "giường đôi",
+    "single": "giường đơn"
+  },
   "booking_mailer": {
     "confirm_booking": {
       "book_day": "Ngày đặt: %{book_day}",
@@ -289,7 +293,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "year": "Năm"
     }
   },
-  "double_bedroom": "Phòng 2 giường đơn",
+  "double_room": "Phòng 2 giường đơn",
   "errors": {
     "connection_refused": "Oops! Failed to connect to the Web Console middleware.\nPlease make sure a rails development server is running.\n",
     "format": "%{attribute} %{message}",
@@ -77000,13 +77004,13 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     "currency": {
       "format": {
         "delimiter": ".",
-        "format": "%u%n",
+        "format": "%n %u",
         "negative_format": "-%u%n",
         "precision": 2,
         "separator": ",",
         "significant": false,
         "strip_insignificant_zeros": false,
-        "unit": "$"
+        "unit": "vnđ"
       }
     },
     "format": {
@@ -77076,15 +77080,16 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "busy_room": "Phòng đã được đặt từ %{ci} đến %{co}"
     },
     "filter": {
-      "asc_name": "Tên (A -> Z)",
+      "amount": "Chọn số lượng",
       "asc_price": "Giá tăng dần",
-      "available": "Tìm phòng trống trong khoảng:",
+      "available": "Khả dụng",
       "button_text": "Tìm kiếm",
       "check_in": "Ngày nhận",
       "check_out": "Ngày trả",
-      "desc_name": "Tên (Z -> A)",
       "desc_price": "Giá giảm dần",
+      "filter": "Bộ lọc",
       "latest": "Mới nhất",
+      "num_guest": "Số người",
       "room_select": "Chọn kiểu phòng",
       "sort": "Sắp xếp",
       "view_select": "Chọn quang cảnh"
@@ -77095,12 +77100,20 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "check_out": "Ngày trả phòng"
     },
     "list_rooms": {
-      "not_found": "Không tìm thấy"
+      "not_found": "Không tìm thấy. Vui lòng nhập ngày nhận và trả phòng."
     },
     "room": {
+      "availabel": {
+        "one": "Còn 1 phòng trên trang web của chúng tôi",
+        "other": "Còn %{count} phòng trên trang web của chúng tôi"
+      },
       "book_now": "Đặt phòng",
       "detail": "Chi tiết",
+      "facility": "Tiện nghi",
+      "info_bed": "%{num} %{size}",
+      "night": "đêm",
       "room_type": "Loại phòng:",
+      "view": "Tầm nhìn",
       "view_type": "Quanh cảnh:"
     },
     "show": {
@@ -77136,7 +77149,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "the_form_contains": "Biểu mẫu này có"
     }
   },
-  "single_bedroom": "Phòng 1 giường đơn",
+  "single_room": "Phòng 1 giường đơn",
   "sofa": "Ghế sofa",
   "support": {
     "array": {
@@ -77157,9 +77170,9 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     },
     "pm": "chiều"
   },
-  "triple_bedroom": "Phòng 3 giường đơn",
+  "triple_room": "Phòng 3 giường đơn",
   "tv": "TV",
-  "twin_bedroom": "Phòng 1 giường đôi",
+  "twin_room": "Phòng 1 giường đôi",
   "user_mailer": {
     "activate_account": {
       "activate": "Kích hoạt tài khoản",

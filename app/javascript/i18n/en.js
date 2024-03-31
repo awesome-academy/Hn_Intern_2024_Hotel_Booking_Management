@@ -123,6 +123,10 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
   "balcony": "Balcony",
   "bath": "Bath",
   "bed": "Bed",
+  "bed_type": {
+    "double": "double bed",
+    "single": "single bed"
+  },
   "booking_mailer": {
     "confirm_booking": {
       "book_day": "Book day: %{book_day}",
@@ -322,7 +326,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "year": "Year"
     }
   },
-  "double_bedroom": "Double room",
+  "double_room": "Double room",
   "errors": {
     "connection_refused": "Oops! Failed to connect to the Web Console middleware.\nPlease make sure a rails development server is running.\n",
     "format": "%{attribute} %{message}",
@@ -77287,13 +77291,13 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     "currency": {
       "format": {
         "delimiter": ",",
-        "format": "%u%n",
+        "format": "%n %u",
         "negative_format": "-%u%n",
         "precision": 2,
         "separator": ".",
         "significant": false,
         "strip_insignificant_zeros": false,
-        "unit": "$"
+        "unit": "vnd"
       }
     },
     "format": {
@@ -77363,15 +77367,16 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "busy_room": "This room isn't available from %{ci} to %{co}"
     },
     "filter": {
-      "asc_name": "Name (A -> Z)",
+      "amount": "Select amount",
       "asc_price": "Ascending price",
-      "available": "Available rooms in:",
+      "available": "Availabel",
       "button_text": "Search",
       "check_in": "Check in",
       "check_out": "Check out",
-      "desc_name": "Name (Z -> A)",
       "desc_price": "Descending price",
+      "filter": "Filter",
       "latest": "Newest",
+      "num_guest": "People",
       "room_select": "Choose room type",
       "sort": "Sort",
       "view_select": "Choose view type"
@@ -77382,12 +77387,20 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "check_out": "Check out"
     },
     "list_rooms": {
-      "not_found": "Not found"
+      "not_found": "Not found. Please enter check-in check-out."
     },
     "room": {
+      "availabel": {
+        "one": "1 room left on our website",
+        "other": "%{count} rooms left on our website"
+      },
       "book_now": "Book now",
       "detail": "View detail",
+      "facility": "Facility",
+      "info_bed": "%{num} %{size}",
+      "night": "night",
       "room_type": "Type:",
+      "view": "View",
       "view_type": "View:"
     },
     "show": {
@@ -77423,7 +77436,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "the_form_contains": "This form contains"
     }
   },
-  "single_bedroom": "Single room",
+  "single_room": "Single room",
   "sofa": "Sofa",
   "support": {
     "array": {
@@ -77444,9 +77457,9 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     },
     "pm": "pm"
   },
-  "triple_bedroom": "Triple room",
+  "triple_room": "Triple room",
   "tv": "TV",
-  "twin_bedroom": "Twin room",
+  "twin_room": "Twin room",
   "user_mailer": {
     "activate_account": {
       "activate": "Active account",

@@ -1,13 +1,14 @@
 <div class="mt-4 d-flex flex-column flex-shrink-0 p-3">
   <%= form_tag rooms_path, method: :post do %>
+    <h6><%= t ".filter" %></h6>
     <%= label_tag :sort, t(".sort") %>
     <%= select_tag :sort, options_for_select(sort_options), include_blank: true, class: "form-select" %>
 
-    <%= label_tag :room_type, t(".room_select") %>
-    <%= select_tag :room_type, options_for_select(room_type_options), include_blank: true, class: "form-select" %>
-
     <%= label_tag :view_type, t(".view_select") %>
     <%= select_tag :view_type, options_for_select(view_type_options), include_blank: true, class: "form-select" %>
+
+    <%= label_tag :room_type, t(".room_select") %>
+    <%= select_tag :room_type, options_for_select(room_type_options), include_blank: true, class: "form-select" %>
 
     <hr/>
     <h6><%= t ".available" %></h6>
@@ -16,6 +17,12 @@
 
     <%= label_tag :check_out, t(".check_out") %>
     <%= date_field_tag :check_out, nil, class: "form-control" %>
+
+    <%= label_tag :amount, t(".amount") %>
+    <%= number_field_tag :amount, 1, min: 1, class: "form-control" %>
+
+    <%= label_tag :num_guest, t(".num_guest") %>
+    <%= number_field_tag :num_guest, 1, min: 1, class: "form-control" %>
 
     <%= submit_tag t(".button_text"), class: "btn btn-primary p-2 mt-2 w-100" %>
   <% end %>
