@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_20_142532) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_01_065637) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,6 +39,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_20_142532) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "booked_rooms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "room_id"
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_booked_rooms_on_booking_id"
+    t.index ["room_id"], name: "index_booked_rooms_on_room_id"
+  end
+
   create_table "bookings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "book_day", null: false
     t.string "note"
@@ -50,11 +59,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_20_142532) do
     t.string "telephone", null: false
     t.datetime "check_in", null: false
     t.datetime "check_out", null: false
-    t.bigint "room_id", null: false
-    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_bookings_on_room_id"
+    t.integer "num_guest"
+    t.integer "room_type_id", null: false
+    t.integer "view_type", null: false
+    t.integer "amount", null: false
+    t.float "price"
     t.index ["user_id", "created_at"], name: "index_bookings_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -66,25 +77,33 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_20_142532) do
     t.index ["name"], name: "index_facilities_on_name"
   end
 
-  create_table "room_facilities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "room_id", null: false
+  create_table "room_type_facilities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "facility_id", null: false
-    t.integer "quantity"
+    t.bigint "room_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["facility_id"], name: "index_room_facilities_on_facility_id"
-    t.index ["room_id"], name: "index_room_facilities_on_room_id"
+    t.index ["facility_id"], name: "index_room_type_facilities_on_facility_id"
+    t.index ["room_type_id"], name: "index_room_type_facilities_on_room_type_id"
+  end
+
+  create_table "room_types", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description"
+    t.float "price", null: false
+    t.integer "num_of_bed"
+    t.integer "size_of_bed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rooms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
-    t.float "price", null: false
-    t.text "description"
-    t.integer "room_type"
     t.integer "view_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "room_type_id"
     t.index ["name"], name: "index_rooms_on_name", unique: true
+    t.index ["room_type_id"], name: "index_rooms_on_room_type_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -103,8 +122,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_20_142532) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "rooms"
+  add_foreign_key "booked_rooms", "bookings"
+  add_foreign_key "booked_rooms", "rooms"
   add_foreign_key "bookings", "users"
-  add_foreign_key "room_facilities", "facilities"
-  add_foreign_key "room_facilities", "rooms"
+  add_foreign_key "room_type_facilities", "facilities"
+  add_foreign_key "room_type_facilities", "room_types"
+  add_foreign_key "rooms", "room_types"
 end
