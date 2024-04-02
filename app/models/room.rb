@@ -5,24 +5,19 @@ class Room < ApplicationRecord
   has_many :booked_rooms, dependent: :destroy
   belongs_to :room_type
 
-  scope :latest, ->{order created_at: :desc}
-  scope :desc_price, ->{order price: :desc}
-  scope :asc_price, ->{order price: :asc}
-  scope :desc_name, ->{order name: :desc}
-  scope :asc_name, ->{order name: :asc}
-  scope :filter_by_room_type, lambda {|room_type|
-                                where(room_type:) if room_type.present?
-                              }
-  scope :filter_by_view_type, lambda{|view_type|
-                                where(view_type:) if view_type.present?
-                              }
-  scope :available_in_priod, lambda {|sd, ed|
-                               if sd.present? && ed.present?
-                                 where.not(
-                                   id: Booking.where(
-                                     "check_in <= ? and check_out >= ?", ed, sd
-                                   ).select("room_id")
-                                 )
-                               end
-                             }
+  scope :availabel, lambda {|sd, ed|
+                      where.not(id: Booking.joins(:booked_rooms)
+                          .where("check_in <= ? and check_out >= ?
+                          and status = 1", ed.to_date, sd.to_date)
+                          .pluck(:room_id))
+                    }
+  scope :filter_by_room_type_id, ->(t){where room_type_id: t}
+  scope :filter_by_view_type, ->(t){where view_type: t}
+
+  def can_be_assigned? cin, cout
+    Booking.where("check_in <= ? and check_out >= ? and status = 1",
+                  cout.to_date, cin.to_date)
+           .joins(:booked_rooms)
+           .where("booked_rooms.id = ?", id).empty?
+  end
 end

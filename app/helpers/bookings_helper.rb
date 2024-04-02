@@ -7,6 +7,8 @@ module BookingsHelper
       content_tag(:span, t(status), class: "badge bg-success rounded-pill fs-5")
     when "rejected"
       content_tag(:span, t(status), class: "badge bg-danger rounded-pill fs-5")
+    when "completed"
+      content_tag(:span, t(status), class: "badge bg-info rounded-pill fs-5")
     end
   end
 
