@@ -158,6 +158,25 @@ vi:
       title: "Tạo yêu cầu"
       book_room: "Đặt phòng"
       button_text: "Tạo yêu cầu đặt phòng"
+      booking_details: "Chi tiết đặt phòng"
+      check_in: "Ngày nhận"
+      check_out: "Ngày trả"
+      total_length_stay: "Thời gian lưu trú"
+      length_stay:
+        one: "%{count} đêm"
+        other: "%{count} đêm"
+      you_select: "Bạn đã chọn"
+      amount:
+        one: "%{count} phòng"
+        other: "%{count} phòng"
+      for_people:
+        one: "cho %{count} người"
+        other: "cho %{count} người"
+      price_summary: "Tóm tắt chi phí"
+      price: "Tổng giá"
+      choose_again: "Chọn lại"
+      enter_your_details: "Nhập thông tin nhận phòng"
+      facilities: "Tiện nghi"
     index:
       title: "Danh sách đặt phòng"
       total: "Tổng"

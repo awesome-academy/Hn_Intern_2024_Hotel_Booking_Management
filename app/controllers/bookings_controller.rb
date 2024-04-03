@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   before_action :signed_in_user
-  before_action :load_room, only: :new
   before_action :load_booking, only: %i(show destroy)
   before_action :create_booking, only: :create
 
@@ -17,7 +16,8 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = @room.bookings.build
+    @booking = current_user.bookings.new booking_params_to_new
+    @room_type = RoomType.find_by id: params[:room_type_id]
   end
 
   def create
@@ -25,6 +25,7 @@ class BookingsController < ApplicationController
       flash[:success] = t ".flash_create_success"
       redirect_to root_path
     else
+      @room_type = RoomType.find_by id: @booking.room_type_id
       flash.now[:danger] = t ".flash_create_danger"
       render :new, status: :unprocessable_entity
     end
@@ -44,10 +45,16 @@ class BookingsController < ApplicationController
   end
 
   private
-  def booking_params
-    params.require(:booking).permit :full_name, :email, :telephone,
-                                    :check_in, :check_out, :note, :price,
-                                    :room_id
+  def booking_params_to_create
+    params.require(:booking).permit :note, :full_name, :email, :telephone,
+                                    :check_in, :check_out, :num_guest,
+                                    :room_type_id, :view_type, :amount, :price
+  end
+
+  def booking_params_to_new
+    params.permit(:room_type_id, :view_type, :amount,
+                  :num_guest, :price, :check_in, :check_out)
+          .merge(full_name: current_user.full_name, email: current_user.email)
   end
 
   def save_booking
@@ -59,9 +66,7 @@ class BookingsController < ApplicationController
   end
 
   def create_booking
-    @room = Room.find_by id: params.dig(:booking, :room_id)
-    @booking = @room.bookings.build booking_params
-    @booking.user = current_user
+    @booking = current_user.bookings.build booking_params_to_create
     @booking.book_day = DateTime.now
   end
 end

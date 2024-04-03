@@ -13,9 +13,8 @@ Rails.application.routes.draw do
       post :index, on: :collection
     end
 
-    get "booking/:id", to: "bookings#new", as: "new_booking"
     post "bookings/:id", to: "bookings#show", as: "booking"
-    resources :bookings, except: %i(show new)
+    resources :bookings, except: :show
 
     namespace :admin do
       get "dashboard", to: "dashboard#index"

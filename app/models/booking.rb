@@ -9,7 +9,7 @@ class Booking < ApplicationRecord
     format: {with: Regexp.new(Settings.regexs.email, "i")}
   validates :telephone, presence: true,
     format: {with: Regexp.new(Settings.regexs.telephone)}
-  validate :check_in_valid, :check_out_valid, :date_valid, on: :create
+  validate :check_in_valid, :check_out_valid, on: :create
   validate :check_reason_presence, if: ->{rejected?}
 
   before_save :clear_reason_if_not_rejected
@@ -30,6 +30,14 @@ class Booking < ApplicationRecord
     end
   end
 
+  def num_of_night
+    ((check_out - check_in) / 86_400).to_i
+  end
+
+  def total_price
+    num_of_night * amount * price
+  end
+
   private
   def check_in_valid
     return unless check_in && check_in < Time.zone.today
@@ -41,12 +49,6 @@ class Booking < ApplicationRecord
     return unless check_out && check_out < check_in
 
     errors.add :check_out, I18n.t("bookings.errors.check_out_invalid")
-  end
-
-  def date_valid
-    return if room.available? check_in, check_out
-
-    errors.add :room, I18n.t("bookings.errors.booked_room")
   end
 
   def check_reason_presence
