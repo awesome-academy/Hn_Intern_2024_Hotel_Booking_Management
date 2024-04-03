@@ -2,6 +2,9 @@ class Room < ApplicationRecord
   enum view_type: {pool: 0, balcony: 1, mountain: 2,
                    ocean: 3}
 
+  has_many :booked_rooms, dependent: :destroy
+  belongs_to :room_type
+
   scope :latest, ->{order created_at: :desc}
   scope :desc_price, ->{order price: :desc}
   scope :asc_price, ->{order price: :asc}

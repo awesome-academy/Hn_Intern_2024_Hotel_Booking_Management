@@ -1,17 +1,17 @@
 class RoomsController < ApplicationController
   before_action :load_room, only: %i(show check_available)
+
   def index
-    @pagy, @rooms = pagy(
-      request.get? ? Room.latest : filtered_rooms,
-      items: Settings.digits.digit_8,
-      params: request.get? ? nil : extra_params,
-      link_extra: request.get? ? nil : "data-turbo-method=post"
-    )
+    if request.get? || params[:check_in].blank? || params[:check_out].blank?
+      return respond_to(&:html)
+    end
+
+    @pagy, @room_types = pagy filtered_rooms, pagination_options
     respond_to do |format|
-      format.html
       format.turbo_stream do
         render turbo_stream: turbo_stream.replace("show-list-rooms",
-                                                  partial: "list_rooms")
+                                                  partial: "list_rooms",
+                                                  locals: keep_params)
       end
     end
   end
@@ -40,14 +40,27 @@ class RoomsController < ApplicationController
   private
 
   def filtered_rooms
-    Room.includes(:facilities)
-        .filter_by_room_type(params[:room_type])
-        .filter_by_view_type(params[:view_type])
-        .available_in_priod(params[:check_in], params[:check_out])
-        .send(params[:sort].presence || "latest")
+    RoomType.availabel_rooms(params[:check_in], params[:check_out])
+            .public_send(params[:sort].presence || "latest")
+            .filter_by_view_type(params[:view_type])
+            .filter_by_room_type(params[:room_type])
+            .filter_by_amount(params[:amount])
   end
 
   def extra_params
-    params.permit(:room_type, :view_type, :sort, :check_in, :check_out).to_h
+    params.permit(:room_type, :view_type, :sort, :check_in, :check_out,
+                  :amount, :num_guest).to_h
+  end
+
+  def keep_params
+    params.permit(:check_in, :check_out, :num_guest).to_h
+  end
+
+  def pagination_options
+    {
+      items: Settings.digits.digit_3,
+      params: extra_params,
+      link_extra: "data-turbo-method=post"
+    }
   end
 end

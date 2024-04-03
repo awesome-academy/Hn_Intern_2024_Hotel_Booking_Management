@@ -6,11 +6,11 @@ en:
   number:
     currency:
       format:
-        unit: "$"
+        unit: "vnd"
         delimiter: ","
         separator: "."
         precision: 2
-        format: "%u%n"
+        format: "%n %u"
 
   bed: "Bed"
   wifi: "WiFi"
@@ -29,10 +29,14 @@ en:
   mountain: "Mountain"
   ocean: "Ocean"
 
-  single_bedroom: "Single room"
-  twin_bedroom: "Twin room"
-  double_bedroom: "Double room"
-  triple_bedroom: "Triple room"
+  single_room: "Single room"
+  twin_room: "Twin room"
+  double_room: "Double room"
+  triple_room: "Triple room"
+
+  bed_type:
+    single: "single bed"
+    double: "double bed"
 
   flash:
     room_not_found: "Room not found"
@@ -113,6 +117,13 @@ en:
       book_now: "Book now"
       room_type: "Type:"
       view_type: "View:"
+      info_bed: "%{num} %{size}"
+      facility: "Facility"
+      view: "View"
+      availabel:
+        one: "1 room left on our website"
+        other: "%{count} rooms left on our website"
+      night: "night"
     check_available:
       available_room: "This room is available from %{ci} to %{co}"
       busy_room: "This room isn't available from %{ci} to %{co}"
@@ -121,16 +132,17 @@ en:
       button_text: "Search"
       asc_price: "Ascending price"
       desc_price: "Descending price"
-      asc_name: "Name (A -> Z)"
-      desc_name: "Name (Z -> A)"
       latest: "Newest"
       view_select: "Choose view type"
       room_select: "Choose room type"
-      available: "Available rooms in:"
+      available: "Availabel"
       check_in: "Check in"
       check_out: "Check out"
+      filter: "Filter"
+      amount: "Select amount"
+      num_guest: "People"
     list_rooms:
-      not_found: "Not found"
+      not_found: "Not found. Please enter check-in check-out."
   sessions:
     new:
       title: "Sign in"

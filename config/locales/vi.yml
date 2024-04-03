@@ -6,11 +6,11 @@ vi:
   number:
     currency:
       format:
-        unit: "$"
+        unit: "vnđ"
         delimiter: "."
         separator: ","
         precision: 2
-        format: "%u%n"
+        format: "%n %u"
 
   bed: "Giường ngủ"
   wifi: "WiFi"
@@ -29,10 +29,14 @@ vi:
   mountain: "Núi"
   ocean: "Biển"
 
-  single_bedroom: "Phòng 1 giường đơn"
-  twin_bedroom: "Phòng 1 giường đôi"
-  double_bedroom: "Phòng 2 giường đơn"
-  triple_bedroom: "Phòng 3 giường đơn"
+  single_room: "Phòng 1 giường đơn"
+  twin_room: "Phòng 1 giường đôi"
+  double_room: "Phòng 2 giường đơn"
+  triple_room: "Phòng 3 giường đơn"
+
+  bed_type:
+    single: "giường đơn"
+    double: "giường đôi"
 
   flash:
     room_not_found: "Không tìm thấy phòng"
@@ -113,6 +117,13 @@ vi:
       book_now: "Đặt phòng"
       room_type: "Loại phòng:"
       view_type: "Quanh cảnh:"
+      info_bed: "%{num} %{size}"
+      facility: "Tiện nghi"
+      view: "Tầm nhìn"
+      availabel:
+        one: "Còn 1 phòng trên trang web của chúng tôi"
+        other: "Còn %{count} phòng trên trang web của chúng tôi"
+      night: "đêm"
     check_available:
       available_room: "Phòng trống từ ngày %{ci} đến %{co}"
       busy_room: "Phòng đã được đặt từ %{ci} đến %{co}"
@@ -121,16 +132,17 @@ vi:
       button_text: "Tìm kiếm"
       asc_price: "Giá tăng dần"
       desc_price: "Giá giảm dần"
-      asc_name: "Tên (A -> Z)"
-      desc_name: "Tên (Z -> A)"
       latest: "Mới nhất"
       view_select: "Chọn quang cảnh"
       room_select: "Chọn kiểu phòng"
-      available: "Tìm phòng trống trong khoảng:"
+      available: "Khả dụng"
       check_in: "Ngày nhận"
       check_out: "Ngày trả"
+      filter: "Bộ lọc"
+      amount: "Chọn số lượng"
+      num_guest: "Số người"
     list_rooms:
-      not_found: "Không tìm thấy"
+      not_found: "Không tìm thấy. Vui lòng nhập ngày nhận và trả phòng."
   sessions:
     new:
       title: "Đăng nhập"
