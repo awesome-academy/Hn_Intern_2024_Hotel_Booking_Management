@@ -253,7 +253,17 @@ en:
     bookings:
       index:
         booking_request_list: "Booking request list"
+        filter: "Filter"
+        booking_id: "Booking ID"
+        booked_by: "Booked by"
+        view_type: "View type"
+        status: "Status"
+        book_day: "Book date"
+        check_in: "Check in"
+        check_out: "Check out"
         action: "Action"
+        amount: "Amount"
+        room_type: "Room type"
       show:
         title: "Booking detail"
         customer: "Customer"

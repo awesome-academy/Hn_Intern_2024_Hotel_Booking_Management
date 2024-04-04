@@ -9,4 +9,8 @@ module BookingsHelper
       content_tag(:span, t(status), class: "badge bg-danger rounded-pill fs-5")
     end
   end
+
+  def status_options
+    Booking.statuses.map{|k, v| [t(k), v]}
+  end
 end

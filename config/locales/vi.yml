@@ -253,7 +253,17 @@ vi:
     bookings:
       index:
         booking_request_list: "Danh sách yêu cầu đặt phòng"
+        filter: "Lọc"
+        booking_id: "Mã đặt phòng"
+        booked_by: "Người đặt"
+        view_type: "Tầm nhìn"
+        status: "Trạng thái"
+        book_day: "Ngày tạo"
+        check_in: "Ngày nhận"
+        check_out: "Ngày trả"
         action: "Hành động"
+        amount: "Số phòng"
+        room_type: "Kiểu phòng"
       show:
         title: "Chi tiết yêu cầu"
         customer: "Khách hàng"

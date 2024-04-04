@@ -2,6 +2,7 @@ class Booking < ApplicationRecord
   has_many :booked_rooms, dependent: :destroy
 
   belongs_to :user
+  belongs_to :room_type
 
   validates :full_name, :check_in, :check_out, presence: true
   validates :email, presence: true,
@@ -36,6 +37,26 @@ class Booking < ApplicationRecord
 
   def total_price
     num_of_night * amount * price
+  end
+
+  # config for ransack
+  def self.ransackable_attributes _auth_object = nil
+    %w(
+      id full_name check_in check_out view_type
+      room_type_id amount book_day status
+    )
+  end
+
+  ransacker :book_day do
+    Arel.sql("date(book_day)")
+  end
+
+  ransacker :check_in do
+    Arel.sql("date(check_in)")
+  end
+
+  ransacker :check_out do
+    Arel.sql("date(check_out)")
   end
 
   private

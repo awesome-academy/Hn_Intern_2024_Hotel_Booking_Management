@@ -2,20 +2,19 @@
   <th scope="row">
     <%= link_to booking.id, admin_booking_path(booking), class: "text-decoration-underline" %>
   </th>
-  <td><%= booking.full_name %></td>
-  <td><%= booking.room.name %></td>
-  <td><%= l booking.book_day, format: :short_date %></td>
+  <td><%= highlight booking.full_name, params.dig(:q, :full_name_cont) %></td>
   <td><%= l booking.check_in, format: :short_date %></td>
   <td><%= l booking.check_out, format: :short_date %></td>
+  <td><%= t view_type_name(booking.view_type) %></td>
+  <td><%= t booking.room_type.name %></td>
+  <td><%= booking.amount %></td>
+  <td><%= l booking.book_day, format: :short_date %></td>
   <td>
     <%= show_tag_status booking.status %>
   </td>
   <td>
     <%= link_to admin_booking_path(booking), class: "btn btn-primary rounded-circle" do %>
       <%= fa_icon "eye" %>
-    <% end %>
-    <%= link_to "#", class: "btn btn-danger rounded-circle" do %>
-      <%= fa_icon "trash" %>
     <% end %>
   </td>
 </tr>

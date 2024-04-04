@@ -2,8 +2,10 @@ class Admin::BookingsController < Admin::BaseController
   before_action :load_booking, only: %i(show update)
 
   def index
-    @pagy, @bookings = pagy Booking.newest,
-                            items: Settings.digits.digit_5
+    @q = Booking.ransack(params[:q])
+    @q.sorts = ["status asc", "book_day desc"] if @q.sorts.empty?
+    @pagy, @bookings = pagy @q.result,
+                            items: Settings.digits.digit_8
   end
 
   def show; end

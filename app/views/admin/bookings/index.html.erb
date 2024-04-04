@@ -1,26 +1,64 @@
 <div class="container mt-5 w-100">
   <div class="px-5">
-    <h1 class="display-4"><%= t ".booking_request_list" %> (<%= Booking.count %>)</h1>
-    <hr class="my-4">
-    <div>
-      <table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col"><%= t "bookings.detail.book_name" %></th>
-            <th scope="col"><%= t "bookings.detail.room" %></th>
-            <th scope="col"><%= t "bookings.detail.book_day" %></th>
-            <th scope="col"><%= t "bookings.booking.check_in" %></th>
-            <th scope="col"><%= t "bookings.booking.check_out" %></th>
-            <th scope="col"><%= t "bookings.booking.status" %></th>
-            <th scope="col"><%= t ".action" %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render @bookings %>
-        </tbody>
-      </table>
-      <%== pagy_bootstrap_nav @pagy if @pagy.pages > 1 %>
+    <div class="row">
+      <div class="col-2">
+        <div class="my-2">
+          <h1><%= t ".filter" %></h1>
+          <%= search_form_for @q, url: admin_bookings_path do |f| %>
+            <%= f.label :id_eq, t(".booking_id"), class: "form-label" %>
+            <%= f.search_field :id_eq, class: "form-control" %>
+
+            <%= f.label :full_name_cont, t(".booked_by"), class: "form-label" %>
+            <%= f.search_field :full_name_cont, class: "form-control" %>
+
+            <%= f.label :view_type_eq, t(".view_type"), class: "form-label" %>
+            <%= f.select :view_type_eq, view_type_options, {include_blank: true}, class: "form-select" %>
+
+            <%= f.label :room_type_id_eq, t(".room_type"), class: "form-label" %>
+            <%= f.select :room_type_id_eq, room_type_id_options, {include_blank: true}, class: "form-select" %>
+
+            <%= f.label :status_eq, t(".status"), class: "form-label" %>
+            <%= f.select :status_eq, status_options, {include_blank: true}, class: "form-select" %>
+
+            <%= f.label :book_day_eq, t(".book_day"), class: "form-label" %>
+            <%= f.date_field :book_day_eq, class: "form-control" %>
+
+            <%= f.label :check_in_gteq, t(".check_in"), class: "form-label" %>
+            <%= f.date_field :check_in_gteq, class: "form-control" %>
+
+            <%= f.label :check_out_lteq, t(".check_out"), class: "form-label" %>
+            <%= f.date_field :check_out_lteq, class: "form-control" %>
+
+            <%= f.submit t(".filter"), class: "btn btn-success w-100 my-2" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-10">
+        <h1><%= t ".booking_request_list" %></h1>
+        <hr class="my-4">
+        <div>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr class="text-primary">
+                <th scope="col"><%= sort_link @q, :id, t(".booking_id") %></th>
+                <th scope="col"><%= sort_link @q, :full_name, t(".booked_by") %></th>
+                <th scope="col"><%= sort_link @q, :check_in, t(".check_in") %></th>
+                <th scope="col"><%= sort_link @q, :check_out, t(".check_out") %></th>
+                <th scope="col"><%= sort_link @q, :view_type, t(".view_type") %></th>
+                <th scope="col"><%= sort_link @q, :room_type_id, t(".room_type") %></th>
+                <th scope="col"><%= sort_link @q, :amount, t(".amount") %></th>
+                <th scope="col"><%= sort_link @q, :book_day, t(".book_day") %></th>
+                <th scope="col"><%= sort_link @q, :status, t(".status") %></th>
+                <th scope="col"><%= t ".action" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render @bookings %>
+            </tbody>
+          </table>
+          <%== pagy_bootstrap_nav @pagy if @pagy.pages > 1 %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
