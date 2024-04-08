@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
 
   belongs_to :user
   belongs_to :room_type
+  has_many :booked_rooms, dependent: :destroy
 
   validates :full_name, :check_in, :check_out, presence: true
   validates :email, presence: true,

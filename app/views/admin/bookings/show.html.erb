@@ -1,132 +1,112 @@
 <div class="container mt-5 w-100">
   <div class="px-5">
-    <h1 class="display-4"><%= t ".title" %></h1>
+    <%= render "shared/error_messages", object: @booking %>
     <hr/>
-    <div class="row shadow rounded-3 border border-light border-2 p-0 m-0">
-
-      <div class="col-12"><h1 class="display-4"><%= t ".id" %>: #<%= @booking.id %></h1></div>
-
-      <%= render "shared/error_messages", object: @booking %>
-
-      <div class="col-6 mb-5">
-        <div class="row ms-5">
-          <div class="col-2 d-flex justify-content-center align-items-start">
-            <div class="rounded-circle fa-3x mt-2">
-              <%= fa_stacked_icon "user", base: "circle-o", class: "text-primary" %>
-            </div>
+    <div class="row g-5 px-5">
+      <div class="col-lg-3 col-sm-12">
+        <div class="border border-secondary shadow rounded-3 p-3">
+          <h4><%= t ".info_user" %></h4>
+          <div class="rounded-circle fa-3x mt-2 text-center">
+            <%= fa_stacked_icon "user", base: "circle-o", class: "text-primary" %>
           </div>
-          <div class="col-10">
-            <div class="card border-0">
-              <div class="card-body">
-                <h5 class="card-title"><%= t ".customer" %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".account" %>: #<%= @booking.user.id %> - <%= @booking.user.full_name %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".book_name" %>: <%= @booking.full_name %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".email" %>: <%= @booking.email %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".telephone" %>: <%= @booking.telephone %></h6>
-              </div>
-            </div>
+          <div class="row">
+            <div class="col-lg-5 col-sm-12"><%= t ".user_id" %></div>
+            <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= @booking.user.id %></strong></div>
+            <div class="col-lg-5 col-sm-12"><%= t ".user_full_name" %></div>
+            <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= @booking.user.full_name %></strong></div>
+            <div class="col-lg-5 col-sm-12"><%= t ".user_email" %></div>
+            <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= @booking.user.email %></strong></div>
+            <div class="col-lg-5 col-sm-12"><%= t ".receiver_full_name" %></div>
+            <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= @booking.full_name %></strong></div>
+            <div class="col-lg-5 col-sm-12"><%= t ".receiver_email" %></div>
+            <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= @booking.email %></strong></div>
+            <div class="col-lg-5 col-sm-12"><%= t ".receiver_phone" %></div>
+            <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= @booking.telephone %></strong></div>
           </div>
         </div>
       </div>
-
-      <div class="col-6 mb-5">
-        <div class="row ms-5">
-          <div class="col-2 d-flex justify-content-center align-items-start">
-            <div class="rounded-circle fa-3x mt-2">
-              <%= fa_stacked_icon "info", base: "circle-o", class: "text-info" %>
+      <div class="col-lg-9 col-sm-12 border border-secondary shadow rounded-3 p-3">
+        <div class="d-flex flex-column align-items-start h-100">
+          <h4><%= t ".info_request" %></h4>
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="row">
+                <div class="col-lg-5 col-sm-12"><%= t ".booking_id" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= @booking.id %></strong></div>
+                <div class="col-lg-5 col-sm-12"><%= t ".book_day" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= l @booking.book_day, format: :short_date %></strong></div>
+                <div class="col-lg-5 col-sm-12"><%= t ".check_in" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= l @booking.check_in, format: :short_date %></strong></div>
+                <div class="col-lg-5 col-sm-12"><%= t ".check_out" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= l @booking.check_out, format: :short_date %></strong></div>
+                <div class="col-lg-5 col-sm-12"><%= t ".num_guest" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= @booking.num_guest %></strong></div>
+                <div class="col-lg-5 col-sm-12"><%= t ".note" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= @booking.note %></strong></div>
+              </div>
             </div>
-          </div>
-          <div class="col-10">
-            <div class="card border-0">
-              <div class="card-body">
-                <h5 class="card-title"><%= t ".room_info" %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".room_name" %>: <%= @booking.room.name %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".room_price" %>: <%= number_to_currency @booking.room.price %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".room_view" %>: <%= t @booking.room.view_type %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".room_type" %>: <%= t @booking.room.room_type %></h6>
+            <div class="col-lg-5 col-sm-12">
+              <div class="row">
+                <div class="col-lg-5 col-sm-12"><%= t ".room_type" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= t @booking.room_type.name %></strong></div>
+                <div class="col-lg-5 col-sm-12"><%= t ".view_type" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= t view_type_name(@booking.view_type) %></strong></div>
+                <div class="col-lg-5 col-sm-12"><%= t ".amount" %></div>
+                <div class="col-lg-7 col-sm-12">
+                  <strong class="text-break"><%= @booking.amount %></strong>
+                  <i class="text-danger">(
+                    <% if ["confirmed", "completed"].include? @booking.status %>
+                      <% @booking.booked_rooms.each do |room| %>
+                        <%= room.room.name %>
+                      <% end %>
+                    <% elsif @availabel_rooms.length < @booking.amount %>
+                      <%= t ".no_room_left" %>
+                    <% else %>
+                      <%= t ".availabel_room", count: @availabel_rooms.length %>
+                    <% end %>
+                  )</i>
+                </div>
+                <div class="col-lg-5 col-sm-12"><%= t ".price" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= number_to_currency @booking.price %></strong></div>
+                <div class="col-lg-5 col-sm-12"><%= t ".num_of_night" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= @booking.num_of_night %></strong></div>
+                <div class="col-lg-5 col-sm-12"><%= t ".total" %></div>
+                <div class="col-lg-7 col-sm-12"><strong class="text-break"><%= number_to_currency @booking.total_price %></strong></div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="col-4 mb-5">
-        <div class="row ms-5">
-          <div class="col-2 d-flex justify-content-center align-items-start">
-            <div class="rounded-circle fa-3x mt-2">
-              <%= fa_stacked_icon "calendar", base: "circle-o", class: "text-secondary" %>
-            </div>
-          </div>
-          <div class="col-10">
-            <div class="card border-0">
-              <div class="card-body">
-                <h5 class="card-title"><%= t ".time" %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".book_day" %>: <%= l @booking.book_day, format: :short_date %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".check_in" %>: <%= l @booking.check_in, format: :short_date %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= t ".check_out" %>: <%= l @booking.check_out, format: :short_date %></h6>
+          <div class="row mt-auto w-100">
+            <div class="col-lg-4 col-sm-12">
+              <div class="row">
+                <h4 class="col-lg-5 col-sm-12"><%= t ".status" %></h4>
+                <div class="col-lg-7 col-sm-12"><%= show_tag_status @booking.status %></div>
               </div>
             </div>
+            <div class="col-lg-7 col-sm-12 d-flex flex-row justify-content-end">
+              <% if "pending" == @booking.status %>
+                <% if @availabel_rooms.length >= @booking.amount %>
+                  <button class="btn btn-success mx-2 p-3" data-bs-toggle="modal" data-bs-target="#assignRoomModal"><%= t ".btn_assign" %></button>
+                <% end %>
+                <button type="button" class="btn btn-danger mx-2 p-3" data-bs-toggle="modal" data-bs-target="#rejectModal">
+                  <%= t "rejected" %>
+                </button>
+              <% elsif "confirmed" == @booking.status %>
+                <%= link_to t(".btn_complete"), admin_booking_path(@booking, status: "completed"), data: {"turbo-method": :put}, class: "btn btn-info text-light mx-2 p-3" %>
+                <button type="button" class="btn btn-danger mx-2 p-3" data-bs-toggle="modal" data-bs-target="#rejectModal">
+                  <%= t "rejected" %>
+                </button>
+              <% end %>
+              <%= link_to t(".btn_back"), admin_bookings_path, class: "btn btn-secondary mx-2 p-3" %>
+            </div>
+            <% if @booking.status == "rejected" %>
+              <h6 class="mt-2 text-danger"><%= t ".reason" %>: <%= @booking.reason %></h6>
+            <% end %>
           </div>
         </div>
-      </div>
-
-      <div class="col-4 mb-5">
-        <div class="row ms-5">
-          <div class="col-2 d-flex justify-content-center align-items-start">
-            <div class="rounded-circle fa-3x mt-2">
-              <%= fa_stacked_icon "book", base: "circle-o", class: "text-danger" %>
-            </div>
-          </div>
-          <div class="col-10">
-            <div class="card border-0">
-              <div class="card-body">
-                <h5 class="card-title"><%= t ".note" %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><%= @booking.note %></h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4 mb-5">
-        <div class="row ms-5">
-          <div class="col-2 d-flex justify-content-center align-items-start">
-            <div class="rounded-circle fa-3x mt-2">
-              <%= fa_stacked_icon "bars", base: "circle-o", class: "text-success" %>
-            </div>
-          </div>
-          <div class="col-10">
-            <div class="card border-0">
-              <div class="card-body">
-                <h5 class="card-title"><%= t ".status" %></h5>
-                <h6 class="card-subtitle mb-2 text-muted">
-                  <%= show_tag_status @booking.status %>
-                  <% if @booking.status == "rejected" %>
-                    <br/>
-                    <%= t ".reason" %>: <%= @booking.reason %>
-                  <% end %>
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 text-end mb-2">
-
-        <button type="button" class="btn btn-success p-3 m-2" data-bs-toggle="modal" data-bs-target="#confirmModal">
-          <%= t "confirmed" %>
-        </button>
-
-        <button type="button" class="btn btn-danger p-3 m-2" data-bs-toggle="modal" data-bs-target="#rejectModal">
-          <%= t "rejected" %>
-        </button>
-
-        <%= link_to t(".btn_cancel"), admin_bookings_path, class: "btn btn-secondary p-3 m-2" %>
       </div>
     </div>
   </div>
 </div>
-
 
 <!-- Modal reject -->
 <div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -142,7 +122,7 @@
 
         <div class="modal-body">
             <%= f.label :reason, class: "form-label" %>:
-            <%= f.text_field :reason, class: "form-control" %>
+            <%= f.text_field :reason, class: "form-control", autofocus: true %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t ".btn_close" %></button>
@@ -154,23 +134,41 @@
 </div>
 
 <!-- Modal confirm -->
-<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="assignRoomModal" tabindex="-1" aria-labelledby="assignRoomModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><%= t "confirmed" %></h5>
+        <h5 class="modal-title" id="exampleModalLabel"><%= t ".btn_assign" %></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <%= form_for @booking, url: admin_booking_path do |f| %>
+      <%= form_with url: admin_booking_path(@booking), method: :put do |f| %>
 
         <%= f.hidden_field :status, value: :confirmed %>
 
-        <div class="modal-body">
-          <p><%= t ".confirm_text" %></p>
+        <div class="p-3">
+          <table class="table table-striped table-bordered" id="availabel_rooms_table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <input type="checkbox" id="check_box_all" class="form-check-input">
+                  <%= t ".check" %>
+                </th>
+                <th scope="col"><%= t ".name" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= f.collection_check_boxes :assigned_rooms, @availabel_rooms, :id, :name do |b| %>
+                <tr>
+                  <td><%= b.check_box class: "form-check-input" %></td>
+                  <td><%= b.label class: "form-check-label" %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t ".btn_close" %></button>
-          <%= f.submit t(".btn_save"), class: "btn btn-primary" %>
+          <%= f.submit t(".btn_save"), class: "btn btn-primary", data: {"turbo-confirm": t(".confirm_assign")} %>
         </div>
       <% end %>
     </div>
