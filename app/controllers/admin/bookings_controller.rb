@@ -34,7 +34,7 @@ class Admin::BookingsController < Admin::BaseController
   end
 
   def update_to_completed
-    @booking.update status: "completed"
+    @booking.update status: :completed, completed_at: DateTime.now
     flash[:success] = t ".flash_update_success"
     redirect_to admin_bookings_path
   end
@@ -44,7 +44,7 @@ class Admin::BookingsController < Admin::BaseController
     if assigned_rooms.length == @booking.amount
       ActiveRecord::Base.transaction do
         assign_rooms assigned_rooms
-        @booking.status = "confirmed"
+        @booking.status = :confirmed
         @booking.save!
         @booking.send_mail_booking
       end

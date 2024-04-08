@@ -1,8 +1,14 @@
 <div class="row border border-dark mb-3">
-  <h3 class="col-6 text-start border-bottom border-dark bg-primary" ><%= t ".code" %>: #<%= booking.id %></h3>
-  <h3 class="col-6 text-end border-bottom border-dark bg-primary"><%= t ".book_day" %>: <%= l booking.book_day, format: :short_date_time %></h3>
-  <h4 class="col-8 text-start"><%= t ".book_name" %>: <%= booking.full_name %></h4>
-  <h4 class="col-4 text-end"><%= t ".status" %>:
+  <h3 class="col-6 text-start border-bottom border-dark bg-primary">
+    <%= t ".code" %>: #<%= booking.id %>
+  </h3>
+  <h3 class="col-6 text-end border-bottom border-dark bg-primary">
+    <%= t ".book_day" %>: <%= l booking.book_day, format: :short_date_time %>
+  </h3>
+  <h4 class="col-6 text-start">
+    <%= t ".book_name" %>: <%= booking.full_name %>
+  </h4>
+  <h4 class="col-6 text-end"><%= t ".status" %>:
     <%= show_tag_status booking.status %>
   </h4>
   <div class="col-8 text-start row">
@@ -10,6 +16,8 @@
     <h4><%= t ".check_out" %>: <%= l booking.check_out, format: :short_date %></h4>
   </div>
   <div class="col-4 text-end d-flex align-items-end justify-content-end mb-4">
-    <%= link_to t(".view_detail"), booking_path(booking), data: {"turbo-method": :post}, class: "btn btn-link" %>
+    <%= link_to booking_path(booking), data: {"turbo-method": :post}, class: "btn btn-link", id: "detail-booking-#{booking.id}" do %>
+      <span><%= t ".view_detail" %></span>
+    <% end %>
   </div>
 </div>
