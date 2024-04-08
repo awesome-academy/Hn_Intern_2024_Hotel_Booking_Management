@@ -55,6 +55,15 @@ en:
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
       new:
         sign_up: "Sign up"
+      edit:
+        btn_update: "Update"
+        btn_back: "Back"
+        title: "Edit profile"
+        leave_blank: "(leave blank if you don't want to change it)"
+        require_cur_pass: "(we need your current password to confirm your changes)"
+        no_image: "No profile image"
+        btn_delete: "Delete"
+        confirm_delete: "Are you sure?"
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."

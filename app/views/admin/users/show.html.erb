@@ -6,7 +6,13 @@
       <div class="col-lg-4 col-sm-12">
         <div class="border-end">
           <div class="text-center mb-3">
-            <%= image_tag "img/carousel-2.jpg", class: "img-fluid p-3"%>
+            <% if @user.profile_image.attached? %>
+              <div class="text-center mb-3">
+                <%= image_tag @user.profile_image.variant(:thumb), alt: @user.full_name, class: "shadow" %>
+              </div>
+            <% else %>
+              <%= t ".no_image" %>
+            <% end %>
           </div>
           <div class="text-center">
             <h3><%= @user.full_name %></h3>

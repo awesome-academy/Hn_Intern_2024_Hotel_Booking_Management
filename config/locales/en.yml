@@ -52,6 +52,8 @@ en:
     activated: "Activated successfully"
     inactivated: "Inactivated successfully"
     can_not_perform: "Can not perform this action"
+    image_not_found: "Image not found"
+    delete_success: "Delete successfully"
 
   activerecord:
     models:
@@ -63,6 +65,8 @@ en:
         email: "Email"
         password: "Password"
         password_confirmation: "Password confirmation"
+        current_password: "Current password"
+        profile_image: "Profile image"
       booking:
         full_name: "Full name"
         email: "Email"
@@ -360,6 +364,7 @@ en:
         profile: "User's profile"
         created_at: "Created at"
         btn_back: "Back"
+        no_image: "No profile image"
 
   booking_mailer:
     confirm_booking:

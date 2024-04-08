@@ -32,7 +32,7 @@
               <div class="nav-item dropdown mx-5">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><%= t ".account" %></a>
               <div class="dropdown-menu rounded-0 m-0">
-                <%= link_to t(".profile"), "#", class: "dropdown-item" %>
+                <%= link_to t(".profile"), edit_user_registration_path, class: "dropdown-item" %>
                 <%= link_to t(".logout"), destroy_user_session_path, class: "dropdown-item", data: { "turbo-method": :delete } %>
               </div>
             </div>

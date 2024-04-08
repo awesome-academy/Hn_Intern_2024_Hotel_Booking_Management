@@ -55,6 +55,15 @@ vi:
       updated_but_not_signed_in: "Tài khoản của bạn đã được cập nhật thành công nhưng do mật khẩu của bạn đã bị thay đổi nên bạn cần đăng nhập lại."
       new:
         sign_up: "Đăng ký"
+      edit:
+        btn_update: "Cập nhật"
+        btn_back: "Quay lại"
+        title: "Cập nhật hồ sơ"
+        leave_blank: "(để trống nếu bạn không muốn thay đổi)"
+        require_cur_pass: "(nhập mật khẩu hiện tại của bạn để xác nhận những thay đổi của bạn)"
+        no_image: "Không có ảnh hồ sơ"
+        btn_delete: "Xóa"
+        confirm_delete: "Bạn chắc chắn xóa ảnh đại diện?"
     sessions:
       signed_in: "Đã đăng nhập thành công."
       signed_out: "Đăng xuất thành công."

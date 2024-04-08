@@ -20,10 +20,12 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "telephone": "Số điện thoại"
       },
       "user": {
+        "current_password": "Mật khẩu hiện tại",
         "email": "Email",
         "full_name": "Họ và tên",
         "password": "Mật khẩu",
-        "password_confirmation": "Xác nhận mật khẩu"
+        "password_confirmation": "Xác nhận mật khẩu",
+        "profile_image": "Ảnh hồ sơ"
       }
     },
     "errors": {
@@ -160,6 +162,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "email": "Email",
         "full_name": "Họ và tên",
         "id": "ID",
+        "no_image": "Không có ảnh hồ sơ",
         "profile": "Thông tin người dùng"
       }
     }
@@ -440,6 +443,16 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     },
     "registrations": {
       "destroyed": "Tạm biệt! Tài khoản của bạn đã được hủy thành công. Mong rằng chúng tôi sẽ sớm gặp lại bạn.",
+      "edit": {
+        "btn_back": "Quay lại",
+        "btn_delete": "Xóa",
+        "btn_update": "Cập nhật",
+        "confirm_delete": "Bạn chắc chắn xóa ảnh đại diện?",
+        "leave_blank": "(để trống nếu bạn không muốn thay đổi)",
+        "no_image": "Không có ảnh hồ sơ",
+        "require_cur_pass": "(nhập mật khẩu hiện tại của bạn để xác nhận những thay đổi của bạn)",
+        "title": "Cập nhật hồ sơ"
+      },
       "new": {
         "sign_up": "Đăng ký"
       },
@@ -77029,6 +77042,9 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     },
     "activated": "Kích hoạt thành công",
     "booking_not_found": "Không tìm thấy thông tin đặt phòng",
+    "can_not_perform": "Không thể thực hiện hành động",
+    "delete_success": "Xóa thành công",
+    "image_not_found": "Không tìm thấy ảnh",
     "inactivated": "Vô hiệu hóa thành công",
     "must_sign_in": "Vui lòng đăng nhập trước",
     "request_not_approved": "Yêu cầu không được duyệt",

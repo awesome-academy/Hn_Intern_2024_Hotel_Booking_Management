@@ -20,10 +20,12 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
         "telephone": "Telephone"
       },
       "user": {
+        "current_password": "Current password",
         "email": "Email",
         "full_name": "Full name",
         "password": "Password",
-        "password_confirmation": "Password confirmation"
+        "password_confirmation": "Password confirmation",
+        "profile_image": "Profile image"
       }
     },
     "errors": {
@@ -160,6 +162,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
         "email": "Email",
         "full_name": "Full name",
         "id": "ID",
+        "no_image": "No profile image",
         "profile": "User's profile"
       }
     }
@@ -473,6 +476,16 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     },
     "registrations": {
       "destroyed": "Bye! Your account has been successfully cancelled. We hope to see you again soon.",
+      "edit": {
+        "btn_back": "Back",
+        "btn_delete": "Delete",
+        "btn_update": "Update",
+        "confirm_delete": "Are you sure?",
+        "leave_blank": "(leave blank if you don't want to change it)",
+        "no_image": "No profile image",
+        "require_cur_pass": "(we need your current password to confirm your changes)",
+        "title": "Edit profile"
+      },
       "new": {
         "sign_up": "Sign up"
       },
@@ -77453,6 +77466,9 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     },
     "activated": "Activated successfully",
     "booking_not_found": "Booking not found",
+    "can_not_perform": "Can not perform this action",
+    "delete_success": "Delete successfully",
+    "image_not_found": "Image not found",
     "inactivated": "Inactivated successfully",
     "must_sign_in": "Please sign in first",
     "request_not_approved": "Request not approved",

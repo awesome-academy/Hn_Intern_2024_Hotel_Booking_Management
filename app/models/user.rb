@@ -36,6 +36,9 @@ class User < ApplicationRecord
   enum role: {user: 0, admin: 1}
 
   has_many :bookings, dependent: :destroy
+  has_one_attached :profile_image do |attachable|
+    attachable.variant :thumb, resize_to_fill: Settings.image_size.s_240x240
+  end
 
   def get_bookings
     bookings.newest
