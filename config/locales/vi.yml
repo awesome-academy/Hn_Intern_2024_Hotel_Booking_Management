@@ -336,13 +336,6 @@ vi:
         incorrect_num_of_assigned_room: "Số lượng phòng chỉ định chưa đúng"
         room_is_ordered: "Phòng %{name} đã được đặt"
 
-  user_mailer:
-    activate_account:
-      subject: "Kích hoạt tài khoản"
-      hi: "Xin chào"
-      welcome: "Chào mừng bạn đến với hệ thống khách sạn"
-      activate: "Kích hoạt tài khoản"
-
   booking_mailer:
     confirm_booking:
       subject: "Xác nhận yêu cầu đặt phòng"

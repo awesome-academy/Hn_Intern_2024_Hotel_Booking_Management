@@ -1,6 +1,6 @@
 # Update new
-User.create!(full_name: "ADMIN", email: "admin@gmail.com", password: "Admin123@", password_confirmation: "Admin123@", role: 1, activated: 1)
-User.create!(full_name: "test", email: "test@gmail.com", password: "Test123@", password_confirmation: "Test123@", role: 0, activated: 1)
+User.create!(full_name: "ADMIN", email: "admin@gmail.com", password: "Admin123@", password_confirmation: "Admin123@", role: 1)
+User.create!(full_name: "test", email: "tester@gmail.com", password: "Test123@", password_confirmation: "Test123@", role: 0)
 
 facility_names = ["wifi", "bed", "bath", "pool", "air_conditioner", "tv", "iron", "sofa"]
 facility_names.each do |name|

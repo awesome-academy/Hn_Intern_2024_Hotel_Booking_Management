@@ -336,13 +336,6 @@ en:
         incorrect_num_of_assigned_room: "The specified number of rooms is not correct"
         room_is_ordered: "Room %{name} is ordered"
 
-  user_mailer:
-    activate_account:
-      subject: "Account activation"
-      hi: "Hello"
-      welcome: "Welcome to the hotel system"
-      activate: "Active account"
-
   booking_mailer:
     confirm_booking:
       subject: "Confirm the booking request"

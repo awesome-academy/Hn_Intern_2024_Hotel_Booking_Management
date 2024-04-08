@@ -7,6 +7,7 @@ gem "font-awesome-rails"
 
 gem "active_storage_validations"
 gem "config"
+gem "devise"
 gem "faker"
 gem "figaro"
 gem "i18n-js", "~>3.9.2"

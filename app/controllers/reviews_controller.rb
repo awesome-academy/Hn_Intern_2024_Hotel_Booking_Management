@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :signed_in_user
+  before_action :authenticate_user!
   before_action :load_review, only: :update
 
   def create

@@ -9,15 +9,18 @@
     <%= javascript_importmap_tags %>
   </head>
   <body class="bg-white" data-locale="<%= I18n.locale %>">
-    <div class="container-xxl bg-white p-0">
-      <%= render "layouts/header" %>
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %> alert-dismissible fade show m-0" role="alert">
-          <%= message %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-      <% end %>
-      <%= yield %>
+    <div class="container-xxl p-0">
+      <div class="bg-white">
+        <%= render "layouts/header" %>
+        <% flash.each do |message_type, message| %>
+          <% x = message_type == "alert" ? "danger" : (message_type == "notice" ? "success" : message_type) %>
+          <div class="alert alert-<%= x %> alert-dismissible fade show m-0" role="alert">
+            <%= message %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        <% end %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
