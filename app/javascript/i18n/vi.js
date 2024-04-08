@@ -153,16 +153,19 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
   },
   "booking_mailer": {
     "confirm_booking": {
+      "amount": "Số lượng: %{amount}",
+      "assigned_rooms": "Phòng được giao:",
       "book_day": "Ngày đặt: %{book_day}",
       "check_in": "Ngày nhận phòng: %{check_in}",
       "check_out": "Ngày trả phòng: %{check_out}",
       "contact": "Nếu bạn có thắc mắc nào xin hãy liên hệ với chúng tôi qua số %{phone} hoặc qua email %{email}",
       "dear": "Kính gửi %{full_name},",
+      "num_guest": "Số khách: %{num_guest}",
       "respect_inform": "Chúng tôi xin trân trọng thông báo rằng yêu cầu đặt phòng (mã: #%{code}) của bạn đã được chấp nhận. Dưới đây là một số thông tin liên quan:",
-      "room_name": "Tên phòng: %{room_name}",
       "room_type": "Loại phòng: %{room_type}",
       "subject": "Xác nhận yêu cầu đặt phòng",
-      "thanks": "Cảm ơn bạn đã chọn khách sạn của chúng tôi và chúng tôi rất mong chờ được phục vụ bạn trong chuyến đi tới."
+      "thanks": "Cảm ơn bạn đã chọn khách sạn của chúng tôi và chúng tôi rất mong chờ được phục vụ bạn trong chuyến đi tới.",
+      "view_type": "Quang cảnh: %{view_type}"
     },
     "reject_booking": {
       "aplogize": "Chúng tôi rất tiếc vì sự bất tiện này và hy vọng bạn sẽ tìm được sự thoải mái và thuận lợi ở các lựa chọn khác.",
@@ -76871,6 +76874,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
   "flash": {
     "booking_not_found": "Không tìm thấy thông tin đặt phòng",
     "must_sign_in": "Vui lòng đăng nhập trước",
+    "request_not_approved": "Yêu cầu không được duyệt",
     "require_admin": "Chỉ admin mới được thực hiện",
     "room_not_found": "Không tìm thấy phòng"
   },

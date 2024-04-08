@@ -46,6 +46,7 @@ class Admin::BookingsController < Admin::BaseController
         assign_rooms assigned_rooms
         @booking.status = "confirmed"
         @booking.save!
+        @booking.send_mail_booking
       end
       flash[:success] = t ".flash_update_success"
       redirect_to admin_bookings_path
@@ -77,6 +78,7 @@ class Admin::BookingsController < Admin::BaseController
   def update_booking
     if @booking.update booking_params
       flash[:success] = t ".flash_update_success"
+      @booking.send_mail_booking
       redirect_to admin_bookings_path
     else
       @booking.reload

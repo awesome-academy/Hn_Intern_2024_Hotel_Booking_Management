@@ -1,4 +1,6 @@
 class BookingMailer < ApplicationMailer
+  extend RoomsHelper
+
   def confirm_booking booking
     @booking = booking
 

@@ -153,16 +153,19 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
   },
   "booking_mailer": {
     "confirm_booking": {
+      "amount": "Amount: %{amount}",
+      "assigned_rooms": "Assigned room(s):",
       "book_day": "Book day: %{book_day}",
       "check_in": "Check in: %{check_in}",
       "check_out": "Check out: %{check_out}",
       "contact": "Should you have any questions or concerns, please do not hesitate to contact us via this phone number %{phone} or email %{email}",
       "dear": "Dear %{full_name},",
+      "num_guest": "Guests: %{num_guest}",
       "respect_inform": "We are pleased to inform you that your room reservation request (code: #%{code}) has been received and is being processed. Below are some relevant details:",
-      "room_name": "Room name: %{room_name}",
       "room_type": "Room type: %{room_type}",
       "subject": "Confirm the booking request",
-      "thanks": "Thank you for choosing our hotel, and we look forward to serving you on your upcoming trip."
+      "thanks": "Thank you for choosing our hotel, and we look forward to serving you on your upcoming trip.",
+      "view_type": "View: %{view_type}"
     },
     "reject_booking": {
       "aplogize": "We apologize for the inconvenience and hope you find suitable alternatives for your stay.",
@@ -77295,6 +77298,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
   "flash": {
     "booking_not_found": "Booking not found",
     "must_sign_in": "Please sign in first",
+    "request_not_approved": "Request not approved",
     "require_admin": "Only admins can do this",
     "room_not_found": "Room not found"
   },

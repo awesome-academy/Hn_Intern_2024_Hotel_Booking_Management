@@ -1,11 +1,15 @@
 <%= t ".dear", full_name: @booking.full_name  %>
 <%= t ".respect_inform", code: @booking.id %>
-
-<%= t ".book_day", book_day: l(@booking.book_day, format: :short_date_time) %>
-<%= t ".check_in", check_in: l(@booking.check_in, format: :short_date) %>
-<%= t ".check_out", check_out: l(@booking.check_out, format: :short_date) %>
-<%= t ".room_name", room_name: @booking.room.name %>
-<%= t ".room_type", room_type: t(@booking.room.room_type) %>
-
+  <%= t ".book_day", book_day: l(@booking.book_day, format: :short_date_time) %>
+  <%= t ".check_in", check_in: l(@booking.check_in, format: :short_date) %>
+  <%= t ".check_out", check_out: l(@booking.check_out, format: :short_date) %>
+  <%= t ".view_type", view_type: t(BookingMailer.view_type_name(@booking.view_type)) %>
+  <%= t ".room_type", room_type: t(@booking.room_type.name) %>
+  <%= t ".amount", amount: @booking.amount %>
+  <%= t ".num_guest", num_guest: @booking.num_guest %>
+<%= t ".assigned_rooms" %>
+<% @booking.rooms.each do |r| %>
+  <%= r.name %>
+<% end %>
 <%= t ".contact", phone: Settings.hotel.phone, email: Settings.hotel.email %>
 <%= t ".thanks" %>

@@ -36,3 +36,4 @@ config/environments/*.local.yml
 /config/application.yml
 config/credentials.yml.enc
 /coverage
+/dump.rdb
