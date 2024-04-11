@@ -23,6 +23,9 @@ class BookingsController < ApplicationController
   def create
     if save_booking
       flash[:success] = t ".flash_create_success"
+      AutoCheckBookingJob.perform_at(
+        Settings.auto_check_booking_delay.seconds.from_now, @booking.id
+      )
       redirect_to root_path
     else
       @room_type = RoomType.find_by id: @booking.room_type_id

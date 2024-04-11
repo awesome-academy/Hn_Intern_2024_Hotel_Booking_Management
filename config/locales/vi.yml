@@ -43,6 +43,8 @@ vi:
     must_sign_in: "Vui lòng đăng nhập trước"
     booking_not_found: "Không tìm thấy thông tin đặt phòng"
     require_admin: "Chỉ admin mới được thực hiện"
+    request_not_approved: "Yêu cầu không được duyệt"
+
 
   activerecord:
     models:
@@ -321,8 +323,11 @@ vi:
       book_day: "Ngày đặt: %{book_day}"
       check_in: "Ngày nhận phòng: %{check_in}"
       check_out: "Ngày trả phòng: %{check_out}"
-      room_name: "Tên phòng: %{room_name}"
+      view_type: "Quang cảnh: %{view_type}"
       room_type: "Loại phòng: %{room_type}"
+      amount: "Số lượng: %{amount}"
+      num_guest: "Số khách: %{num_guest}"
+      assigned_rooms: "Phòng được giao:"
       contact: "Nếu bạn có thắc mắc nào xin hãy liên hệ với chúng tôi qua số %{phone} hoặc qua email %{email}"
       thanks: "Cảm ơn bạn đã chọn khách sạn của chúng tôi và chúng tôi rất mong chờ được phục vụ bạn trong chuyến đi tới."
     reject_booking:

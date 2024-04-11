@@ -43,6 +43,7 @@ en:
     must_sign_in: "Please sign in first"
     booking_not_found: "Booking not found"
     require_admin: "Only admins can do this"
+    request_not_approved: "Request not approved"
 
   activerecord:
     models:
@@ -321,8 +322,11 @@ en:
       book_day: "Book day: %{book_day}"
       check_in: "Check in: %{check_in}"
       check_out: "Check out: %{check_out}"
-      room_name: "Room name: %{room_name}"
+      view_type: "View: %{view_type}"
       room_type: "Room type: %{room_type}"
+      amount: "Amount: %{amount}"
+      num_guest: "Guests: %{num_guest}"
+      assigned_rooms: "Assigned room(s):"
       contact: "Should you have any questions or concerns, please do not hesitate to contact us via this phone number %{phone} or email %{email}"
       thanks: "Thank you for choosing our hotel, and we look forward to serving you on your upcoming trip."
     reject_booking:

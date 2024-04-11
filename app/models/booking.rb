@@ -4,6 +4,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :room_type
   has_many :booked_rooms, dependent: :destroy
+  has_many :rooms, through: :booked_rooms, source: :room
 
   validates :full_name, :check_in, :check_out, presence: true
   validates :email, presence: true,
@@ -24,7 +25,7 @@ class Booking < ApplicationRecord
     pending?
   end
 
-  def send_mail_confirm
+  def send_mail_booking
     if confirmed?
       BookingMailer.confirm_booking(self).deliver_now
     elsif rejected?

@@ -10,3 +10,4 @@ regexs:
 hotel:
   phone: 024-6666-8888
   email: hotelier@gmail.com
+auto_check_booking_delay: 30
