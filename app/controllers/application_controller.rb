@@ -30,10 +30,10 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin
-    return if current_user&.admin?
+    return if current_user.try(:admin?)
 
-    flash[:warning] = t "flash.require_admin"
-    redirect_to root_path
+    redirect_to root_path,
+                alert: t("flash.require_admin")
   end
 
   private

@@ -35,6 +35,9 @@ en:
   double_room: "Double room"
   triple_room: "Triple room"
 
+  inactive: "Inactive"
+  active: "Active"
+
   bed_type:
     single: "single bed"
     double: "double bed"
@@ -45,6 +48,10 @@ en:
     booking_not_found: "Booking not found"
     require_admin: "Only admins can do this"
     request_not_approved: "Request not approved"
+    user_not_found: "User not found"
+    activated: "Activated successfully"
+    inactivated: "Inactivated successfully"
+    can_not_perform: "Can not perform this action"
 
   activerecord:
     models:
@@ -335,6 +342,24 @@ en:
         flash_update_danger: "Update failed"
         incorrect_num_of_assigned_room: "The specified number of rooms is not correct"
         room_is_ordered: "Room %{name} is ordered"
+
+    users:
+      index:
+        filter: "Filter"
+        id: "ID"
+        full_name: "Full name"
+        email: "Email"
+        activated: "Status"
+        list_user: "List user"
+        action: "Action"
+      show:
+        id: "ID"
+        full_name: "Full name"
+        email: "Email"
+        activated: "Status"
+        profile: "User's profile"
+        created_at: "Created at"
+        btn_back: "Back"
 
   booking_mailer:
     confirm_booking:

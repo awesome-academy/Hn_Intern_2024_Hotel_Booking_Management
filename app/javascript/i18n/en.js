@@ -7,6 +7,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "flash_edit_success": "Kích hoạt tài khoản thành công"
     }
   },
+  "active": "Active",
   "activerecord": {
     "attributes": {
       "booking": {
@@ -140,6 +141,26 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
         "title": "Admin",
         "user": "User",
         "vietnamese": "Vietnamese"
+      }
+    },
+    "users": {
+      "index": {
+        "action": "Action",
+        "activated": "Status",
+        "email": "Email",
+        "filter": "Filter",
+        "full_name": "Full name",
+        "id": "ID",
+        "list_user": "List user"
+      },
+      "show": {
+        "activated": "Status",
+        "btn_back": "Back",
+        "created_at": "Created at",
+        "email": "Email",
+        "full_name": "Full name",
+        "id": "ID",
+        "profile": "User's profile"
       }
     }
   },
@@ -77430,11 +77451,14 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
         "notice": "%{resource_name} was successfully updated."
       }
     },
+    "activated": "Activated successfully",
     "booking_not_found": "Booking not found",
+    "inactivated": "Inactivated successfully",
     "must_sign_in": "Please sign in first",
     "request_not_approved": "Request not approved",
     "require_admin": "Only admins can do this",
-    "room_not_found": "Room not found"
+    "room_not_found": "Room not found",
+    "user_not_found": "User not found"
   },
   "helpers": {
     "select": {
@@ -77454,6 +77478,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       ]
     }
   },
+  "inactive": "Inactive",
   "iron": "Iron",
   "layouts": {
     "header": {
