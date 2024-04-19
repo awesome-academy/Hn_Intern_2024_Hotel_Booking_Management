@@ -201,18 +201,32 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "flash_destroy_success": "Hủy đặt phòng thành công"
     },
     "detail": {
+      "amount": "Số phòng",
       "book_day": "Ngày tạo",
       "book_name": "Người đặt",
       "button_cancel": "Hủy đặt phòng",
       "code": "Mã",
+      "comment": "Bình luận",
       "confirm_cancel": "Bạn chắc chắn hủy đặt phòng?",
+      "edit": "Sửa",
       "email": "Email",
       "note": "Ghi chú",
+      "num_guest": "Số khách",
+      "num_of_night": "Số đêm lưu trú",
+      "order_info": "Thông tin người đặt",
       "price": "Đơn giá",
+      "rating": "Xếp hạng",
       "reason": "Lý do từ chối",
+      "request_info": "Thông tin đặt phòng",
+      "review": "Đánh giá",
       "room": "Phòng",
+      "room_type": "Kiểu phòng",
+      "status": "Trạng thái",
       "telephone": "Số điện thoại",
-      "title": "Chi tiết đặt phòng"
+      "title": "Chi tiết đặt phòng",
+      "total": "Tổng cộng",
+      "update": "Cập nhật",
+      "view_type": "Quang cảnh"
     },
     "errors": {
       "booked_room": "đã được đặt. Vui lòng chọn thời gian khác",
@@ -221,7 +235,12 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "require_reason": "chưa có lý do từ chối"
     },
     "index": {
+      "book_day": "Ngày đặt",
+      "code": "Mã",
+      "filter": "Lọc",
       "no_booking_request": "Chưa có yêu cầu nào",
+      "sort": "Sắp xếp",
+      "status": "Trạng thái",
       "title": "Danh sách đặt phòng",
       "total": "Tổng"
     },
@@ -253,6 +272,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "you_select": "Bạn đã chọn"
     }
   },
+  "completed": "Hoàn thành",
   "confirmed": "Chấp nhận",
   "date": {
     "abbr_day_names": [
@@ -77195,6 +77215,14 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     "value": "value"
   },
   "rejected": "Từ chối",
+  "reviews": {
+    "cannot_review": "Không thể đánh giá vì chưa thanh toán hoặc hết thời gian đánh giá",
+    "create_failed": "Tạo đánh giá thất bại. Vui lòng thử lại",
+    "create_success": "Tạo đánh giá thành công. Xin cảm ơn",
+    "please_enter_comment": "Vui lòng nhập bình luận",
+    "update_failed": "Cập nhật thất bại",
+    "update_success": "Cập nhật thành công"
+  },
   "rooms": {
     "check_available": {
       "available_room": "Phòng trống từ ngày %{ci} đến %{co}",

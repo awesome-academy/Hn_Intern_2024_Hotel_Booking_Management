@@ -6,6 +6,7 @@ import "./custom/bootstrap.bundle.min.js";
 import "./custom/main";
 import "./custom/booking";
 import "./custom/admin/booking"
+import "./custom/review";
 import I18n from "i18n-js";
 import "i18n/en";
 import "i18n/vi";

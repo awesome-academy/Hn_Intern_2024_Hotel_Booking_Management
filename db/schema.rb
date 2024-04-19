@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_01_065637) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_09_092256) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -66,6 +66,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_01_065637) do
     t.integer "view_type", null: false
     t.integer "amount", null: false
     t.float "price"
+    t.datetime "completed_at"
     t.index ["user_id", "created_at"], name: "index_bookings_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -75,6 +76,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_01_065637) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_facilities_on_name"
+  end
+
+  create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "booking_id", null: false
+    t.integer "rating", default: 5, null: false
+    t.string "comment", null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "room_type_facilities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -125,6 +136,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_01_065637) do
   add_foreign_key "booked_rooms", "bookings"
   add_foreign_key "booked_rooms", "rooms"
   add_foreign_key "bookings", "users"
+  add_foreign_key "reviews", "bookings"
   add_foreign_key "room_type_facilities", "facilities"
   add_foreign_key "room_type_facilities", "room_types"
   add_foreign_key "rooms", "room_types"

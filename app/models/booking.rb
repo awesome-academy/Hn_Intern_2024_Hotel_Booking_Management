@@ -5,6 +5,7 @@ class Booking < ApplicationRecord
   belongs_to :room_type
   has_many :booked_rooms, dependent: :destroy
   has_many :rooms, through: :booked_rooms, source: :room
+  has_one :review, dependent: :destroy
 
   validates :full_name, :check_in, :check_out, presence: true
   validates :email, presence: true,
@@ -23,6 +24,10 @@ class Booking < ApplicationRecord
 
   def can_be_deleted?
     pending?
+  end
+
+  def can_be_reviewed?
+    completed? && left_time_to_review? && review.nil?
   end
 
   def send_mail_booking
@@ -82,5 +87,9 @@ class Booking < ApplicationRecord
 
   def clear_reason_if_not_rejected
     self.reason = nil unless rejected?
+  end
+
+  def left_time_to_review?
+    (Time.zone.now - completed_at) <= Settings.time_to_review_minutes.minutes
   end
 end

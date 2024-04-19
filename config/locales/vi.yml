@@ -24,6 +24,7 @@ vi:
   pending: "Đang chờ"
   confirmed: "Chấp nhận"
   rejected: "Từ chối"
+  completed: "Hoàn thành"
 
   balcony: "Ban công"
   mountain: "Núi"
@@ -44,7 +45,6 @@ vi:
     booking_not_found: "Không tìm thấy thông tin đặt phòng"
     require_admin: "Chỉ admin mới được thực hiện"
     request_not_approved: "Yêu cầu không được duyệt"
-
 
   activerecord:
     models:
@@ -183,6 +183,11 @@ vi:
       title: "Danh sách đặt phòng"
       total: "Tổng"
       no_booking_request: "Chưa có yêu cầu nào"
+      filter: "Lọc"
+      sort: "Sắp xếp"
+      code: "Mã"
+      book_day: "Ngày đặt"
+      status: "Trạng thái"
     booking:
       code: "MÃ"
       book_day: "Ngày đặt"
@@ -220,6 +225,29 @@ vi:
       button_cancel: "Hủy đặt phòng"
       confirm_cancel: "Bạn chắc chắn hủy đặt phòng?"
       reason: "Lý do từ chối"
+      order_info: "Thông tin người đặt"
+      request_info: "Thông tin đặt phòng"
+      num_guest: "Số khách"
+      room_type: "Kiểu phòng"
+      view_type: "Quang cảnh"
+      amount: "Số phòng"
+      num_of_night: "Số đêm lưu trú"
+      total: "Tổng cộng"
+      status: "Trạng thái"
+      review: "Đánh giá"
+      rating: "Xếp hạng"
+      comment: "Bình luận"
+      update: "Cập nhật"
+      edit: "Sửa"
+
+  reviews:
+    create_success: "Tạo đánh giá thành công. Xin cảm ơn"
+    create_failed: "Tạo đánh giá thất bại. Vui lòng thử lại"
+    update_success: "Cập nhật thành công"
+    update_failed: "Cập nhật thất bại"
+    please_enter_comment: "Vui lòng nhập bình luận"
+    cannot_review: "Không thể đánh giá vì chưa thanh toán hoặc hết thời gian đánh giá"
+    review_not_found: "Không tìm thấy đánh giá"
 
   account_activations:
     edit:

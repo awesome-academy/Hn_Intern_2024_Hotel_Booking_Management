@@ -201,18 +201,32 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "flash_destroy_success": "Booking canceled successfully"
     },
     "detail": {
+      "amount": "Amount",
       "book_day": "Date created",
       "book_name": "Order's name",
       "button_cancel": "Cancel booking",
       "code": "Code",
+      "comment": "Comment",
       "confirm_cancel": "Are you sure to cancel the booking?",
+      "edit": "Edit",
       "email": "Email",
       "note": "Note",
+      "num_guest": "Guests",
+      "num_of_night": "Length of stay",
+      "order_info": "Order's info",
       "price": "Price",
+      "rating": "Rating",
       "reason": "Reason for rejection",
+      "request_info": "Request's info",
+      "review": "Review",
       "room": "Room",
+      "room_type": "Room type",
+      "status": "Status",
       "telephone": "Telephone",
-      "title": "Booking details"
+      "title": "Booking details",
+      "total": "Total",
+      "update": "Update",
+      "view_type": "View"
     },
     "errors": {
       "booked_room": "is booked. Please choose another time",
@@ -221,7 +235,12 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "require_reason": "no reason for rejection"
     },
     "index": {
+      "book_day": "Book day",
+      "code": "Code",
+      "filter": "Filter",
       "no_booking_request": "There are no requests yet",
+      "sort": "Sort",
+      "status": "Status",
       "title": "Booking list",
       "total": "Total"
     },
@@ -253,6 +272,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "you_select": "You selected"
     }
   },
+  "completed": "Completed",
   "confirmed": "Accept",
   "date": {
     "abbr_day_names": [
@@ -77482,6 +77502,14 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     "value": "value"
   },
   "rejected": "Reject",
+  "reviews": {
+    "cannot_review": "Can't rate because payment hasn't been made or the review time has expired",
+    "create_failed": "Failed to create review. Please try again",
+    "create_success": "Review created successfully. Thank you",
+    "please_enter_comment": "Please enter your comment",
+    "update_failed": "Update failed",
+    "update_success": "Update successfully"
+  },
   "rooms": {
     "check_available": {
       "available_room": "This room is available from %{ci} to %{co}",

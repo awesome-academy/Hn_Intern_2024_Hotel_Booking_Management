@@ -24,6 +24,7 @@ en:
   pending: "Pending"
   confirmed: "Accept"
   rejected: "Reject"
+  completed: "Completed"
 
   balcony: "Balcony"
   mountain: "Mountain"
@@ -182,6 +183,11 @@ en:
       title: "Booking list"
       total: "Total"
       no_booking_request: "There are no requests yet"
+      filter: "Filter"
+      sort: "Sort"
+      code: "Code"
+      book_day: "Book day"
+      status: "Status"
     booking:
       code: "CODE"
       book_day: "Book day"
@@ -219,6 +225,29 @@ en:
       button_cancel: "Cancel booking"
       confirm_cancel: "Are you sure to cancel the booking?"
       reason: "Reason for rejection"
+      order_info: "Order's info"
+      request_info: "Request's info"
+      num_guest: "Guests"
+      room_type: "Room type"
+      view_type: "View"
+      amount: "Amount"
+      num_of_night: "Length of stay"
+      total: "Total"
+      status: "Status"
+      review: "Review"
+      rating: "Rating"
+      comment: "Comment"
+      update: "Update"
+      edit: "Edit"
+
+  reviews:
+    create_success: "Review created successfully. Thank you"
+    create_failed: "Failed to create review. Please try again"
+    update_success: "Update successfully"
+    update_failed: "Update failed"
+    please_enter_comment: "Please enter your comment"
+    cannot_review: "Can't rate because payment hasn't been made or the review time has expired"
+    review_not_found: "Review not found"
 
   account_activations:
     edit:

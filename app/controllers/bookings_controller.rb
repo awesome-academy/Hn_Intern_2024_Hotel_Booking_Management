@@ -4,7 +4,9 @@ class BookingsController < ApplicationController
   before_action :create_booking, only: :create
 
   def index
-    @pagy, @bookings = pagy current_user.get_bookings,
+    @q = current_user.bookings.ransack(params[:q])
+    @q.sorts = ["status asc", "id desc"] if @q.sorts.empty?
+    @pagy, @bookings = pagy @q.result,
                             items: Settings.digits.digit_3
   end
 

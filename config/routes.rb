@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     post "bookings/:id", to: "bookings#show", as: "booking"
     resources :bookings, except: :show
 
+    resource :reviews, only: %i(create update)
+
     namespace :admin do
       get "dashboard", to: "dashboard#index"
       resources "bookings", only: %i(index show update)
