@@ -19,6 +19,11 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
         "reason": "Reason for rejection",
         "telephone": "Telephone"
       },
+      "room": {
+        "name": "Name",
+        "room_type_id": "Room type",
+        "view_type": "View type"
+      },
       "user": {
         "current_password": "Current password",
         "email": "Email",
@@ -55,6 +60,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     },
     "models": {
       "booking": "Booking",
+      "room": "Room",
       "user": "User"
     }
   },
@@ -123,6 +129,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       "index": {
         "booking_request": "Booking request list",
         "manage_room": "Room management",
+        "manage_room_type": "Room type management",
         "manage_user": "User management",
         "review_request": "Review list",
         "statistic": "Statistic",
@@ -138,11 +145,76 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
         "language": "Language",
         "logout": "Log out",
         "manage": "Manage",
+        "profile": "Profile",
         "room": "Room",
+        "room_type": "Room type",
         "statistic": "Statistic",
         "title": "Admin",
         "user": "User",
         "vietnamese": "Vietnamese"
+      }
+    },
+    "room_types": {
+      "index": {
+        "action": "Action",
+        "filter": "Filter",
+        "id": "ID",
+        "list_room_type": "List room type",
+        "name": "Name",
+        "num_of_bed": "Num of bed",
+        "price": "Price",
+        "price_max": "Price max",
+        "price_min": "Price min",
+        "size_of_bed": "Size of bed",
+        "status": "Status"
+      },
+      "show": {
+        "add_image": "Add image",
+        "btn_delete": "Delete",
+        "btn_update": "Update",
+        "confirm_delete": "Are you sure?",
+        "created_at": "Created at",
+        "demo_image": "Demo images",
+        "facilities": "Facilities",
+        "name": "Name",
+        "no_image": "No image to show",
+        "num_of_bed": "Num of bed",
+        "rooms": "Rooms",
+        "size_of_bed": "Size of bed",
+        "status": "Status",
+        "title": "Detail of room type"
+      }
+    },
+    "rooms": {
+      "index": {
+        "action": "Action",
+        "add_new": "Add new room",
+        "created_at": "Created at",
+        "created_at_from": "Created at from",
+        "created_at_to": "To",
+        "filter": "Filter",
+        "id": "ID",
+        "list_room": "List room",
+        "name": "Name",
+        "room_type": "Room type",
+        "status": "Status",
+        "view_type": "View type"
+      },
+      "new": {
+        "btn_add": "Add new",
+        "title": "Add new room"
+      },
+      "show": {
+        "btn_update": "Update",
+        "created_at": "Created at",
+        "demo_image": "Demo images",
+        "facilities": "Facilities",
+        "name": "Name",
+        "no_image": "No image to show",
+        "room_type": "Room type",
+        "status": "Status",
+        "title": "Detail of room",
+        "view_type": "View type"
       }
     },
     "users": {
@@ -77465,6 +77537,8 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       }
     },
     "activated": "Activated successfully",
+    "add_failed": "Add failed",
+    "add_success": "Add successfully",
     "booking_not_found": "Booking not found",
     "can_not_perform": "Can not perform this action",
     "delete_success": "Delete successfully",
@@ -77474,6 +77548,8 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     "request_not_approved": "Request not approved",
     "require_admin": "Only admins can do this",
     "room_not_found": "Room not found",
+    "update_failed": "Update failed",
+    "update_success": "Update successfully",
     "user_not_found": "User not found"
   },
   "helpers": {

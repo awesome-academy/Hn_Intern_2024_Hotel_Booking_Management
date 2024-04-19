@@ -1,0 +1,111 @@
+<div class="container mt-5 w-100">
+  <div class="px-5">
+    <h1 class="text-center p-3"><%= t ".title" %></h1>
+    <div class="shadow">
+
+      <%= form_for @room_type, url: admin_room_type_path do |f| %>
+        <div class="row mb-3">
+          <div class="col-lg-4 col-sm-12">
+            <div id="room_type_images" class="carousel slide" data-bs-ride="carousel">
+
+              <% if @room_type.images.attached? %>
+                <h5 class="text-center"><%= t ".demo_image" %></h5>
+                <div class="carousel-inner">
+                  <% @room_type.images.each_with_index do |image, index| %>
+                    <div class="carousel-item <%= "active" if index == 0 %>">
+                      <%= f.hidden_field :images, multiple: true, value: image.signed_id %>
+                      <div class="text-center">
+                        <%= image_tag image.variant(:display), class: "w-100"%>
+                        <%= link_to t(".btn_delete"), admin_remove_image_path(image), data: {turbo_method: :delete, turbo_confirm: t(".confirm_delete")} %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#room_type_images"
+                                data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#room_type_images"
+                                data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              <% else %>
+                <%= t ".no_image" %>
+              <% end %>
+
+            </div>
+            <label><%= t ".add_image" %></label>
+            <%= f.file_field :images, multiple: true, class: "form-control" %>
+          </div>
+          <div class="col-lg-8 col-sm-12">
+            <div class="m-3">
+              <div>
+                <div class="row row-cols-lg-2 row-cols-sm-1 w-100">
+                  <div class="mb-3">
+                    <div class="col"><strong><%= t ".name" %></strong></div>
+                    <div class="col"><%= t @room_type.name %></div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="col"><strong><%= t ".num_of_bed" %></strong></div>
+                    <div class="col"><%= @room_type.num_of_bed %></div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="col"><strong><%= t ".created_at" %></strong></div>
+                    <div class="col"><%= l @room_type.created_at, format: :short_date %></div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="col"><strong><%= t ".size_of_bed" %></strong></div>
+                    <div class="col"><%= t "bed_type.#{@room_type.size_of_bed}" %></div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="col"><strong><%= t ".status" %></strong></div>
+                    <div class="col">
+                      <%= show_tag_status_room @room_type.status %>
+                      <%= show_button_status_room_type @room_type %>
+                    </div>
+                  </div>
+
+                  <div class="mb-3"></div>
+                  <div class="mb-3">
+                    <div class="col"><strong><%= t ".facilities" %></strong></div>
+                    <div class="row row-cols-3">
+                      <%= f.collection_check_boxes :facility_ids, @facilities, :id, :name do |ff| %>
+                        <div>
+                          <%= ff.check_box %>
+                          <%= ff.label do %>
+                            <%= t ff.object.name %>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+
+                  <div class="mb-3"></div>
+                  <div class="mb-3">
+                    <div class="col"><strong><%= t ".rooms" %></strong></div>
+                    <div class="row row-cols-4">
+                      <% @room_type.rooms.each do |r| %>
+                        <div>
+                          <%= link_to r.name, admin_room_path(r), class: "text-info text-decoration-underline" %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mb-3 p-3">
+          <%= f.submit t(".btn_update"), class: "w-50 btn btn-info" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

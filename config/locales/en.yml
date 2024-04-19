@@ -54,11 +54,18 @@ en:
     can_not_perform: "Can not perform this action"
     image_not_found: "Image not found"
     delete_success: "Delete successfully"
+    update_success: "Update successfully"
+    update_failed: "Update failed"
+    add_success: "Add successfully"
+    add_failed: "Add failed"
+    room_is_busy: "Can not inactive this room, because it is being booked."
+    some_room_is_busy: "Can not inactive this type room, because there exists some rooms being booked"
 
   activerecord:
     models:
       user: "User"
       booking: "Booking"
+      room: "Room"
     attributes:
       user:
         full_name: "Full name"
@@ -75,6 +82,10 @@ en:
         check_in: "Check in"
         check_out: "Check out"
         reason: "Reason for rejection"
+      room:
+        name: "Name"
+        view_type: "View type"
+        room_type_id: "Room type"
     errors:
       models:
         user:
@@ -281,12 +292,15 @@ en:
         account: "Account"
         logout: "Log out"
         booking_request: "Booking request list"
+        room_type: "Room type"
+        profile: "Profile"
 
     dashboard:
       index:
         welcome: "Welcome to the admin page!"
         manage_user: "User management"
         manage_room: "Room management"
+        manage_room_type: "Room type management"
         booking_request: "Booking request list"
         review_request: "Review list"
         statistic: "Statistic"
@@ -365,6 +379,64 @@ en:
         created_at: "Created at"
         btn_back: "Back"
         no_image: "No profile image"
+
+    room_types:
+      index:
+        filter: "Filter"
+        id: "ID"
+        name: "Name"
+        status: "Status"
+        price_min: "Price min"
+        price_max: "Price max"
+        size_of_bed: "Size of bed"
+        list_room_type: "List room type"
+        price: "Price"
+        num_of_bed: "Num of bed"
+        action: "Action"
+      show:
+        title: "Detail of room type"
+        demo_image: "Demo images"
+        btn_delete: "Delete"
+        confirm_delete: "Are you sure?"
+        no_image: "No image to show"
+        add_image: "Add image"
+        name: "Name"
+        num_of_bed: "Num of bed"
+        created_at: "Created at"
+        size_of_bed: "Size of bed"
+        status: "Status"
+        facilities: "Facilities"
+        rooms: "Rooms"
+        btn_update: "Update"
+
+    rooms:
+      index:
+        filter: "Filter"
+        add_new: "Add new room"
+        id: "ID"
+        name: "Name"
+        view_type: "View type"
+        room_type: "Room type"
+        created_at_from: "Created at from"
+        created_at_to: "To"
+        created_at: "Created at"
+        status: "Status"
+        list_room: "List room"
+        action: "Action"
+      show:
+        title: "Detail of room"
+        demo_image: "Demo images"
+        no_image: "No image to show"
+        name: "Name"
+        view_type: "View type"
+        room_type: "Room type"
+        created_at: "Created at"
+        status: "Status"
+        facilities: "Facilities"
+        btn_update: "Update"
+      new:
+        title: "Add new room"
+        btn_add: "Add new"
 
   booking_mailer:
     confirm_booking:

@@ -1,0 +1,16 @@
+<tr>
+  <th scope="row">
+    <%= link_to room_type.id, admin_room_type_path(room_type), class: "text-decoration-underline" %>
+  </th>
+  <td><%= t room_type.name %></td>
+  <td><%= number_to_currency room_type.price %></td>
+  <td><%= room_type.num_of_bed %></td>
+  <td><%= t "bed_type.#{room_type.size_of_bed}" %></td>
+  <td><%= show_tag_status_room room_type.status %></td>
+  <td>
+    <%= link_to admin_room_type_path(room_type), class: "btn btn-primary rounded-circle" do %>
+      <%= fa_icon "eye" %>
+    <% end %>
+    <%= show_button_status_room_type room_type %>
+  </td>
+</tr>

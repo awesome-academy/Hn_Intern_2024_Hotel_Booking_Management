@@ -21,7 +21,8 @@
             <ul class="dropdown-menu">
               <li><%= link_to t(".booking_request"), admin_bookings_path, class: "dropdown-item" %></li>
               <li><%= link_to t(".user"), admin_users_path, class: "dropdown-item" %></li>
-              <li><a class="dropdown-item" href="#"><%= t(".room") %></a></li>
+              <li><%= link_to t(".room"), admin_rooms_path, class: "dropdown-item" %></li>
+              <li><%= link_to t(".room_type"), admin_room_types_path, class: "dropdown-item" %></li>
             </ul>
           </li>
           <li class="nav-item">

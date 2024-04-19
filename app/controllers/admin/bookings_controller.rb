@@ -28,7 +28,8 @@ class Admin::BookingsController < Admin::BaseController
   end
 
   def load_availabel_rooms
-    @availabel_rooms = Room.availabel(@booking.check_in, @booking.check_out)
+    @availabel_rooms = Room.active.availabel(@booking.check_in,
+                                             @booking.check_out)
                            .filter_by_room_type_id(@booking.room_type_id)
                            .filter_by_view_type(@booking.view_type)
   end

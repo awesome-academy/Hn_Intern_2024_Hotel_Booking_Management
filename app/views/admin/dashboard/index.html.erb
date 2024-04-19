@@ -7,7 +7,10 @@
         <%= link_to t(".manage_user"), admin_users_path, class: "text-secondary text-uppercase fs-3 text-decoration-underline" %>
       </li>
       <li class="list-group-item">
-        <%= link_to t(".manage_room"), "#", class: "text-secondary text-uppercase fs-3 text-decoration-underline" %>
+        <%= link_to t(".manage_room"), admin_rooms_path, class: "text-secondary text-uppercase fs-3 text-decoration-underline" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to t(".manage_room_type"), admin_room_types_path, class: "text-secondary text-uppercase fs-3 text-decoration-underline" %>
       </li>
       <li class="list-group-item">
         <%= link_to t(".booking_request"), admin_bookings_path, class: "text-secondary text-uppercase fs-3 text-decoration-underline" %>
