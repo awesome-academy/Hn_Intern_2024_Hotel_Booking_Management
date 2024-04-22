@@ -1,22 +1,16 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-  include SessionsHelper
   include BookingsHelper
 
   before_action :set_locale
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def store_location
-    session[:forwarding_url] = request.original_url if request.get?
-  end
-
-  def redirect_back_or default
-    forwarding_url = session[:forwarding_url]
-    session.delete :forwarding_url
-    redirect_to forwarding_url || default
-  end
-
-  def sign_in user
-    session[:user_id] = user.id
+  def after_sign_in_path_for resource
+    if resource.admin?
+      admin_dashboard_path
+    else
+      root_path
+    end
   end
 
   def load_room
@@ -35,16 +29,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
-  def signed_in_user
-    return if signed_in?
-
-    store_location
-    flash[:danger] = t "flash.must_sign_in"
-    redirect_to signin_url
-  end
-
   def require_admin
-    return if admin?
+    return if current_user&.admin?
 
     flash[:warning] = t "flash.require_admin"
     redirect_to root_path
@@ -65,5 +51,12 @@ class ApplicationController < ActionController::Base
     return unless I18n.available_locales.map(&:to_s).include?(parsed_locale)
 
     parsed_locale.to_sym
+  end
+
+  protected
+  def configure_permitted_parameters
+    added_attrs = %i(full_name email password password_confirmation remember_me)
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 end

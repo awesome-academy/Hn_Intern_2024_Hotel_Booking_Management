@@ -3,12 +3,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => "/sidekiq"
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     root "static_pages#home"
-
-    get "/signup", to: "users#new"
-    post "/signup", to: "users#create"
-    get "/signin", to: "sessions#new"
-    post "/signin", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
+    devise_for :users
 
     resources :rooms, only: %i(index show) do
       get :check_available, on: :member
@@ -24,7 +19,5 @@ Rails.application.routes.draw do
       get "dashboard", to: "dashboard#index"
       resources "bookings", only: %i(index show update)
     end
-
-    resources "account_activations", only: :edit
   end
 end

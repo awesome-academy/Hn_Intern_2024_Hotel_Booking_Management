@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :signed_in_user
+  before_action :authenticate_user!
   before_action :load_booking, only: %i(show destroy)
   before_action :create_booking, only: :create
 

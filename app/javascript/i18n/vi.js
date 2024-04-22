@@ -362,12 +362,106 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "year": "Năm"
     }
   },
+  "devise": {
+    "confirmations": {
+      "confirmed": "Địa chỉ email của bạn đã được xác nhận.",
+      "new": {
+        "title": "Gửi lại hướng dẫn xác nhận tài khoản"
+      },
+      "send_instructions": "Bạn sẽ nhận được một email với hướng dẫn kích hoạt tài khoản trong vài phút.",
+      "send_paranoid_instructions": "Nếu email của bạn đã tồn tại, bạn sẽ nhận một email với hướng dẫn xác nhận tài khoản trong vài phút."
+    },
+    "failure": {
+      "already_authenticated": "Bạn đã đăng nhập trước đó.",
+      "inactive": "Tài khoản của bạn chưa được kích hoạt.",
+      "invalid": "%{authentication_keys} hoặc mật khẩu không hợp lệ.",
+      "last_attempt": "Bạn còn một lần thử trước khi tài khoản bị khóa.",
+      "locked": "Tài khoản của bạn bị khóa.",
+      "not_found_in_database": "%{authentication_keys} hoặc mật khẩu không hợp lệ.",
+      "timeout": "Đã hết phiên làm việc. Vui lòng đăng nhập lại để tiếp tục.",
+      "unauthenticated": "Bạn cần đăng nhập hoặc đăng ký trước khi tiếp tục.",
+      "unconfirmed": "Bạn phải xác nhận địa chỉ email của bạn trước khi tiếp tục."
+    },
+    "mailer": {
+      "confirmation_instructions": {
+        "instruction": "Bạn có thể xác nhận email tài khoản của mình thông qua liên kết bên dưới:",
+        "link_text": "Xác nhận tài khoản",
+        "subject": "Hướng dẫn xác nhận tài khoản",
+        "welcome": "Xin chào"
+      },
+      "email_changed": {
+        "subject": "Email đã thay đổi"
+      },
+      "password_change": {
+        "subject": "Mật khẩu đã thay đổi"
+      },
+      "reset_password_instructions": {
+        "subject": "Hướng dẫn khôi phục mật khẩu"
+      },
+      "unlock_instructions": {
+        "subject": "Hướng dẫn mở khóa tài khoản"
+      }
+    },
+    "omniauth_callbacks": {
+      "failure": "Không thể xác thực bạn từ %{kind} vì \"%{reason}\".",
+      "success": "Xác thực từ %{kind} tài khoản thành công."
+    },
+    "passwords": {
+      "new": {
+        "button": "Tiếp tục",
+        "forgot": "Quên mật khẩu"
+      },
+      "no_token": "Bạn không thể truy cập trang này nếu không nhận được email đặt lại mật khẩu. Nếu bạn nhận được email đặt lại mật khẩu, vui lòng đảm bảo rằng bạn đã sử dụng URL đầy đủ được cung cấp.",
+      "send_instructions": "Bạn sẽ nhận được email có hướng dẫn về cách đặt lại mật khẩu sau vài phút.",
+      "send_paranoid_instructions": "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được liên kết khôi phục mật khẩu tại địa chỉ email của mình sau vài phút.",
+      "updated": "Mật khẩu của bạn đã được thay đổi thành công. Bây giờ bạn đã đăng nhập.",
+      "updated_not_active": "Mật khẩu của bạn đã được thay đổi thành công."
+    },
+    "registrations": {
+      "destroyed": "Tạm biệt! Tài khoản của bạn đã được hủy thành công. Mong rằng chúng tôi sẽ sớm gặp lại bạn.",
+      "new": {
+        "sign_up": "Đăng ký"
+      },
+      "signed_up": "Chào mừng! Bạn đã đăng ký thành công.",
+      "signed_up_but_inactive": "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập cho bạn vì tài khoản của bạn chưa được kích hoạt.",
+      "signed_up_but_locked": "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập cho bạn vì tài khoản của bạn bị khóa.",
+      "signed_up_but_unconfirmed": "Một tin nhắn có liên kết xác nhận đã được gửi đến địa chỉ email của bạn. Vui lòng theo liên kết để kích hoạt tài khoản của bạn.",
+      "update_needs_confirmation": "Bạn đã cập nhật tài khoản của mình thành công nhưng chúng tôi cần xác minh địa chỉ email mới của bạn. Vui lòng kiểm tra email của bạn và nhấp vào liên kết xác nhận để xác nhận địa chỉ email mới của bạn.",
+      "updated": "Tài khoản của bạn đã được cập nhật thành công.",
+      "updated_but_not_signed_in": "Tài khoản của bạn đã được cập nhật thành công nhưng do mật khẩu của bạn đã bị thay đổi nên bạn cần đăng nhập lại."
+    },
+    "sessions": {
+      "already_signed_out": "Đăng xuất thành công.",
+      "new": {
+        "log_in": "Đăng nhập",
+        "remember_me": "Ghi nhớ đăng nhập "
+      },
+      "signed_in": "Đã đăng nhập thành công.",
+      "signed_out": "Đăng xuất thành công."
+    },
+    "shared": {
+      "links": {
+        "forgot_your_password": "Quên mật khẩu?",
+        "log_in": "Đăng nhập",
+        "not_receive_confirm": "Không nhận được hướng dẫn xác nhận tài khoản?",
+        "not_receive_unlock": "Không nhận được hướng dẫn mở khóa tài khoản?",
+        "sign_in_with": "Đăng nhập với %{provider}",
+        "sign_up": "Đăng ký"
+      }
+    },
+    "unlocks": {
+      "send_instructions": "Bạn sẽ nhận được email có hướng dẫn cách mở khóa tài khoản của mình sau vài phút.",
+      "send_paranoid_instructions": "Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được email có hướng dẫn cách mở khóa sau vài phút.",
+      "unlocked": "Tài khoản của bạn đã được mở khóa thành công. Vui lòng đăng nhập để tiếp tục."
+    }
+  },
   "double_room": "Phòng 2 giường đơn",
   "errors": {
     "connection_refused": "Oops! Failed to connect to the Web Console middleware.\nPlease make sure a rails development server is running.\n",
     "format": "%{attribute} %{message}",
     "messages": {
       "accepted": "phải được đồng ý",
+      "already_confirmed": "đã được xác nhận, vui lòng thử đăng nhập",
       "aspect_ratio_is_not": "phải có tỉ lệ ảnh %{aspect_ratio}",
       "aspect_ratio_not_landscape": "phải là ảnh ngang",
       "aspect_ratio_not_portrait": "phải là ảnh đứng",
@@ -375,6 +469,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "aspect_ratio_unknown": "tỉ lệ ảnh không xác định",
       "blank": "không thể để trắng",
       "confirmation": "không khớp với xác nhận",
+      "confirmation_period_expired": "cần được xác nhận trong vòng %{period}, vui lòng yêu cầu một cái mới",
       "content_type_invalid": "tệp không hợp lệ",
       "dimension_height_equal_to": "chiều cao phải bằng %{length} pixel",
       "dimension_height_greater_than_or_equal_to": "chiều cao phải lớn hơn hoặc bằng %{length} pixel",
@@ -390,6 +485,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "equal_to": "phải bằng %{count}",
       "even": "phải là số chẵn",
       "exclusion": "đã được giành trước",
+      "expired": "đã hết hạn, vui lòng yêu cầu một cái mới",
       "file_size_not_between": "kích thước tệp phải nằm trong khoảng từ %{min_size} đến %{max_size} (kích thước hiện tại là %{file_size})",
       "file_size_not_greater_than": "kích thước tệp phải lớn hơn %{min_size} (kích thước hiện tại là %{file_size})",
       "file_size_not_greater_than_or_equal_to": "kích thước tệp phải lớn hơn hoặc bằng %{min_size} (kích thước hiện tại là %{file_size})",
@@ -408,6 +504,12 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "model_invalid": "Validation failed: %{errors}",
       "not_a_number": "không phải là số",
       "not_an_integer": "phải là một số nguyên",
+      "not_found": "không tìm thấy",
+      "not_locked": "không bị khóa",
+      "not_saved": {
+        "one": "1 lỗi đã khiến %{resource} này không được lưu:",
+        "other": "%{count} lỗi đã khiến %{resource} này không được lưu:"
+      },
       "odd": "phải là số lẻ",
       "other_than": "cần phải khác %{count}",
       "password_too_long": "is too long",
@@ -76892,6 +76994,18 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     }
   },
   "flash": {
+    "actions": {
+      "create": {
+        "notice": "%{resource_name} was successfully created."
+      },
+      "destroy": {
+        "alert": "%{resource_name} could not be destroyed.",
+        "notice": "%{resource_name} was successfully destroyed."
+      },
+      "update": {
+        "notice": "%{resource_name} was successfully updated."
+      }
+    },
     "booking_not_found": "Không tìm thấy thông tin đặt phòng",
     "must_sign_in": "Vui lòng đăng nhập trước",
     "request_not_approved": "Yêu cầu không được duyệt",
@@ -77220,6 +77334,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     "create_failed": "Tạo đánh giá thất bại. Vui lòng thử lại",
     "create_success": "Tạo đánh giá thành công. Xin cảm ơn",
     "please_enter_comment": "Vui lòng nhập bình luận",
+    "review_not_found": "Không tìm thấy đánh giá",
     "update_failed": "Cập nhật thất bại",
     "update_success": "Cập nhật thành công"
   },
@@ -77322,14 +77437,6 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
   "triple_room": "Phòng 3 giường đơn",
   "tv": "TV",
   "twin_room": "Phòng 1 giường đôi",
-  "user_mailer": {
-    "activate_account": {
-      "activate": "Kích hoạt tài khoản",
-      "hi": "Xin chào",
-      "subject": "Kích hoạt tài khoản",
-      "welcome": "Chào mừng bạn đến với hệ thống khách sạn"
-    }
-  },
   "users": {
     "create": {
       "flash_create_success": "Tạo tài khoản mới thành công"
