@@ -1,0 +1,14 @@
+<tr>
+  <th scope="row">
+    <%= link_to user.id, admin_user_path(user), class: "text-decoration-underline" %>
+  </th>
+  <td><%= highlight user.full_name, params.dig(:q, :full_name_cont) %></td>
+  <td><%= highlight user.email, params.dig(:q, :email_cont) %></td>
+  <td><%= show_status_lock user %></td>
+  <td>
+    <%= link_to admin_user_path(user), class: "btn btn-primary rounded-pill" do %>
+      <%= fa_icon "eye" %>
+    <% end %>
+    <%= show_button_lock user %>
+  </td>
+</tr>

@@ -35,6 +35,9 @@ vi:
   double_room: "Phòng 2 giường đơn"
   triple_room: "Phòng 3 giường đơn"
 
+  inactive: "Vô hiệu"
+  active: "Hoạt động"
+
   bed_type:
     single: "giường đơn"
     double: "giường đôi"
@@ -45,6 +48,10 @@ vi:
     booking_not_found: "Không tìm thấy thông tin đặt phòng"
     require_admin: "Chỉ admin mới được thực hiện"
     request_not_approved: "Yêu cầu không được duyệt"
+    user_not_found: "Không tìm thấy người dùng"
+    activated: "Kích hoạt thành công"
+    inactivated: "Vô hiệu hóa thành công"
+    can_not_perform: "Không thể thực hiện hành động"
 
   activerecord:
     models:
@@ -335,6 +342,24 @@ vi:
         flash_update_danger: "Cập nhật thất bại"
         incorrect_num_of_assigned_room: "Số lượng phòng chỉ định chưa đúng"
         room_is_ordered: "Phòng %{name} đã được đặt"
+
+    users:
+      index:
+        filter: "Lọc"
+        id: "ID"
+        full_name: "Họ và tên"
+        email: "Email"
+        activated: "Trạng thái"
+        list_user: "Danh sách người dùng"
+        action: "Hành động"
+      show:
+        id: "ID"
+        full_name: "Họ và tên"
+        email: "Email"
+        activated: "Trạng thái"
+        profile: "Thông tin người dùng"
+        created_at: "Tạo vào ngày"
+        btn_back: "Trở về"
 
   booking_mailer:
     confirm_booking:

@@ -7,6 +7,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "flash_edit_success": "Kích hoạt tài khoản thành công"
     }
   },
+  "active": "Hoạt động",
   "activerecord": {
     "attributes": {
       "booking": {
@@ -140,6 +141,26 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "title": "Quản trị",
         "user": "Người dùng",
         "vietnamese": "Tiếng việt"
+      }
+    },
+    "users": {
+      "index": {
+        "action": "Hành động",
+        "activated": "Trạng thái",
+        "email": "Email",
+        "filter": "Lọc",
+        "full_name": "Họ và tên",
+        "id": "ID",
+        "list_user": "Danh sách người dùng"
+      },
+      "show": {
+        "activated": "Trạng thái",
+        "btn_back": "Trở về",
+        "created_at": "Tạo vào ngày",
+        "email": "Email",
+        "full_name": "Họ và tên",
+        "id": "ID",
+        "profile": "Thông tin người dùng"
       }
     }
   },
@@ -77006,11 +77027,14 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "notice": "%{resource_name} was successfully updated."
       }
     },
+    "activated": "Kích hoạt thành công",
     "booking_not_found": "Không tìm thấy thông tin đặt phòng",
+    "inactivated": "Vô hiệu hóa thành công",
     "must_sign_in": "Vui lòng đăng nhập trước",
     "request_not_approved": "Yêu cầu không được duyệt",
     "require_admin": "Chỉ admin mới được thực hiện",
-    "room_not_found": "Không tìm thấy phòng"
+    "room_not_found": "Không tìm thấy phòng",
+    "user_not_found": "Không tìm thấy người dùng"
   },
   "helpers": {
     "select": {
@@ -77167,6 +77191,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       }
     }
   },
+  "inactive": "Vô hiệu",
   "iron": "Bàn là",
   "layouts": {
     "header": {

@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     namespace :admin do
       get "dashboard", to: "dashboard#index"
       resources "bookings", only: %i(index show update)
+      resources "users", only: %i(index show)
+      post "lock/:id", to: "users#lock_user", as: "lock_user"
+      post "unlock/:id", to: "users#unlock_user", as: "unlock_user"
     end
   end
 end
