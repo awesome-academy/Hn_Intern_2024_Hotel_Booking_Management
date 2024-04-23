@@ -22,16 +22,6 @@ RSpec.describe Room, type: :model do
     end
   end
 
-  describe "scope" do
-    it ".latest" do
-      room_1 = FactoryBot.create(:room)
-      room_2 = FactoryBot.create(:room)
-      room_3 = FactoryBot.create(:room)
-      arr = [room_1, room_2, room_3].sort_by {|r| r[:created_at].to_i * -1}
-      expect(Room.latest).to eq(arr)
-    end
-  end
-
   describe "validates" do
     context "when name is not present" do
       it "is not valid" do

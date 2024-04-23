@@ -13,12 +13,8 @@ FactoryBot.define do
     association :user, factory: :user
     book_day {Faker::Date.between(from: Date.today - 4.days, to: Date.today - 1.day)}
 
-    transient do
-      booked_rooms_count {3}
-    end
-
     after(:create) do |booking, context|
-      create_list(:booked_room, context.booked_rooms_count, booking:)
+      create_list(:booked_room, context.amount, booking:)
     end
   end
 

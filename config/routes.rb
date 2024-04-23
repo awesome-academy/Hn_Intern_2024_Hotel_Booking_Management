@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
 
     post "bookings/:id", to: "bookings#show", as: "booking"
-    resources :bookings, except: :show
+    resources :bookings, except: %i(show edit update)
 
     resource :reviews, only: %i(create update)
 
