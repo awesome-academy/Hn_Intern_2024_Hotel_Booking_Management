@@ -1,0 +1,57 @@
+<div class="container mt-5 w-100">
+  <div class="px-5">
+    <div class="row">
+      <div class="col-lg-2 col-sm-12">
+        <div class="my-2">
+          <h1><%= t ".filter" %></h1>
+          <%= search_form_for @q, url: admin_room_types_path do |f| %>
+            <div class="row row-cols-2 g-1">
+              <%= f.label :id_eq, t(".id") %>
+              <%= f.search_field :id_eq %>
+
+              <%= f.label :name_cont, t(".name") %>
+              <%= f.search_field :name_cont %>
+
+              <%= f.label :status_eq, t(".status") %>
+              <%= f.select :status_eq, active_status_options, {include_blank: true} %>
+
+              <%= f.label :price_gteq, t(".price_min") %>
+              <%= f.search_field :price_gteq %>
+
+              <%= f.label :price_lteq, t(".price_max") %>
+              <%= f.search_field :price_lteq %>
+
+              <%= f.label :size_of_bed_eq, t(".size_of_bed") %>
+              <%= f.select :size_of_bed_eq, size_of_bed_options, {include_blank: true} %>
+            </div>
+
+            <%= f.submit t(".filter"), class: "w-100 mt-3" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-lg-10 col-sm-12">
+        <h1><%= t ".list_room_type" %></h1>
+        <hr class="my-4">
+        <div>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr class="text-primary">
+                <th scope="col"><%= sort_link @q, :id, t(".id") %></th>
+                <th scope="col"><%= sort_link @q, :name, t(".name") %></th>
+                <th scope="col"><%= sort_link @q, :price, t(".price") %></th>
+                <th scope="col"><%= sort_link @q, :num_of_bed, t(".num_of_bed") %></th>
+                <th scope="col"><%= sort_link @q, :size_of_bed, t(".size_of_bed") %></th>
+                <th scope="col"><%= sort_link @q, :status, t(".status") %></th>
+                <th scope="col"><%= t ".action" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render @room_types%>
+            </tbody>
+          </table>
+          <%== pagy_bootstrap_nav @pagy %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

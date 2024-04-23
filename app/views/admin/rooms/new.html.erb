@@ -1,0 +1,39 @@
+<div class="container mt-5 w-100">
+  <div class="px-5">
+    <h1 class="text-center p-3"><%= t ".title" %></h1>
+    <div class="shadow">
+      <%= form_for @room, url: admin_rooms_path do |f| %>
+        <%= render "devise/shared/error_messages", resource: @room %>
+
+        <div class="row">
+          <div class="col-lg-12 col-sm-12">
+            <div class="m-3">
+              <div>
+                <div class="row row-cols-lg-3 row-cols-sm-1 w-100">
+
+                  <div class="mb-3">
+                    <%= f.label :name, class: "form-label fw-bold" %>
+                    <%= f.text_field :name, class: "form-control" %>
+                  </div>
+
+                  <div class="mb-3">
+                    <%= f.label :view_type, class: "form-label fw-bold" %>
+                    <%= f.select :view_type, view_type_options_for_save, {}, class: "form-select" %>
+                  </div>
+
+                  <div class="mb-3">
+                    <%= f.label :room_type_id, class: "form-label fw-bold" %>
+                    <%= f.select :room_type_id, room_type_id_options, {}, class: "form-select" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mb-3 p-3">
+          <%= f.submit t(".btn_add"), class: "w-50 btn btn-info" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

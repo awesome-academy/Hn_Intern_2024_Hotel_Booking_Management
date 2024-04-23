@@ -19,6 +19,11 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "reason": "Lý do từ chối",
         "telephone": "Số điện thoại"
       },
+      "room": {
+        "name": "Tên",
+        "room_type_id": "Kiểu phòng",
+        "view_type": "Quang cảnh"
+      },
       "user": {
         "current_password": "Mật khẩu hiện tại",
         "email": "Email",
@@ -55,6 +60,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     },
     "models": {
       "booking": "Đặt phòng",
+      "room": "Phòng",
       "user": "Người dùng"
     }
   },
@@ -123,6 +129,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "index": {
         "booking_request": "Danh sách yêu cầu đặt phòng",
         "manage_room": "Quản lý phòng",
+        "manage_room_type": "Quản lý kiểu phòng",
         "manage_user": "Quản lý người dùng",
         "review_request": "Duyệt đánh giá",
         "statistic": "Thống kê",
@@ -138,11 +145,76 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "language": "Ngôn ngữ",
         "logout": "Đăng xuất",
         "manage": "Quản lý",
+        "profile": "Thông tin người dùng",
         "room": "Phòng",
+        "room_type": "Kiểu phòng",
         "statistic": "Thống kê",
         "title": "Quản trị",
         "user": "Người dùng",
         "vietnamese": "Tiếng việt"
+      }
+    },
+    "room_types": {
+      "index": {
+        "action": "Hành động",
+        "filter": "Lọc",
+        "id": "ID",
+        "list_room_type": "Danh sách kiểu phòng",
+        "name": "Kiểu phòng",
+        "num_of_bed": "Số lượng giường",
+        "price": "Giá",
+        "price_max": "Đến",
+        "price_min": "Giá từ",
+        "size_of_bed": "Cỡ giường",
+        "status": "Trạng thái"
+      },
+      "show": {
+        "add_image": "Thêm ảnh",
+        "btn_delete": "Xóa",
+        "btn_update": "Cập nhật",
+        "confirm_delete": "Bạn chắc chắn muốn xóa?",
+        "created_at": "Ngày tạo",
+        "demo_image": "Ảnh minh họa",
+        "facilities": "Cơ sở vật chất",
+        "name": "Tên",
+        "no_image": "Không có ảnh để hiển thị",
+        "num_of_bed": "Số lượng giường",
+        "rooms": "Các phòng liên quan",
+        "size_of_bed": "Kích cỡ giường",
+        "status": "Trạng thái",
+        "title": "Thông tin kiểu phòng"
+      }
+    },
+    "rooms": {
+      "index": {
+        "action": "Hành động",
+        "add_new": "Thêm phòng",
+        "created_at": "Ngày tạo",
+        "created_at_from": "Được tạo từ",
+        "created_at_to": "đến",
+        "filter": "Lọc",
+        "id": "ID",
+        "list_room": "Danh sách phòng",
+        "name": "Tên",
+        "room_type": "Kiểu phòng",
+        "status": "Trạng thái",
+        "view_type": "Quang cảnh"
+      },
+      "new": {
+        "btn_add": "Thêm mới",
+        "title": "Thêm phòng mới"
+      },
+      "show": {
+        "btn_update": "Cập nhật",
+        "created_at": "Ngày tạo",
+        "demo_image": "Ảnh minh họa",
+        "facilities": "Cơ sở vật chất",
+        "name": "Tên",
+        "no_image": "Không có ảnh để hiển thị",
+        "room_type": "Kiểu phòng",
+        "status": "Trạng thái",
+        "title": "Thông tin phòng",
+        "view_type": "Quang cảnh"
       }
     },
     "users": {
@@ -77041,6 +77113,8 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       }
     },
     "activated": "Kích hoạt thành công",
+    "add_failed": "Thêm mới thất bại",
+    "add_success": "Thêm mới thành công",
     "booking_not_found": "Không tìm thấy thông tin đặt phòng",
     "can_not_perform": "Không thể thực hiện hành động",
     "delete_success": "Xóa thành công",
@@ -77050,6 +77124,8 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
     "request_not_approved": "Yêu cầu không được duyệt",
     "require_admin": "Chỉ admin mới được thực hiện",
     "room_not_found": "Không tìm thấy phòng",
+    "update_failed": "Cập nhật thất bại",
+    "update_success": "Cập nhật thành công",
     "user_not_found": "Không tìm thấy người dùng"
   },
   "helpers": {

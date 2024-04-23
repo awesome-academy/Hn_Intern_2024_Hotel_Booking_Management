@@ -1,0 +1,16 @@
+<tr>
+  <th scope="row">
+    <%= link_to room.id, admin_room_path(room), class: "text-decoration-underline" %>
+  </th>
+  <td><%= room.name %></td>
+  <td><%= t room.view_type %></td>
+  <td><%= t room.room_type.name %></td>
+  <td><%= l room.created_at, format: :short_date %></td>
+  <td><%= show_tag_status_room room.status %></td>
+  <td>
+    <%= link_to admin_room_path(room), class: "btn btn-primary rounded-circle" do %>
+      <%= fa_icon "eye" %>
+    <% end %>
+    <%= show_button_status_room room %>
+  </td>
+</tr>

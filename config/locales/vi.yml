@@ -54,11 +54,18 @@ vi:
     can_not_perform: "Không thể thực hiện hành động"
     image_not_found: "Không tìm thấy ảnh"
     delete_success: "Xóa thành công"
+    update_success: "Cập nhật thành công"
+    update_failed: "Cập nhật thất bại"
+    add_success: "Thêm mới thành công"
+    add_failed: "Thêm mới thất bại"
+    room_is_busy: "Không thể vô hiệu phòng vì phòng đang được đặt."
+    some_room_is_busy: "Không thể vô hiệu loại phòng vì có phòng thuộc loại này đang được đặt"
 
   activerecord:
     models:
       user: "Người dùng"
       booking: "Đặt phòng"
+      room: "Phòng"
     attributes:
       user:
         full_name: "Họ và tên"
@@ -75,6 +82,10 @@ vi:
         check_in: "Ngày nhận phòng"
         check_out: "Ngày trả phòng"
         reason: "Lý do từ chối"
+      room:
+        name: "Tên"
+        view_type: "Quang cảnh"
+        room_type_id: "Kiểu phòng"
     errors:
       models:
         user:
@@ -281,12 +292,15 @@ vi:
         account: "Tài khoản"
         logout: "Đăng xuất"
         booking_request: "Danh sách yêu cầu đặt phòng"
+        room_type: "Kiểu phòng"
+        profile: "Thông tin người dùng"
 
     dashboard:
       index:
         welcome: "Chào mừng đến với trang quản trị!"
         manage_user: "Quản lý người dùng"
         manage_room: "Quản lý phòng"
+        manage_room_type: "Quản lý kiểu phòng"
         booking_request: "Danh sách yêu cầu đặt phòng"
         review_request: "Duyệt đánh giá"
         statistic: "Thống kê"
@@ -365,6 +379,64 @@ vi:
         created_at: "Tạo vào ngày"
         btn_back: "Trở về"
         no_image: "Không có ảnh hồ sơ"
+
+    room_types:
+      index:
+        filter: "Lọc"
+        id: "ID"
+        name: "Kiểu phòng"
+        status: "Trạng thái"
+        price_min: "Giá từ"
+        price_max: "Đến"
+        size_of_bed: "Cỡ giường"
+        list_room_type: "Danh sách kiểu phòng"
+        price: "Giá"
+        num_of_bed: "Số lượng giường"
+        action: "Hành động"
+      show:
+        title: "Thông tin kiểu phòng"
+        demo_image: "Ảnh minh họa"
+        btn_delete: "Xóa"
+        confirm_delete: "Bạn chắc chắn muốn xóa?"
+        no_image: "Không có ảnh để hiển thị"
+        add_image: "Thêm ảnh"
+        name: "Tên"
+        num_of_bed: "Số lượng giường"
+        created_at: "Ngày tạo"
+        size_of_bed: "Kích cỡ giường"
+        status: "Trạng thái"
+        facilities: "Cơ sở vật chất"
+        rooms: "Các phòng liên quan"
+        btn_update: "Cập nhật"
+
+    rooms:
+      index:
+        filter: "Lọc"
+        add_new: "Thêm phòng"
+        id: "ID"
+        name: "Tên"
+        view_type: "Quang cảnh"
+        room_type: "Kiểu phòng"
+        created_at_from: "Được tạo từ"
+        created_at_to: "đến"
+        created_at: "Ngày tạo"
+        status: "Trạng thái"
+        list_room: "Danh sách phòng"
+        action: "Hành động"
+      show:
+        title: "Thông tin phòng"
+        demo_image: "Ảnh minh họa"
+        no_image: "Không có ảnh để hiển thị"
+        name: "Tên"
+        view_type: "Quang cảnh"
+        room_type: "Kiểu phòng"
+        created_at: "Ngày tạo"
+        status: "Trạng thái"
+        facilities: "Cơ sở vật chất"
+        btn_update: "Cập nhật"
+      new:
+        title: "Thêm phòng mới"
+        btn_add: "Thêm mới"
 
   booking_mailer:
     confirm_booking:
