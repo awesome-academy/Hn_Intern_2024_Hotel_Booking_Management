@@ -12,3 +12,5 @@ hotel:
   email: hotelier@gmail.com
 auto_check_booking_delay: 30
 time_to_review_minutes: 5
+image_size:
+  s_240x240: [240, 240]

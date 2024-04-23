@@ -52,6 +52,8 @@ vi:
     activated: "Kích hoạt thành công"
     inactivated: "Vô hiệu hóa thành công"
     can_not_perform: "Không thể thực hiện hành động"
+    image_not_found: "Không tìm thấy ảnh"
+    delete_success: "Xóa thành công"
 
   activerecord:
     models:
@@ -63,6 +65,8 @@ vi:
         email: "Email"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
+        current_password: "Mật khẩu hiện tại"
+        profile_image: "Ảnh hồ sơ"
       booking:
         full_name: "Tên người đặt"
         email: "Email"
@@ -360,6 +364,7 @@ vi:
         profile: "Thông tin người dùng"
         created_at: "Tạo vào ngày"
         btn_back: "Trở về"
+        no_image: "Không có ảnh hồ sơ"
 
   booking_mailer:
     confirm_booking:
