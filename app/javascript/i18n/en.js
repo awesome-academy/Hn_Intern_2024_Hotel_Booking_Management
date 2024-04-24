@@ -596,6 +596,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
   },
   "double_room": "Double room",
   "errors": {
+    "connection_refused": "Oops! Failed to connect to the Web Console middleware.\nPlease make sure a rails development server is running.\n",
     "format": "%{attribute} %{message}",
     "messages": {
       "accepted": "must be accepted",
@@ -673,7 +674,9 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
         "one": "%{count} error prohibited this %{model} from being saved",
         "other": "%{count} errors prohibited this %{model} from being saved"
       }
-    }
+    },
+    "unacceptable_request": "A supported version is expected in the Accept header.\n",
+    "unavailable_session": "Session %{id} is no longer available in memory.\n\nIf you happen to run on a multi-process server (like Unicorn or Puma) the process\nthis request hit doesn't store %{id} in memory. Consider turning the number of\nprocesses/workers to one (1) or using a different server in development.\n"
   },
   "faker": {
     "address": {
@@ -77544,7 +77547,9 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     "must_sign_in": "Please sign in first",
     "request_not_approved": "Request not approved",
     "require_admin": "Only admins can do this",
+    "room_is_busy": "Can not inactive this room, because it is being booked.",
     "room_not_found": "Room not found",
+    "some_room_is_busy": "Can not inactive this type room, because there exists some rooms being booked",
     "update_failed": "Update failed",
     "update_success": "Update successfully",
     "user_not_found": "User not found"
