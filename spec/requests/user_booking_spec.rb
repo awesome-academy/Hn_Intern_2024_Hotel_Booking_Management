@@ -39,8 +39,8 @@ RSpec.describe BookingsController, type: :request do
 
     context "booking found" do
       it "render parital detail" do
-        post booking_path(id: booking.id)
-        expect(response).to render_template(partial: '_detail')
+        post booking_path(id: booking.id), as: :turbo_stream
+        expect(response).to render_template(partial: "_detail")
       end
     end
 
@@ -60,7 +60,7 @@ RSpec.describe BookingsController, type: :request do
 
   end
 
-   describe 'GET #new' do
+   describe "GET #new" do
     before {
       allow(RoomType).to receive(:find_by).and_return(room_type)
       get new_booking_path(booking_params_to_new)
@@ -92,6 +92,24 @@ RSpec.describe BookingsController, type: :request do
         post bookings_path(booking: booking_params_to_create)
         expect(response).to render_template :new
       end
+    end
+  end
+
+  describe "DELETE #destroy" do
+    before do
+      allow(Booking).to receive(:find_by).and_return(booking)
+      allow(booking).to receive(:can_be_deleted?).and_return(true)
+    end
+    it "success" do
+      allow(booking).to receive(:destroy).and_return(true)
+      delete new_booking_path, :params => {id: booking.id}, :headers => {"HTTP_REFERER" => bookings_path}
+      expect(flash[:success]).to match(/success/)
+    end
+
+    it "failed" do
+      allow(booking).to receive(:destroy).and_return(false)
+      delete new_booking_path, :params => {id: booking.id}, :headers => {"HTTP_REFERER" => bookings_path}
+      expect(flash[:danger]).to match(/failed/)
     end
   end
 end
