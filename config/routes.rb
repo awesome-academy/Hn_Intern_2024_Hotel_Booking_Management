@@ -36,4 +36,10 @@ Rails.application.routes.draw do
     end
     delete "remove_profile_image/:id", to: "application#remove_profile_image", as: "remove_profile_image"
   end
+
+  namespace :api do
+    namespace :v1 do
+      post "authenticate", to: "authentication#create"
+    end
+  end
 end
