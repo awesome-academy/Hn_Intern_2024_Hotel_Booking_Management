@@ -60,6 +60,11 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
+    active_model_serializers (0.10.14)
+      actionpack (>= 4.1)
+      activemodel (>= 4.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     active_storage_validations (1.1.4)
       activejob (>= 5.2.0)
       activemodel (>= 5.2.0)
@@ -114,6 +119,8 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    case_transform (0.2)
+      activesupport
     concurrent-ruby (1.2.3)
     config (5.3.0)
       deep_merge (~> 1.2, >= 1.2.1)
@@ -168,6 +175,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.7.1)
+    jsonapi-renderer (0.2.2)
     jwt (2.8.1)
       base64
     language_server-protocol (3.17.0.3)
@@ -377,6 +385,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  active_model_serializers
   active_storage_validations
   bcrypt
   bootsnap
