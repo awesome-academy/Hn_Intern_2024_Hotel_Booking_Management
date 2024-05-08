@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post "authenticate", to: "authentication#create"
+      resources :rooms, only: :index
+      resources :bookings, only: %i(index show create)
     end
   end
 end

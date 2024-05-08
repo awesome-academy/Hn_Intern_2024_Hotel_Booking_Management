@@ -5,6 +5,7 @@ ruby "3.3.0"
 
 gem "font-awesome-rails"
 
+gem "active_model_serializers"
 gem "active_storage_validations"
 gem "config"
 gem "devise"
